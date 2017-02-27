@@ -63,7 +63,7 @@
         </tr>
     </table>
     <br />
-    <a href="EditAccount.aspx">
+    <a href="AccountEdit.aspx">
         <input type="text" value="Thêm mới" class="btn btn-primary" style="width: 90px !important;" /></a>
 </asp:Content>
 

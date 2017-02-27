@@ -51,7 +51,7 @@
         <div class="AdminRightItem">
             <asp:Button ID="btnSave" runat="server" Text="Ghi nhận" CssClass="btn btn-primary" OnClick="btnSave_Click"/>
             &nbsp;
-            <a href = "EditGroupAccount.aspx?id=<%Response.Write(this.GroupId.ToString()); %>"><input type ="button" class ="btn btn-default" value ="Bỏ qua" /></a>
+            <a href = "GroupAccountEdit.aspx?id=<%Response.Write(this.GroupId.ToString()); %>"><input type ="button" class ="btn btn-default" value ="Bỏ qua" /></a>
         </div>
     </div>
 

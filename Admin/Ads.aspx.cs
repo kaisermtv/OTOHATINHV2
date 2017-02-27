@@ -44,7 +44,11 @@ public partial class Admin_Ads : System.Web.UI.Page
             {
                 this.txtTitle.Text = this.objTable.Rows[0]["Title"].ToString();
                 this.txtContent.Text = this.objTable.Rows[0]["AdsContent"].ToString();
-                this.ckbState.Checked = bool.Parse(this.objTable.Rows[0]["State"].ToString());
+                try
+                {
+                    this.ckbState.Checked = bool.Parse(this.objTable.Rows[0]["State"].ToString());
+                }
+                catch { }
             }
         }
     }

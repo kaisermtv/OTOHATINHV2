@@ -51,7 +51,7 @@
         </tr>
     </table>
     <br />
-    <a href="EditGroupAccount.aspx">
+    <a href="GroupAccountEdit.aspx">
         <input type="text" value="Thêm mới" class="btn btn-primary" style="width: 90px !important;" /></a>
 </asp:Content>
 

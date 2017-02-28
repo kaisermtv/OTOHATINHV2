@@ -32,4 +32,26 @@ public class Oto : DataClass
     }
     #endregion
 
+    public int insert()
+    {
+        try
+        {
+            SqlCommand Cmd = this.getSQLConnect();
+            Cmd.CommandText = "INSERT INTO [tblOto]( ";
+            Cmd.CommandText += "";
+            Cmd.CommandText += ") VALUES()";
+
+            DataRowCollection ret = this.findAll(Cmd);
+
+            this.SQLClose();
+            return ret;
+        }
+        catch (Exception ex)
+        {
+            this.Message = ex.Message;
+            this.ErrorCode = ex.HResult;
+            return 0;
+        }
+    }
+
 }

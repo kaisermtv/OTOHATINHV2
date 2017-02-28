@@ -134,7 +134,7 @@
                  <br /><br />
                  <asp:Label ID="lblMsg" runat="server" Text="&nbsp;" ForeColor="Red"></asp:Label>
                   <br />
-                <asp:Button ID="btnPost" CssClass ="btn btn-primary" runat="server" Text="Đăng tin" />
+                <asp:Button ID="btnPost" CssClass ="btn btn-primary" runat="server" Text="Đăng tin" OnClick ="btnPost_Click" />
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

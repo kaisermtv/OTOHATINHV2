@@ -8,17 +8,16 @@ using System.Web.UI.WebControls;
 public partial class Admin_Admin : System.Web.UI.MasterPage
 {
     #region declare objects
-    public string strTitle = ""; 
+    public HttpContext context = HttpContext.Current;
     #endregion
 
     #region method Page_Load
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["TITLE"] == null)
+        if (Session["TITLE"] != null)
         {
-            Session["TITLE"] = "QUẢN TRỊ HỆ THỐNG";
+            context.Items["strTitle"] = Session["TITLE"];
         }
-        strTitle = Session["TITLE"].ToString();
     } 
     #endregion
 }

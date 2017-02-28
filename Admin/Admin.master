@@ -6,35 +6,35 @@
 <head>
     <title>TVS Administrator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../css/TVSStyle.css" rel="stylesheet" />
+    <link href="/css/TVSStyle.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../css/Adminstyle.css" />
 
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- Bootstrap Core CSS -->
-    <link href="../admin/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <link href="/admin/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <!-- Custom CSS -->
-    <link href="../admin/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="/admin/css/style.css" rel='stylesheet' type='text/css' />
     <!-- Graph CSS -->
-    <link href="../admin/css/font-awesome.css" rel="stylesheet" />
+    <link href="/admin/css/font-awesome.css" rel="stylesheet" />
     <!-- jQuery -->
     <!-- lined-icons -->
-    <link rel="stylesheet" href="../admin/css/icon-font.min.css" type='text/css' />
+    <link rel="stylesheet" href="/admin/css/icon-font.min.css" type='text/css' />
     <!-- //lined-icons -->
     <!-- chart -->
-    <script src="../admin/js/Chart.js"></script>
+    <script src="/admin/js/Chart.js"></script>
     <!-- //chart -->
     <!--animate-->
-    <link href="../admin/css/animate.css" rel="stylesheet" type="text/css" media="all" />
-    <script src="../admin/js/wow.min.js"></script>
+    <link href="/admin/css/animate.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/admin/js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
     <!--//end-animate-->
     <!----webfonts--->
-    <link href='../admin/css/fonts-googleapis.css' rel='stylesheet' type='text/css' />
+    <link href='/admin/css/fonts-googleapis.css' rel='stylesheet' type='text/css' />
     <!---//webfonts--->
     <!-- Meters graphs -->
-    <script src="../admin/js/jquery-1.10.2.min.js"></script>
+    <script src="/admin/js/jquery-1.10.2.min.js"></script>
     <!-- Placed js at the end of the document so the pages load faster -->
 
 </head>
@@ -107,7 +107,7 @@
                     <!--notification menu start -->
                     <div class="profile_details_left">
                         <div style ="margin-top:10px;">
-                            GIANOIBO.COM - <% Response.Write(strTitle); %>
+                            GIANOIBO.COM - <% if (context.Items["strTitle"] != null) { Response.Write(context.Items["strTitle"].ToString()); } else { Response.Write("QUẢN TRỊ HỆ THỐNG"); }  %>
                         </div>
                     </div>
                     <div class="menu-right">
@@ -166,11 +166,11 @@
             </footer>
             <!--footer section end-->
         </section>
-        <script src="../admin/js/jquery.nicescroll.js"></script>
-        <script src="../admin/js/scripts.js"></script>
+        <script src="/admin/js/jquery.nicescroll.js"></script>
+        <script src="/admin/js/scripts.js"></script>
         <!-- Bootstrap Core JavaScript -->
-        <script src="../admin/js/bootstrap.min.js"></script>
+        <script src="/admin/js/bootstrap.min.js"></script>
     </form>
-    <iframe src ="../Admin/AutoRefresh.html" style ="width:100px !important; height:100px !important; border:none;"></iframe>
+    <iframe src ="/Admin/AutoRefresh.html" style ="width:100px !important; height:100px !important; border:none;"></iframe>
 </body>
 </html>

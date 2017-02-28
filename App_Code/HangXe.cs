@@ -5,8 +5,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-public class HangXe
+public class HangXe : DataClass
 {
+
 	#region method HangXe
     public HangXe()
     {
@@ -49,7 +50,7 @@ public class HangXe
         string sqlQuery = "";
         if (searchKey.Trim() != "")
         {
-            sqlQuery += " AND UPPER(RTRIM(LTRIM(NameHangXe))) LIKE N'%'+UPPER(RTRIM(LTRIM(@SearchKey)))+'%'";
+            sqlQuery += " AND UPPER(TRIM(NameHangXe)) LIKE N'%'+UPPER(TRIM(@SearchKey))+'%'";
         }
         DataTable objTable = new DataTable();
         try
@@ -78,6 +79,29 @@ public class HangXe
         return objTable;
     }
     #endregion
+
+    //#region method getList
+    //public DataRowCollection getList()
+    //{
+    //    try
+    //    {
+    //        SqlCommand Cmd = this.getSQLConnect();
+    //        Cmd.CommandText = "SELECT * FROM [tblHangXe] WHERE [State] = 1";
+
+    //        DataRowCollection ret = this.findAll(Cmd);
+
+    //        this.SQLClose();
+    //        return ret;
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        this.Message = ex.Message;
+    //        this.ErrorCode = ex.HResult;
+    //        return null;
+    //    }
+    //}
+
+    //#endregion
 
     #region method getDataById
     public DataTable getDataById(int IdHangXe)

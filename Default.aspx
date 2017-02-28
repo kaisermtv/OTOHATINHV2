@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="TRANG CHỦ" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
-
+<%@ Register TagPrefix="cc1" Namespace="SiteUtils" Assembly="CollectionPager" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="container" style="margin-left:10px; padding-left:0px;">
@@ -16,306 +16,66 @@
                     </div>
                 </div>
                 <br />
-                <div class="DeafaultRow">
-                    <div class="DeafaultItem">
-                        <div class="DeafaultItemLeft">
-                            <img src="../Images/Car/Car1.png" alt="" />
-                            <div class="CarPrice">
-                                338 triệu
-                            </div>
-                        </div>
-                        <div class="DeafaultItemRight">
-                            <div class="DeafaultItemRight1">
-                                Toyota Giải Phóng cam kết giá rẻ nhất cả nước khuyến mại lên đến 100tr đồng. LH 0963.58.4444
-                            </div>
-                            <div class="DeafaultItemRight2">
-                                <div class="DeafaultItemRightSub1">
-                                    Mới
+                <asp:DataList ID="dtlChucVu" runat="server" RepeatDirection="Horizontal" RepeatColumns="1" Width="100%">
+                    <ItemTemplate>
+                        <div class="DeafaultRow">
+                            <div class="DeafaultItem">
+                                <div class="DeafaultItemLeft">
+                                    <img src="/Images/Car/Car1.png" alt="" />
+                                    <div class="CarPrice">
+                                        <%# Eval("GiaBan") %> triệu
+                                    </div>
                                 </div>
-                                <div class="DeafaultItemRightSub2">
-                                    Nhập khẩu
+                                <div class="DeafaultItemRight">
+                                    <div class="DeafaultItemRight1">
+                                        <%# Eval("IdNameOto") %>
+                                    </div>
+                                    <div class="DeafaultItemRight2">
+                                        <div class="DeafaultItemRightSub1">
+                                            Mới
+                                        </div>
+                                        <div class="DeafaultItemRightSub2">
+                                            Nhập khẩu
+                                        </div>
+                                        <div class="DeafaultItemRightSub3">
+                                            Số tự động
+                                        </div>
+                                    </div>
+                                    <div class="DeafaultItemRight3">
+                                        <div class="DeafaultItemRightSub4">
+                                            Mới
+                                        </div>
+                                        <div class="DeafaultItemRightSub5">
+                                            Nhập khẩu
+                                        </div>
+                                        <div class="DeafaultItemRightSub6">
+                                            Số tự động
+                                        </div>
+                                    </div>
+                                    <div class="DeafaultItemRight4">
+                                        <div class="DeafaultItemRightSub7">
+                                            <div class="DeafaultItemRightSub7Content">1-2-3</div>
+                                        </div>
+                                        <div class="DeafaultItemRightSub8">
+                                            <div class="DeafaultItemRightSub8Content">1-2-3</div>
+                                        </div>
+                                        <div class="DeafaultItemRightSub9">
+                                            <div class="DeafaultItemRightSub9Content">1-2-3</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="DeafaultItemRightSub3">
-                                    Số tự động
-                                </div>
-                            </div>
-                            <div class="DeafaultItemRight3">
-                                <div class="DeafaultItemRightSub4">
-                                    Mới
-                                </div>
-                                <div class="DeafaultItemRightSub5">
-                                    Nhập khẩu
-                                </div>
-                                <div class="DeafaultItemRightSub6">
-                                    Số tự động
-                                </div>
-                            </div>
-                            <div class="DeafaultItemRight4">
-                                <div class="DeafaultItemRightSub7">
-                                    <div class="DeafaultItemRightSub7Content">1-2-3</div>
-                                </div>
-                                <div class="DeafaultItemRightSub8">
-                                    <div class="DeafaultItemRightSub8Content">1-2-3</div>
-                                </div>
-                                <div class="DeafaultItemRightSub9">
-                                    <div class="DeafaultItemRightSub9Content">1-2-3</div>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-                <br />
-                <div class="DeafaultRow">
-                    <div class="DeafaultItem">
-                        <div class="DeafaultItemLeft">
-                            <img src="../Images/Car/Car1.png" alt="" />
-                            <div class="CarPrice">
-                                338 triệu
                             </div>
                         </div>
-                        <div class="DeafaultItemRight">
-                            <div class="DeafaultItemRight1">
-                                Toyota Giải Phóng cam kết giá rẻ nhất cả nước khuyến mại lên đến 100tr đồng. LH 0963.58.4444
-                            </div>
-                            <div class="DeafaultItemRight2">
-                                <div class="DeafaultItemRightSub1">
-                                    Mới
-                                </div>
-                                <div class="DeafaultItemRightSub2">
-                                    Nhập khẩu
-                                </div>
-                                <div class="DeafaultItemRightSub3">
-                                    Số tự động
-                                </div>
-                            </div>
-                            <div class="DeafaultItemRight3">
-                                <div class="DeafaultItemRightSub4">
-                                    Mới
-                                </div>
-                                <div class="DeafaultItemRightSub5">
-                                    Nhập khẩu
-                                </div>
-                                <div class="DeafaultItemRightSub6">
-                                    Số tự động
-                                </div>
-                            </div>
-                            <div class="DeafaultItemRight4">
-                                <div class="DeafaultItemRightSub7">
-                                    <div class="DeafaultItemRightSub7Content">1-2-3</div>
-                                </div>
-                                <div class="DeafaultItemRightSub8">
-                                    <div class="DeafaultItemRightSub8Content">1-2-3</div>
-                                </div>
-                                <div class="DeafaultItemRightSub9">
-                                    <div class="DeafaultItemRightSub9Content">1-2-3</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <br />
-                <div class="DeafaultRow">
-                    <div class="DeafaultItem">
-                        <div class="DeafaultItemLeft">
-                            <img src="../Images/Car/Car1.png" alt="" />
-                            <div class="CarPrice">
-                                338 triệu
-                            </div>
-                        </div>
-                        <div class="DeafaultItemRight">
-                            <div class="DeafaultItemRight1">
-                                Toyota Giải Phóng cam kết giá rẻ nhất cả nước khuyến mại lên đến 100tr đồng. LH 0963.58.4444
-                            </div>
-                            <div class="DeafaultItemRight2">
-                                <div class="DeafaultItemRightSub1">
-                                    Mới
-                                </div>
-                                <div class="DeafaultItemRightSub2">
-                                    Nhập khẩu
-                                </div>
-                                <div class="DeafaultItemRightSub3">
-                                    Số tự động
-                                </div>
-                            </div>
-                            <div class="DeafaultItemRight3">
-                                <div class="DeafaultItemRightSub4">
-                                    Mới
-                                </div>
-                                <div class="DeafaultItemRightSub5">
-                                    Nhập khẩu
-                                </div>
-                                <div class="DeafaultItemRightSub6">
-                                    Số tự động
-                                </div>
-                            </div>
-                            <div class="DeafaultItemRight4">
-                                <div class="DeafaultItemRightSub7">
-                                    <div class="DeafaultItemRightSub7Content">1-2-3</div>
-                                </div>
-                                <div class="DeafaultItemRightSub8">
-                                    <div class="DeafaultItemRightSub8Content">1-2-3</div>
-                                </div>
-                                <div class="DeafaultItemRightSub9">
-                                    <div class="DeafaultItemRightSub9Content">1-2-3</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <br />
-                <div class="DeafaultRow">
-                    <div class="DeafaultItem">
-                        <div class="DeafaultItemLeft">
-                            <img src="../Images/Car/Car1.png" alt="" />
-                            <div class="CarPrice">
-                                338 triệu
-                            </div>
-                        </div>
-                        <div class="DeafaultItemRight">
-                            <div class="DeafaultItemRight1">
-                                Toyota Giải Phóng cam kết giá rẻ nhất cả nước khuyến mại lên đến 100tr đồng. LH 0963.58.4444
-                            </div>
-                            <div class="DeafaultItemRight2">
-                                <div class="DeafaultItemRightSub1">
-                                    Mới
-                                </div>
-                                <div class="DeafaultItemRightSub2">
-                                    Nhập khẩu
-                                </div>
-                                <div class="DeafaultItemRightSub3">
-                                    Số tự động
-                                </div>
-                            </div>
-                            <div class="DeafaultItemRight3">
-                                <div class="DeafaultItemRightSub4">
-                                    Mới
-                                </div>
-                                <div class="DeafaultItemRightSub5">
-                                    Nhập khẩu
-                                </div>
-                                <div class="DeafaultItemRightSub6">
-                                    Số tự động
-                                </div>
-                            </div>
-                            <div class="DeafaultItemRight4">
-                                <div class="DeafaultItemRightSub7">
-                                    <div class="DeafaultItemRightSub7Content">1-2-3</div>
-                                </div>
-                                <div class="DeafaultItemRightSub8">
-                                    <div class="DeafaultItemRightSub8Content">1-2-3</div>
-                                </div>
-                                <div class="DeafaultItemRightSub9">
-                                    <div class="DeafaultItemRightSub9Content">1-2-3</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <br />
-                <div class="DeafaultRow">
-                    <div class="DeafaultItem">
-                        <div class="DeafaultItemLeft">
-                            <img src="../Images/Car/Car1.png" alt="" />
-                            <div class="CarPrice">
-                                338 triệu
-                            </div>
-                        </div>
-                        <div class="DeafaultItemRight">
-                            <div class="DeafaultItemRight1">
-                                Toyota Giải Phóng cam kết giá rẻ nhất cả nước khuyến mại lên đến 100tr đồng. LH 0963.58.4444
-                            </div>
-                            <div class="DeafaultItemRight2">
-                                <div class="DeafaultItemRightSub1">
-                                    Mới
-                                </div>
-                                <div class="DeafaultItemRightSub2">
-                                    Nhập khẩu
-                                </div>
-                                <div class="DeafaultItemRightSub3">
-                                    Số tự động
-                                </div>
-                            </div>
-                            <div class="DeafaultItemRight3">
-                                <div class="DeafaultItemRightSub4">
-                                    Mới
-                                </div>
-                                <div class="DeafaultItemRightSub5">
-                                    Nhập khẩu
-                                </div>
-                                <div class="DeafaultItemRightSub6">
-                                    Số tự động
-                                </div>
-                            </div>
-                            <div class="DeafaultItemRight4">
-                                <div class="DeafaultItemRightSub7">
-                                    <div class="DeafaultItemRightSub7Content">1-2-3</div>
-                                </div>
-                                <div class="DeafaultItemRightSub8">
-                                    <div class="DeafaultItemRightSub8Content">1-2-3</div>
-                                </div>
-                                <div class="DeafaultItemRightSub9">
-                                    <div class="DeafaultItemRightSub9Content">1-2-3</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <br />
-                <div class="DeafaultRow">
-                    <div class="DeafaultItem">
-                        <div class="DeafaultItemLeft">
-                            <img src="../Images/Car/Car1.png" alt="" />
-                            <div class="CarPrice">
-                                338 triệu
-                            </div>
-                        </div>
-                        <div class="DeafaultItemRight">
-                            <div class="DeafaultItemRight1">
-                                Toyota Giải Phóng cam kết giá rẻ nhất cả nước khuyến mại lên đến 100tr đồng. LH 0963.58.4444
-                            </div>
-                            <div class="DeafaultItemRight2">
-                                <div class="DeafaultItemRightSub1">
-                                    Mới
-                                </div>
-                                <div class="DeafaultItemRightSub2">
-                                    Nhập khẩu
-                                </div>
-                                <div class="DeafaultItemRightSub3">
-                                    Số tự động
-                                </div>
-                            </div>
-                            <div class="DeafaultItemRight3">
-                                <div class="DeafaultItemRightSub4">
-                                    Mới
-                                </div>
-                                <div class="DeafaultItemRightSub5">
-                                    Nhập khẩu
-                                </div>
-                                <div class="DeafaultItemRightSub6">
-                                    Số tự động
-                                </div>
-                            </div>
-                            <div class="DeafaultItemRight4">
-                                <div class="DeafaultItemRightSub7">
-                                    <div class="DeafaultItemRightSub7Content">1-2-3</div>
-                                </div>
-                                <div class="DeafaultItemRightSub8">
-                                    <div class="DeafaultItemRightSub8Content">1-2-3</div>
-                                </div>
-                                <div class="DeafaultItemRightSub9">
-                                    <div class="DeafaultItemRightSub9Content">1-2-3</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <br />
+                        <br />
+            
+                    </ItemTemplate>
+                </asp:DataList>
+                <cc1:CollectionPager ID="cpChucVu" runat="server" BackText="" FirstText="Đầu"
+                    ControlCssClass="ProductPage" LabelText="" LastText="Cuối" NextText="" UseSlider="true"
+                    ResultsFormat="" BackNextLinkSeparator="" ResultsLocation="None" BackNextLocation="None"
+                    PageNumbersSeparator="&nbsp;">
+                </cc1:CollectionPager>
                 <br />
                 <!-- TU VAN XE -->
                 <div class="DeafaultHeader">

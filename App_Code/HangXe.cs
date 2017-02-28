@@ -50,7 +50,7 @@ public class HangXe : DataClass
         string sqlQuery = "";
         if (searchKey.Trim() != "")
         {
-            sqlQuery += " AND UPPER(TRIM(NameHangXe)) LIKE N'%'+UPPER(TRIM(@SearchKey))+'%'";
+            sqlQuery += " AND UPPER(LTRIM(RTRIM(NameHangXe))) LIKE N'%'+UPPER(LTRIM(RTRIM(@SearchKey)))+'%'";
         }
         DataTable objTable = new DataTable();
         try
@@ -79,29 +79,6 @@ public class HangXe : DataClass
         return objTable;
     }
     #endregion
-
-    //#region method getList
-    //public DataRowCollection getList()
-    //{
-    //    try
-    //    {
-    //        SqlCommand Cmd = this.getSQLConnect();
-    //        Cmd.CommandText = "SELECT * FROM [tblHangXe] WHERE [State] = 1";
-
-    //        DataRowCollection ret = this.findAll(Cmd);
-
-    //        this.SQLClose();
-    //        return ret;
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        this.Message = ex.Message;
-    //        this.ErrorCode = ex.HResult;
-    //        return null;
-    //    }
-    //}
-
-    //#endregion
 
     #region method getDataById
     public DataTable getDataById(int IdHangXe)

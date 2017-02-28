@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.master" CodeFile="ListCategory.aspx.cs" Inherits="Admin_ListCategory" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.master" CodeFile="ListProduct.aspx.cs" Inherits="Admin_ListProduct" %>
 
 <%@ Register TagPrefix="cc1" Namespace="SiteUtils" Assembly="CollectionPager" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
@@ -9,7 +9,7 @@
                 <input type="text" id="txtSearch" placeholder="Nhập tên màu sắc để tìm kiếm" runat="server" class="form-control" />
             </td>
             <td style="width: 40px !important; text-align: center;">
-                <asp:ImageButton ID="btnSearch" ImageUrl="../Admin/images/Search.png" runat="server" Style="margin-bottom: -12px; margin-left: -15px;" OnClick="btnSearch_Click" />
+                <asp:ImageButton ID="btnSearch" ImageUrl="/Admin/images/Search.png" runat="server" Style="margin-bottom: -12px; margin-left: -15px;" OnClick="btnSearch_Click" />
             </td>
         </tr>
     </table>
@@ -29,8 +29,7 @@
         </table>
     </div>
 
-    <asp:DataList ID="dtlChucVu" runat="server" RepeatDirection="Horizontal" RepeatColumns="1"
-        Width="100%">
+    <asp:DataList ID="dtlChucVu" runat="server" RepeatDirection="Horizontal" RepeatColumns="1" Width="100%">
         <ItemTemplate>
             <table class="DataListTable" border="0">
                 <tr style="height: 40px;">

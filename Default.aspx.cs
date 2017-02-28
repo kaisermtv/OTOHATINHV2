@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,12 +11,19 @@ public partial class _Default : Page
     public string strHtmlTest = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        strHtmlTest = "<div class=\"DeafaultItemLeft\">";
-        strHtmlTest += "<img src=\"../Images/Car/Car1.png\" alt=\"\" />";
-        strHtmlTest += "<div class=\"CarPrice\">";
-        strHtmlTest += "338 triệu";
-        strHtmlTest += "</div>";
-        strHtmlTest += "</div>";
+        if (!Page.IsPostBack)
+        {
+            Oto objOto = new Oto();
+
+            DataTable objData = objOto.getData();
+
+            cpChucVu.MaxPages = 1000;
+            cpChucVu.PageSize = 10;
+            cpChucVu.DataSource = objData.DefaultView;
+            cpChucVu.BindToControl = dtlChucVu;
+            dtlChucVu.DataSource = cpChucVu.DataSourcePaged;
+            dtlChucVu.DataBind();
+        }
                        
     }
 }

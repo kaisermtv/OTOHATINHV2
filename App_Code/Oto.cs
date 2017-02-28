@@ -11,32 +11,37 @@ using System.Web;
 public class Oto : DataClass
 {
     #region getData
-    public DataTable getData()
+    public DataTable getData(string searchKey = "")
     {
         try
         {
             SqlCommand Cmd = this.getSQLConnect();
-            Cmd.CommandText = "SELECT 0 AS TT, * FROM [tblOto] GROUP BY [NgayDang] DESC";
+            Cmd.CommandText = "SELECT 0 AS TT, * FROM [tblOto] ";
 
+            if (searchKey.Trim() != "")
+            {
+                Cmd.CommandText += " WHERE UPPER(LTRIM(RTRIM(IdNameOto))) LIKE N'%'+UPPER(LTRIM(RTRIM(@SearchKey)))+'%'";
+                Cmd.Parameters.Add("SearchKey", SqlDbType.NVarChar).Value = searchKey;
+            }
+
+            Cmd.CommandText += " ORDER BY [NgayDang] DESC";
+            
             DataTable ret = this.findAll(Cmd);
 
             this.SQLClose();
 
-            if(ret != null)
+            for (int i = 1; i <= ret.Rows.Count; i++)
             {
-                for(int i = 1;i <= ret.Rows.Count;i++)
-                {
-                    ret.Rows[i - 1]["TT"] = i;
-                }
-
+                ret.Rows[i - 1]["TT"] = i;
             }
+                
             return ret;
         }
         catch (Exception ex)
         {
             this.Message = ex.Message;
             this.ErrorCode = ex.HResult;
-            return null;
+            return new DataTable(); ;
         }
     }
     #endregion

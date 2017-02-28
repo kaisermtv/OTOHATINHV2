@@ -95,10 +95,13 @@ public partial class Member_Post : System.Web.UI.Page
 
             if(ret != 0)
             {
-                Response.Redirect("/");
+                this.lblMsg.Text = "Đăng tin thành công";
+            }
+            else
+            {
+                this.lblMsg.Text = objOto.Message;
             }
 
-            this.lblMsg.Text = objOto.Message;
         }
         catch(Exception ex)
         {

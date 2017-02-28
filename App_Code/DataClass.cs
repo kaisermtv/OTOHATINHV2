@@ -81,7 +81,7 @@ public class DataClass
         }
     }
 
-    protected DataRowCollection findAll(SqlCommand Cmd)
+    protected DataTable findAll(SqlCommand Cmd)
     {
         SqlDataAdapter da = new SqlDataAdapter();
         da.SelectCommand = Cmd;
@@ -90,7 +90,7 @@ public class DataClass
 
         if (ds.Tables[0].Rows.Count > 0)
         {
-            return ds.Tables[0].Rows;
+            return ds.Tables[0];
         }
         else
         {

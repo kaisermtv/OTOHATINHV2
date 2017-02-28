@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 
 public partial class Member_Post : System.Web.UI.Page
 {
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if(!Page.IsPostBack)
@@ -61,6 +62,53 @@ public partial class Member_Post : System.Web.UI.Page
 
     protected void btnPost_Click(object sender, EventArgs e)
     {
-        this.lblMsg.Text = txtIdNameOto.Text;
+        Oto objOto = new Oto();
+
+        if (txtIdNameOto.Text == null || txtIdNameOto.Text == "")
+        {
+            this.lblMsg.Text = "Bạn cần nhập tiêu đề!";
+            return;
+        }
+
+        float giaban = 0;
+        if (txtGiaBan.Value != null && txtGiaBan.Value != "")
+        {
+            try
+            {
+                if (txtGiaBan.Value == null || txtGiaBan.Value == "") giaban = 0;
+                giaban = float.Parse(txtGiaBan.Value);
+            }
+            catch 
+            {
+                this.lblMsg.Text = "Giá bán định dạng sai!";
+                return;
+            }
+        }
+
+        try
+        {
+
+            int ret = objOto.insert(txtIdNameOto.Text, txtNoiDung.Value, giaban, txtNamSanXuat.Text, 0,
+                /* Int32.Parse(ddlIdTinhTrang.Text) */ 0, /*Int32.Parse(ddlIdXuatXu.Text)*/ 0, 0, Int32.Parse(ddlIdKieuDang.Text),
+                Int32.Parse(ddlIdNhienLieu.Text), 0,Int32.Parse( ddlIdMauSac.Text), Int32.Parse(ddlIdSoCho.Text),
+                Int32.Parse(ddlIdSoCua.Text), Int32.Parse(ddlIdHangXe.Text), Int32.Parse(ddlIdDongXe.Text));
+
+            if(ret != 0)
+            {
+                Response.Redirect("/");
+            }
+
+            this.lblMsg.Text = objOto.Message;
+        }
+        catch(Exception ex)
+        {
+            this.lblMsg.Text = "Có lỗi xảy ra. Xin thử lại!";
+            this.lblMsg.Text = ex.Message;
+            return;
+        }
+
+        
+
+        
     }
 }

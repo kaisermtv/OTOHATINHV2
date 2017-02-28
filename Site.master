@@ -40,19 +40,19 @@
         <div class="Header">
             <div class="container" style="padding: 0px;">
                 <div class="HeaderLogo">
-                    <a href="#">
-                        <img src="../Images/Logo.png" alt=""></a>
+                    <a href="/">
+                        <img src="/Images/Logo.png" alt=""></a>
                 </div>
                 <div class="HeaderSearchBg">
                     <div class="HeaderSearchBg1">
                         <input id="txtSearchBox" class="txtTextBoxSearch" runat="server" placeholder="Bạn muốn tìm gì? Ví dụ bán xe Camry~.">
                     </div>
                     <div class="HeaderSearchBg2">
-                        <asp:ImageButton ID="imgSearch" ImageUrl="~/Images/btnSearch.png" Width="28px" CssClass="btnImgSearch" runat="server" />
+                        <asp:ImageButton ID="imgSearch" ImageUrl="/Images/btnSearch.png" Width="28px" CssClass="btnImgSearch" runat="server" />
                     </div>
                 </div>
                 <div class="HeaderPostBg">
-                    <asp:ImageButton ID="btnPost" ImageUrl="~/Images/btnPost.png" runat="server" OnClick="btnPost_Click" />
+                    <asp:ImageButton ID="btnPost" ImageUrl="/Images/btnPost.png" runat="server" OnClick="btnPost_Click" />
                 </div>
                 <div class="HeaderPostRight">
                    <% Response.Write(this.strAction); %>
@@ -72,7 +72,7 @@
                     <div class="navbar-collapse collapse" style="max-height: 42px !important; padding-left: 0px !important;">
                         <ul class="nav navbar-nav" style="padding-left: 0px !important;">
                             <li><a runat="server" href="~/">
-                                <img src="../Images/HomeIcon.png" class="HomeIconImg"></a></li>
+                                <img src="/Images/HomeIcon.png" class="HomeIconImg"></a></li>
                             <% Response.Write(this.strMenuHorizontal); %>
                             <%--<li><a runat="server" href="#">TIN BÁN Ô TÔ</a></li>
                             <li><a runat="server" href="#">TIN TỨC</a></li>

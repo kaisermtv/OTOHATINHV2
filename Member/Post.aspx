@@ -16,7 +16,7 @@
                         </div>
 
                         <div class="RowRegister">
-                            <div class="LeftPost1">Tiêu đề: </div>
+                            <div class="LeftPost1">Nội dung: </div>
                             <div class="RightPost1">
                                 <textarea id="txtNoiDung" rows="4" style="width: 100% !important; max-width: 100%;" class="form-control" runat="server"></textarea>
                             </div>

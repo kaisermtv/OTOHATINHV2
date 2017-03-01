@@ -45,6 +45,8 @@
                             <div class="LeftPost">Xuất xứ: </div>
                             <div class="RightPost">
                                 <asp:DropDownList ID="ddlIdXuatXu" runat="server" CssClass="form-control" Style="width: 100%;">
+                                    <asp:ListItem Value="0">Nhập khẩu</asp:ListItem>
+                                    <asp:ListItem Value="1">Trong nước</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -96,6 +98,8 @@
                             <div class="LeftPost">Tình trạng: </div>
                             <div class="RightPost">
                                 <asp:DropDownList ID="ddlIdTinhTrang" runat="server" CssClass="form-control" Style="width: 100%;">
+                                    <asp:ListItem Value="0">Mới</asp:ListItem>
+                                    <asp:ListItem Value="1">Cũ</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -122,6 +126,13 @@
                             </div>
                         </div>
 
+                        <div class="RowRegister">
+                            <div class="LeftPost">Tỉnh thành: </div>
+                            <div class="RightPost">
+                                <asp:DropDownList ID="ddlIdTinhThanh" runat="server" CssClass="form-control" Style="width: 100%;">
+                                </asp:DropDownList>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <div style="border: solid 1px red; height: 100px;"></div>

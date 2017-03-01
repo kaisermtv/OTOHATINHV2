@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="TRANG CHỦ" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 <%@ Register TagPrefix="cc1" Namespace="SiteUtils" Assembly="CollectionPager" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:UpdatePanel runat="server" ID="UpdatePanel" UpdateMode="Conditional">
+        <ContentTemplate>
     <div class="row">
         <div class="container" style="margin-left:10px; padding-left:0px;">
             <img src="../Images/Ads.png" alt=" " />
@@ -16,6 +18,7 @@
                     </div>
                 </div>
                 <br />
+                <p><%=strHtmlTest %></p>
                 <asp:DataList ID="dtlChucVu" runat="server" RepeatDirection="Horizontal" RepeatColumns="1" Width="100%">
                     <ItemTemplate>
                         <div class="DeafaultRow">
@@ -32,35 +35,35 @@
                                     </div>
                                     <div class="DeafaultItemRight2">
                                         <div class="DeafaultItemRightSub1">
-                                            Mới
+                                            <%# Eval("TinhTrang") %>
                                         </div>
                                         <div class="DeafaultItemRightSub2">
-                                            Nhập khẩu
+                                            <%# Eval("XuatXu") %>
                                         </div>
                                         <div class="DeafaultItemRightSub3">
-                                            Số tự động
+                                            <%# Eval("NameSoCho") %>
                                         </div>
                                     </div>
                                     <div class="DeafaultItemRight3">
                                         <div class="DeafaultItemRightSub4">
-                                            Mới
+                                            <%# Eval("NameSoCua") %>
                                         </div>
                                         <div class="DeafaultItemRightSub5">
-                                            Nhập khẩu
+                                            <%# Eval("NameMauSac") %>
                                         </div>
                                         <div class="DeafaultItemRightSub6">
-                                            Số tự động
+                                            <%# Eval("NameNhienLieu") %>
                                         </div>
                                     </div>
                                     <div class="DeafaultItemRight4">
                                         <div class="DeafaultItemRightSub7">
-                                            <div class="DeafaultItemRightSub7Content">1-2-3</div>
+                                            <div class="DeafaultItemRightSub7Content"><%# Eval("NameTinhThanh") %></div>
                                         </div>
                                         <div class="DeafaultItemRightSub8">
-                                            <div class="DeafaultItemRightSub8Content">1-2-3</div>
+                                            <div class="DeafaultItemRightSub8Content"><%# Eval("Phone") %></div>
                                         </div>
                                         <div class="DeafaultItemRightSub9">
-                                            <div class="DeafaultItemRightSub9Content">1-2-3</div>
+                                            <div class="DeafaultItemRightSub9Content"><%# Eval("NamSanXuat") %></div>
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +184,7 @@
                         <input id="txtSearchBox" class="txtTextBoxSearchSmall" runat="server" placeholder="Bạn muốn tìm gì? Ví dụ bán xe Camry...">
                     </div>
                     <div class="DefaultRightSearchButton">
-                        <asp:ImageButton ID="imgSearch" ImageUrl="../Images/btnSearch.png" Width="28px" CssClass="btnImgSearch" runat="server" />
+                        <asp:ImageButton ID="imgSearch" ImageUrl="../Images/btnSearch.png" Width="28px" CssClass="btnImgSearch" runat="server" OnClick="imgSearch_Click" />
                     </div>
                 </div>
 
@@ -219,7 +222,9 @@
                     </div>
                     <div class="DeafaultHeaderRightRight">
                         <asp:DropDownList ID="ddlTingTrang" CssClass="DeafaultHeaderRightCombobox" runat="server">
-                            <asp:ListItem>Tình trạng</asp:ListItem>
+                            <asp:ListItem Value="2">Tình trạng</asp:ListItem>
+                            <asp:ListItem Value="0">Mới</asp:ListItem>
+                            <asp:ListItem Value="1">Cũ</asp:ListItem>
                         </asp:DropDownList>
                     </div>
                 </div>
@@ -624,4 +629,6 @@
             </div>
         </div>
     </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>

@@ -33,9 +33,12 @@ public partial class Member_Login : System.Web.UI.Page
             this.lblMsg.Text = "Mật khẩu không hợp lệ";
             return;
         }
-        if (this.objThanhVien.checkForLogin(this.txtAccount.Text.ToString().Trim(), this.txtPassword.Text.Trim()))
+        int id = this.objThanhVien.checkForLogin(this.txtAccount.Text.ToString().Trim(), this.txtPassword.Text.Trim());
+
+        if (id != 0)
         {
-            Session["ACCOUNT"] = this.txtAccount.Text.ToUpper();
+            Session["THANHVIEN"] = this.txtAccount.Text.ToUpper();
+            Session["THANHVIENID"] = id;
             Response.Redirect("/");
         }
         else

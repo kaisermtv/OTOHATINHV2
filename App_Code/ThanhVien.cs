@@ -167,9 +167,8 @@ public class ThanhVien
     #endregion
 
     #region method checkForLogin
-    public bool checkForLogin(string Account, string Pwd)
+    public int checkForLogin(string Account, string Pwd)
     {
-        bool tmpValue = false;
         try
         {
             SqlConnection sqlCon = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["TVSConn"].ConnectionString);
@@ -178,24 +177,25 @@ public class ThanhVien
             Cmd.CommandText = "SELECT * FROM tblThanhVien WHERE Account = @Account ";
             Cmd.Parameters.Add("Account", SqlDbType.NVarChar).Value = Account;
 
-            SqlDataReader Rd = Cmd.ExecuteReader();
-            while (Rd.Read())
-            {
-                if (Rd["Password"].ToString() == this.CryptographyMD5(Pwd))
-                {
-                    tmpValue = true;
-                }
-            }
-            Rd.Close();
-
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = Cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
             sqlCon.Close();
             sqlCon.Dispose();
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                if (ds.Tables[0].Rows[0]["Password"].ToString() == this.CryptographyMD5(Pwd))
+                {
+                    return (int)ds.Tables[0].Rows[0]["IdThanhVien"];
+                }
+            }
         }
         catch
         {
-
         }
-        return tmpValue;
+        return 0;
     }
     #endregion
 

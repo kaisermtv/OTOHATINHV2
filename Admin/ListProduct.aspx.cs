@@ -47,8 +47,6 @@ public partial class Admin_ListProduct : System.Web.UI.Page
 
         DataTable objData = objOto.getData(txtSearch.Value);
 
-        txtSearch.Value = objOto.Message;
-
         cpChucVu.MaxPages = 1000;
         cpChucVu.PageSize = 15;
         cpChucVu.DataSource = objData.DefaultView;

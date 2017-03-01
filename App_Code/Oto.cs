@@ -11,17 +11,29 @@ using System.Web;
 public class Oto : DataClass
 {
     #region getData
-    public DataTable getData(string searchKey = "")
+    public DataTable getData(string searchKey = "", int idHangXe = 0,int idDongXe = 0)
     {
         try
         {
             SqlCommand Cmd = this.getSQLConnect();
-            Cmd.CommandText = "SELECT 0 AS TT, * FROM [tblOto] ";
+            Cmd.CommandText = "SELECT 0 AS TT, * FROM [tblOto] WHERE 1=1";
 
             if (searchKey.Trim() != "")
             {
-                Cmd.CommandText += " WHERE UPPER(LTRIM(RTRIM(IdNameOto))) LIKE N'%'+UPPER(LTRIM(RTRIM(@SearchKey)))+'%'";
+                Cmd.CommandText += " AND UPPER(LTRIM(RTRIM(IdNameOto))) LIKE N'%'+UPPER(LTRIM(RTRIM(@SearchKey)))+'%'";
                 Cmd.Parameters.Add("SearchKey", SqlDbType.NVarChar).Value = searchKey;
+            }
+
+            if (idHangXe != 0)
+            {
+                Cmd.CommandText += " AND IdHangXe = @IdHangXe";
+                Cmd.Parameters.Add("IdHangXe", SqlDbType.Int).Value = idHangXe;
+            }
+
+            if (idDongXe != 0)
+            {
+                Cmd.CommandText += " AND IdDongXe = @IdDongXe";
+                Cmd.Parameters.Add("IdDongXe", SqlDbType.Int).Value = idDongXe;
             }
 
             Cmd.CommandText += " ORDER BY [NgayDang] DESC";
@@ -35,6 +47,77 @@ public class Oto : DataClass
                 ret.Rows[i - 1]["TT"] = i;
             }
                 
+            return ret;
+        }
+        catch (Exception ex)
+        {
+            this.Message = ex.Message;
+            this.ErrorCode = ex.HResult;
+            return new DataTable(); ;
+        }
+    }
+    #endregion
+
+    #region getDataShowHome
+    public DataTable getDataShowHome(string searchKey = "", int idHangXe = 0, int idDongXe = 0,int idTinhThanh = 0,int idTinhTrang = 2)
+    {
+        try
+        {
+            SqlCommand Cmd = this.getSQLConnect();
+            Cmd.CommandText = "SELECT REPLACE(REPLACE(CAST(oto.[IdTinhTrang] AS varchar),'1',N'Cũ'),'0',N'Mới') AS TinhTrang";
+            Cmd.CommandText += ",REPLACE(REPLACE(CAST(oto.[IdXuatXu] AS varchar),'1',N'Trong nước'),'0',N'Nhập khẩu') AS XuatXu";
+            Cmd.CommandText += ",oto.[IdOto],oto.[IdNameOto],oto.[NgayDang],oto.[GiaBan],nl.[NameNhienLieu],dx.[NameDongXe]";
+            Cmd.CommandText += ",hx.[NameHangXe],sc.[NameSoCho],scu.[NameSoCua],ms.[NameMauSac],tit.NameTinhThanh,kd.NameKieuDang";
+            Cmd.CommandText += ",oto.NamSanXuat,tv.[Phone]";
+            Cmd.CommandText += " FROM [tblOto] AS oto";
+            Cmd.CommandText += " LEFT JOIN tblNhienLieu AS nl ON oto.[IdNhienLieu] = nl.[IdNhienLieu]";
+            Cmd.CommandText += " LEFT JOIN [tblDongXe] AS dx ON oto.[IdDongXe] = dx.[IdDongXe]";
+            Cmd.CommandText += " LEFT JOIN [tblHangXe] AS hx ON oto.[IdHangXe] = hx.[IdHangXe]";
+            Cmd.CommandText += " LEFT JOIN [tblSoCho] AS sc ON oto.[IdSoCho] = sc.[IdSoCho]";
+            Cmd.CommandText += " LEFT JOIN [tblSoCua] AS scu ON oto.[IdSoCua] = scu.[IdSoCua]";
+            Cmd.CommandText += " LEFT JOIN [tblMauSac] AS ms ON oto.[IdMauSac] = ms.[IdMauSac]";
+            Cmd.CommandText += " LEFT JOIN [tblTinhThanh] AS tit ON oto.[IdTinhThanh] = tit.[IdTinhThanh]";
+            Cmd.CommandText += " LEFT JOIN [tblKieuDang] AS kd ON oto.[IdKieuDang] = kd.[IdKieuDang]";
+            Cmd.CommandText += " LEFT JOIN [tblThanhVien] AS tv ON oto.[IdMember] = tv.[IdThanhVien]";
+           // Cmd.CommandText += " LEFT JOIN [tblHopSo] AS hs ON oto.[IdHopSo] = hs.[IdHopSo]";
+            Cmd.CommandText += " WHERE 1=1";
+
+            if (searchKey.Trim() != "")
+            {
+                Cmd.CommandText += " AND UPPER(LTRIM(RTRIM(oto.IdNameOto))) LIKE N'%'+UPPER(LTRIM(RTRIM(@SearchKey)))+'%'";
+                Cmd.Parameters.Add("SearchKey", SqlDbType.NVarChar).Value = searchKey;
+            }
+
+            if (idHangXe != 0)
+            {
+                Cmd.CommandText += " AND oto.IdHangXe = @IdHangXe";
+                Cmd.Parameters.Add("IdHangXe", SqlDbType.Int).Value = idHangXe;
+            }
+
+            if (idDongXe != 0)
+            {
+                Cmd.CommandText += " AND oto.IdDongXe = @IdDongXe";
+                Cmd.Parameters.Add("IdDongXe", SqlDbType.Int).Value = idDongXe;
+            }
+
+            if (idTinhThanh != 0)
+            {
+                Cmd.CommandText += " AND oto.IdTinhThanh = @IdTinhThanh";
+                Cmd.Parameters.Add("IdTinhThanh", SqlDbType.Int).Value = idTinhThanh;
+            }
+
+            if (idTinhTrang < 2)
+            {
+                Cmd.CommandText += " AND oto.IdTinhTrang = @IdTinhTrang";
+                Cmd.Parameters.Add("IdTinhTrang", SqlDbType.Int).Value = idTinhTrang;
+            }
+
+            Cmd.CommandText += " ORDER BY oto.[NgayDang] DESC";
+
+            DataTable ret = this.findAll(Cmd);
+
+            this.SQLClose();
+
             return ret;
         }
         catch (Exception ex)

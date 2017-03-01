@@ -11,6 +11,11 @@ public partial class Member_Post : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["THANHVIEN"] == null)
+        {
+            Response.Redirect("/Member/Login.aspx");
+        }
+
         if(!Page.IsPostBack)
         {
             try
@@ -18,8 +23,8 @@ public partial class Member_Post : System.Web.UI.Page
                 HangXe objHangXe = new HangXe();
                 setDroplist(this.ddlIdHangXe, objHangXe.getDataCategoryToCombobox(), "NameHangXe", "IdHangXe");
 
-                //XuatSu objXuatSu = new DongXe();
-                //setDroplist(this.ddlIdXuatSu, objXuatSu.getDataCategoryToCombobox(), "NameSoCua", "IdSoCua");
+                TinhThanh objTinhThanh = new TinhThanh();
+                setDroplist(this.ddlIdTinhThanh, objTinhThanh.getDataCategoryToCombobox(), "NameTinhThanh", "IdTinhThanh");
 
                 DongXe objDongXe = new DongXe();
                 setDroplist(this.ddlIdDongXe, objDongXe.getDataCategoryToCombobox(), "NameDongXe", "IdDongXe");
@@ -88,9 +93,9 @@ public partial class Member_Post : System.Web.UI.Page
         try
         {
 
-            int ret = objOto.insert(txtIdNameOto.Text, txtNoiDung.Value, giaban, txtNamSanXuat.Text, 0,
-                /* Int32.Parse(ddlIdTinhTrang.Text) */ 0, /*Int32.Parse(ddlIdXuatXu.Text)*/ 0, 0, Int32.Parse(ddlIdKieuDang.Text),
-                Int32.Parse(ddlIdNhienLieu.Text), 0,Int32.Parse( ddlIdMauSac.Text), Int32.Parse(ddlIdSoCho.Text),
+            int ret = objOto.insert(txtIdNameOto.Text, txtNoiDung.Value, giaban, txtNamSanXuat.Text, (int)Session["THANHVIENID"],
+                Int32.Parse(ddlIdTinhTrang.Text), Int32.Parse(ddlIdXuatXu.Text), 0, Int32.Parse(ddlIdKieuDang.Text),
+                Int32.Parse(ddlIdNhienLieu.Text), Int32.Parse(ddlIdTinhThanh.Text), Int32.Parse(ddlIdMauSac.Text), Int32.Parse(ddlIdSoCho.Text),
                 Int32.Parse(ddlIdSoCua.Text), Int32.Parse(ddlIdHangXe.Text), Int32.Parse(ddlIdDongXe.Text));
 
             if(ret != 0)

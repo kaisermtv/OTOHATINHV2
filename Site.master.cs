@@ -77,7 +77,7 @@ public partial class SiteMaster : MasterPage
     #region method Page_Load
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["ACCOUNT"] == null)
+        if (Session["THANHVIEN"] == null)
         {
             strAction =  "<a href=\"/Member/Register.aspx\">";
             strAction += "<img src=\"../Images/btnRegister.png\" alt=\"Đăng nhập\"></a>";
@@ -87,7 +87,7 @@ public partial class SiteMaster : MasterPage
         else
         {
             strAction = "<a href=\"#\">";
-            strAction += "<img src=\"../Images/btnAccount.png\" alt=\"Đăng nhập\">&nbsp;Xin chào " + Session["ACCOUNT"].ToString();
+            strAction += "<img src=\"../Images/btnAccount.png\" alt=\"Đăng nhập\">&nbsp;Xin chào " + Session["THANHVIEN"].ToString();
             strAction += "</a>";
             strAction += "&nbsp;&nbsp;&nbsp;";
             strAction += "<a href=\"/Member/Logout.aspx\">";

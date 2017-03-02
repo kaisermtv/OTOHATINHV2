@@ -131,7 +131,8 @@ public class Oto : DataClass
 
     public int insert(String IdNameOto, String Mota, float GiaBan, String NamSanXuat, int IdMember,
                 int IdTinhTrang, int IdXuatXu, int IdHopSo, int IdKieuDang, int IdNhienLieu,
-                int IdTinhThanh, int IdMauSac, int IdSoCho, int IdSoCua, int IdHangXe, int IdDongXe)
+                int IdTinhThanh, int IdMauSac, int IdSoCho, int IdSoCua, int IdHangXe, int IdDongXe,
+                String img1 = "",String img2 = "",String img3 = "")
     {
         try
         {
@@ -139,12 +140,12 @@ public class Oto : DataClass
             Cmd.CommandText = "INSERT INTO [tblOto](";
             Cmd.CommandText += "[IdNameOto],[IdTinhTrang],[IdXuatXu],[IdHopSo],[NamSanXuat],[IdKieuDang],[IdNhienLieu]";
             Cmd.CommandText += ",[IdTinhThanh],[IdMauSac],[IdSoCho],[IdSoCua],[IdHangXe],[IdDongXe],[GiaBan],[Mota],[IdMember]";
-            Cmd.CommandText += ") VALUES(";
+            Cmd.CommandText += ",NameImage1,NameImage2,NameImage3) VALUES(";
             Cmd.CommandText += "@IdNameOto,@IdTinhTrang,@IdXuatXu,@IdHopSo,";
             Cmd.CommandText += "@NamSanXuat,@IdKieuDang,@IdNhienLieu,";
             Cmd.CommandText += "@IdTinhThanh,@IdMauSac,@IdSoCho,@IdSoCua,";
-            Cmd.CommandText += "@IdHangXe,@IdDongXe,@GiaBan,@Mota,@IdMember";
-            Cmd.CommandText += ") SELECT CAST(scope_identity() AS int)";
+            Cmd.CommandText += "@IdHangXe,@IdDongXe,@GiaBan,@Mota,@IdMember,";
+            Cmd.CommandText += "@img1,@img2,@img3) SELECT CAST(scope_identity() AS int)";
 
             Cmd.Parameters.Add("IdNameOto", SqlDbType.NVarChar).Value = IdNameOto;
             Cmd.Parameters.Add("Mota", SqlDbType.NText).Value = Mota;
@@ -163,6 +164,10 @@ public class Oto : DataClass
             Cmd.Parameters.Add("IdSoCua", SqlDbType.Int).Value = IdSoCua;
             Cmd.Parameters.Add("IdHangXe", SqlDbType.Int).Value = IdHangXe;
             Cmd.Parameters.Add("IdDongXe", SqlDbType.Int).Value = IdDongXe;
+
+            Cmd.Parameters.Add("img1", SqlDbType.NVarChar).Value = img1;
+            Cmd.Parameters.Add("img2", SqlDbType.NVarChar).Value = img2;
+            Cmd.Parameters.Add("img3", SqlDbType.NVarChar).Value = img3;
 
             int ret = (int)Cmd.ExecuteScalar();
             this.SQLClose();

@@ -24,9 +24,13 @@
                     </div>
                     <div class="col-md-4">
                         HÌNH ẢNH XE
-                        <br />
-                        <br />
-                        <div style="border: solid 1px red; height: 100px; margin-top: 5px;"></div>
+                        <div style="border: solid 1px red; height: 100px;">
+                            <img id="preview" style="height: 100px !important; width: 100%" alt="" />
+                            <label class="file-upload" style="margin-top: 1px;">
+                                <asp:TextBox ID="txtImage1" runat="server" Width="10px" Visible="false"></asp:TextBox>
+                                <asp:FileUpload ID="upImage1" onchange="LoadImgSrc(this,'#preview');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <br />
@@ -135,9 +139,22 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div style="border: solid 1px red; height: 100px;"></div>
+                        <div style="border: solid 1px red; height: 100px;">
+                            <img id="preview2" style="height: 100px !important; width: 100%" alt="" />
+                            <label class="file-upload" style="margin-top: 1px;">
+                                <asp:TextBox ID="txtImage2" runat="server" Width="10px" Visible="false"></asp:TextBox>
+                                <asp:FileUpload ID="upImage2" onchange="LoadImgSrc(this,'#preview2');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
+                            </label>
+                        </div>
                         <br />
-                        <div style="border: solid 1px red; height: 100px;"></div>
+                        <br />
+                        <div style="border: solid 1px red; height: 100px;">
+                            <img id="preview3" style="height: 100px !important; width: 100%" alt="" />
+                            <label class="file-upload" style="margin-top: 1px;">
+                                <asp:TextBox ID="txtImage3" runat="server" Width="10px" Visible="false"></asp:TextBox>
+                                <asp:FileUpload ID="upImage3" onchange="LoadImgSrc(this,'#preview3');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
+                            </label>
+                        </div>
                     </div>
                    
                 </div>
@@ -147,6 +164,22 @@
                   <br />
                 <asp:Button ID="btnPost" CssClass ="btn btn-primary" runat="server" Text="Đăng tin" OnClick ="btnPost_Click" />
             </div>
+            <script>
+                function LoadImgSrc(input, img) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+
+                        reader.onload = function (e) {
+                            $(img)
+                                .attr('src', e.target.result);
+                        };
+
+                        reader.readAsDataURL(input.files[0]);
+                    } else {
+                        $(img).attr('src','');
+                    }
+                }
+            </script>
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>

@@ -9,6 +9,8 @@ using System.Web.UI.WebControls;
 public partial class _Default : Page
 {
     public string strHtmlTest = "";
+
+    private int PageSize = 6;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -21,7 +23,7 @@ public partial class _Default : Page
             strHtmlTest = objOto.Message;
 
             cpChucVu.MaxPages = 1000;
-            cpChucVu.PageSize = 10;
+            cpChucVu.PageSize = PageSize;
             cpChucVu.DataSource = objData.DefaultView;
             cpChucVu.BindToControl = dtlChucVu;
             dtlChucVu.DataSource = cpChucVu.DataSourcePaged;
@@ -87,7 +89,7 @@ public partial class _Default : Page
             DataTable objData = objOto.getDataShowHome(txtSearchBox.Value, Int32.Parse(this.ddlHangXe.Text), Int32.Parse(this.ddlDongXe.Text), Int32.Parse(this.ddlTinhThanh.Text), Int32.Parse(this.ddlTingTrang.Text));
 
             cpChucVu.MaxPages = 1000;
-            cpChucVu.PageSize = 15;
+            cpChucVu.PageSize = PageSize;
             cpChucVu.DataSource = objData.DefaultView;
             cpChucVu.BindToControl = dtlChucVu;
             dtlChucVu.DataSource = cpChucVu.DataSourcePaged;

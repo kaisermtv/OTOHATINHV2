@@ -15,7 +15,7 @@ public partial class Admin_ListCategory : System.Web.UI.Page
             Response.Redirect("Login.aspx");
         }
 
-        Session["TITLE"] = "NHÓM HÀNG HÓA";
+        this.Context.Items["strTitle"] = "NHÓM HÀNG HÓA";
 
         
     }

@@ -631,3 +631,185 @@
 }
 
 /*End Register page*/
+
+.OtoTitleDetail
+{
+	font-family:Arial;
+	font-size:20px;
+	color:#1260ab;
+}
+.OtoImageDetail
+{
+	font-family:Arial;
+	font-size:20px;
+	color:#fff;
+	font-weight:bold;
+	background-color:#1b7cbd;
+	text-transform:uppercase;
+	padding:5px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.OtoBodyDetail1
+{
+	margin-top:2px;
+	width:100%;
+	display:table;
+	border:solid 1px #9fd8fe;
+}
+.OtoBodyDetail11
+{
+	width:60%;
+	float:left;
+}
+.OtoBodyDetail11 img{
+	padding:15px;
+}
+.OtoBodyDetail11ImgMore
+{
+	padding-left:15px;
+}
+.OtoBodyDetail11ImgMore img
+{
+	padding:0px;
+	margin-right:10px;
+}
+.OtoBodyDetail12
+{
+	width:40%;
+	float:right;
+}
+.OtoBodyDetailPrice
+{
+	padding-top:8px;
+	font-family:Arial;
+	font-size:20px;
+}
+.OtoTinhTrangTrai
+{
+	width:40%;
+	float:left;
+	background-image:url('../images/Item1.png');
+	background-repeat:no-repeat;
+	background-position:0px 3px;
+	padding-left:25px;
+	height:26px;
+	line-height:26px;
+}
+.OtoTinhTrangPhai
+{
+	width:60%;
+	float:right;
+	height:26px;
+	line-height:26px;
+}
+.OtoXuatXuTrai
+{
+	width:40%;
+	float:left;
+	background-image:url('../images/Item7.png');
+	background-repeat:no-repeat;
+	background-position:0px 3px;
+	padding-left:25px;
+	background-color:#f7f7f7;
+	height:26px;
+	line-height:26px;
+}
+.OtoXuatXuPhai
+{
+	width:60%;
+	float:right;
+	background-color:#f7f7f7;
+	height:26px;
+	line-height:26px;
+}
+
+.OtoNamSanXuatTrai
+{
+	width:40%;
+	float:left;
+	background-image:url('../images/Item4.png');
+	background-repeat:no-repeat;
+	background-position:0px 3px;
+	padding-left:25px;
+	height:26px;
+	line-height:26px;
+}
+.OtoNamSanXuatPhai
+{
+	width:60%;
+	float:right;
+	height:26px;
+	line-height:26px;
+}
+
+.OtoKieuDangTrai
+{
+	width:40%;
+	float:left;
+	background-image:url('../images/Item5.png');
+	background-repeat:no-repeat;
+	background-position:0px 3px;
+	padding-left:25px;
+	height:26px;
+	line-height:26px;
+	background-color:#f7f7f7;
+}
+.OtoKieuDangPhai
+{
+	width:60%;
+	float:right;
+	height:26px;
+	line-height:26px;
+	background-color:#f7f7f7;
+}
+
+.OtoHopSoTrai
+{
+	width:40%;
+	float:left;
+	background-image:url('../images/Item3.png');
+	background-repeat:no-repeat;
+	background-position:0px 3px;
+	padding-left:25px;
+	height:26px;
+	line-height:26px;
+}
+.OtoHopSoPhai
+{
+	width:60%;
+	float:right;
+	height:26px;
+	line-height:26px;
+}
+
+.OtoContact
+{
+	margin-top:18px;
+	width:94%;
+	display:table;
+	border:solid 3px #bed0e1;
+	height:30px;
+	line-height:30px;
+	padding-left:10px;
+	font-size:16px;
+	font-weight:bold;
+}
+
+.OtoDetail
+{
+	font-family:Arial;
+	font-size:20px;
+	color:#fff;
+	background-color:#1b7cbd;
+	text-transform:uppercase;
+	padding:5px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.OtoDetailMoTa
+{
+	font-family:Arial;
+	font-size:14px;
+	text-align:justify;
+}

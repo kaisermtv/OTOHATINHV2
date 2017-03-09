@@ -97,11 +97,12 @@ public partial class Member_Post : System.Web.UI.Page
             int ret = objOto.insert(txtIdNameOto.Text, txtNoiDung.Value, giaban, txtNamSanXuat.Text, (int)Session["THANHVIENID"],
                 Int32.Parse(ddlIdTinhTrang.Text), Int32.Parse(ddlIdXuatXu.Text), 0, Int32.Parse(ddlIdKieuDang.Text),
                 Int32.Parse(ddlIdNhienLieu.Text), Int32.Parse(ddlIdTinhThanh.Text), Int32.Parse(ddlIdMauSac.Text), Int32.Parse(ddlIdSoCho.Text),
-                Int32.Parse(ddlIdSoCua.Text), Int32.Parse(ddlIdHangXe.Text), Int32.Parse(ddlIdDongXe.Text), saveImage(upImage1), saveImage(upImage2), saveImage(upImage3));
+                Int32.Parse(ddlIdSoCua.Text), Int32.Parse(ddlIdHangXe.Text), Int32.Parse(ddlIdDongXe.Text),
+                saveImage(upImage1), saveImage(upImage2), saveImage(upImage3), saveImage(upImage4), saveImage(upImage5));
 
             if(ret != 0)
             {
-                //this.lblMsg.Text = "Đăng tin thành công";
+                this.lblMsg.Text = "Đăng tin thành công";
             }
             else
             {
@@ -124,15 +125,15 @@ public partial class Member_Post : System.Web.UI.Page
         try
         {
             strBaseLoactionImg = Server.MapPath(System.Configuration.ConfigurationSettings.AppSettings["POSTIMAGE"].ToString());
-            if (fileupload.PostedFile.ContentLength > 5048576)
+            if (fileupload.PostedFile.ContentLength > 5048576 || fileupload.PostedFile.ContentLength == 0)
             {
                 return "";
             }
             else
             {
-                string sFileName = Session["THANHVIENID"].ToString() + "A" + DateTime.Now.ToString("dd-MM-yyy hh:mm:ss.fffffff");
+                string sFileName = Session["THANHVIENID"].ToString() + "-" + DateTime.Now.ToString("dd-MM-yyy hh-mm-ss-fffffff-");
                 string strEx = System.IO.Path.GetFileName(fileupload.PostedFile.FileName);
-                strEx = strEx.Substring(strEx.LastIndexOf("."), strEx.Length - strEx.LastIndexOf("."));
+                //strEx = strEx.Substring(strEx.LastIndexOf("."), strEx.Length - strEx.LastIndexOf("."));
                 strBaseLoactionImg += sFileName + strEx;
                 strBaseLoactionImg = strBaseLoactionImg.Replace("/", "\\");
                 fileupload.PostedFile.SaveAs(strBaseLoactionImg);
@@ -141,7 +142,7 @@ public partial class Member_Post : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            this.lblMsg.Text = ex.Message; //HttpContext.Current.Response.Write(ex.Message);
+            //this.lblMsg.Text = ex.Message; //HttpContext.Current.Response.Write(ex.Message);
             return "";
         }
     }

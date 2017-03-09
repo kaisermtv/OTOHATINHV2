@@ -30,7 +30,7 @@ public class TVSImage
             img = b;
             return img;
         }
-        catch (Exception e)
+        catch //(Exception e)
         {
             return img;
         }

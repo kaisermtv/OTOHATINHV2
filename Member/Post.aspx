@@ -1,8 +1,6 @@
 ﻿<%@ Page Title="ĐĂNG BÀI" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Post.aspx.cs" Inherits="Member_Post" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
-    <asp:UpdatePanel runat="server" ID="UpdatePanel" UpdateMode="Conditional">
-        <ContentTemplate>
             <div class="container">
                 <b>ĐĂNG TIN BÁN XE</b>
                 <hr />
@@ -155,6 +153,24 @@
                                 <asp:FileUpload ID="upImage3" onchange="LoadImgSrc(this,'#preview3');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
                             </label>
                         </div>
+                        <br />
+                        <br />
+                        <div style="border: solid 1px red; height: 100px;">
+                            <img id="preview4" style="height: 100px !important; width: 100%" alt="" />
+                            <label class="file-upload" style="margin-top: 1px;">
+                                <asp:TextBox ID="txtImage4" runat="server" Width="10px" Visible="false"></asp:TextBox>
+                                <asp:FileUpload ID="upImage4" onchange="LoadImgSrc(this,'#preview4');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
+                            </label>
+                        </div>
+                        <br />
+                        <br />
+                        <div style="border: solid 1px red; height: 100px;">
+                            <img id="preview5" style="height: 100px !important; width: 100%" alt="" />
+                            <label class="file-upload" style="margin-top: 1px;">
+                                <asp:TextBox ID="txtImage5" runat="server" Width="10px" Visible="false"></asp:TextBox>
+                                <asp:FileUpload ID="upImage5" onchange="LoadImgSrc(this,'#preview5');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
+                            </label>
+                        </div>
                     </div>
                    
                 </div>
@@ -180,7 +196,5 @@
                     }
                 }
             </script>
-        </ContentTemplate>
-    </asp:UpdatePanel>
 </asp:Content>
 

@@ -1,0 +1,346 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteHome.master.cs" Inherits="SiteHome" %>
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - OTOHATINH.VN</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="/Content/css" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/Content/TVSStyle.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div class="Header">
+            <div class="container" style="padding: 0px;">
+                <div class="HeaderLogo">
+                    <a href="/">
+                        <img src="/Images/Logo.png" alt=""></a>
+                </div>
+                <div class="HeaderSearchBg">
+                    <div class="HeaderSearchBg1">
+                        <input id="txtSearchBox" class="txtTextBoxSearch" runat="server" placeholder="Bạn muốn tìm gì? Ví dụ bán xe Camry~.">
+                    </div>
+                    <div class="HeaderSearchBg2">
+                        <asp:ImageButton ID="imgSearch" ImageUrl="/Images/btnSearch.png" Width="28px" CssClass="btnImgSearch" runat="server" />
+                    </div>
+                </div>
+                <div class="HeaderPostBg">
+                    <asp:ImageButton ID="btnPost" ImageUrl="/Images/btnPost.png" runat="server" OnClick="btnPost_Click" />
+                </div>
+                <div class="HeaderPostRight">
+                   <% Response.Write(this.strAction); %>
+                </div>
+            </div>
+        </div>
+        <div class="Menu">
+            <div class="container" style="padding: 0px;">
+                <div class="navbar navbar-inverse" style="border-radius:0px">
+                    <div class="navbar-header" style="height: 42px !important; padding-left: 0px !important;">
+                        <button type="button" class="navbar-toggle" style="margin-top:4px" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="/" >
+                            <img style="height:100%;margin-top:-1px" src="/Images/HomeIcon.png" />
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav" >
+                            <% Response.Write(this.strMenuHorizontal); %>
+                            <%--<li><a runat="server" href="#">TIN BÁN Ô TÔ</a></li>
+                            <li><a runat="server" href="#">TIN TỨC</a></li>
+                            <li><a runat="server" href="#">TƯ VẤN XE</a></li>
+                            <li><a runat="server" href="#">ĐÁNH GIÁ XE</a></li>
+                            <li><a runat="server" href="#">KINH NGHIỆM</a></li>
+                            <li><a runat="server" href="#">DỊCH VỤ</a></li>
+                            <li><a runat="server" href="#">LIÊN HỆ</a></li>--%>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content" style="padding-top: 30px; padding-bottom: 50px;">
+            <asp:ContentPlaceHolder ID="AdsContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="col-md-9" style="padding-left: 0px;">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                
+            </div>
+            <div class="col-md-3" style="padding-right: 0px; margin-right: 0px;">
+                <asp:ContentPlaceHolder ID="RightContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <div class="DeafaultHeaderRight" style="margin-top: -3px;">
+                    <div class="DeafaultHeaderRightName">
+                        BÁN Ô TÔ THEO HÃNG
+                    </div>
+                </div>
+                <br />
+
+                <%= htmlHangXe %>
+
+
+                <!-- KET THUC TIM KIEM O TO THEO HANG -->
+
+                <!-- BAT DAU PHAN SALON O TO TIEU BIEU -->
+                <br />
+                <div class="DeafaultHeaderRight" style="margin-top: -13px;">
+                    <div class="DeafaultHeaderRightName">
+                        DỊCH VỤ
+                    </div>
+                </div>
+                <br />
+                <asp:DataList ID="dtlDichVu" runat="server" RepeatDirection="Horizontal" RepeatColumns="1" Width="100%">
+                    <ItemTemplate>
+                        <div class="NewsHomeItemBlock">
+                            <div class="NewsHomeItemLeftBlock">
+                                <a href="/View.aspx?id=<%# Eval("Id") %>" >
+                                    <img src="/Images/News/<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" />
+                                </a>
+                            </div>
+                            <div class="NewsHomeItemRightBlock">
+                                <div class="NewsHomeItemRightBlockTitle1">
+                                    <a href="/View.aspx?id=<%# Eval("Id") %>" ><%# Eval("Title") %></a>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:DataList>
+                <!-- KET THUC PHAN SALON O TO TIEU BIEU -->
+
+                <!-- BAT DAU PHAN DANH GIA XE -->
+                 <br /><br /><br />
+                <div class="DeafaultHeaderRight" style="margin-top: -3px;">
+                    <div class="DeafaultHeaderRightName">
+                       ĐÁNH GIÁ XE
+                    </div>
+                </div>
+                <br />
+                <asp:DataList ID="dtlDanhGiaXe" runat="server" RepeatDirection="Horizontal" RepeatColumns="1" Width="100%">
+                    <ItemTemplate>
+                        <div class="NewsHomeItemBlock">
+                            <div class="NewsHomeItemLeftBlock">
+                                <a href="/View.aspx?id=<%# Eval("Id") %>" >
+                                    <img src="/Images/News/<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" />
+                                </a>
+                            </div>
+                            <div class="NewsHomeItemRightBlock">
+                                <div class="NewsHomeItemRightBlockTitle1">
+                                    <a href="/View.aspx?id=<%# Eval("Id") %>" ><%# Eval("Title") %></a>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:DataList>
+                <!-- KET THUC PHAN DANH GIA XE -->
+            </div>
+        </div>
+        <div class="container body-content" style="padding-top: 30px; padding-bottom: 50px;">
+        <br /><br />
+        <div class="row">
+            <div class="container" style="margin-left: 10px; padding-left: 20px; padding-right: 0px; background-color:#f2f2f2;">
+                <div class ="DivP20L">
+                    <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Camry
+                    </p>
+                   <p style ="margin-bottom:5px;">
+                        Xe Toyota Vios
+                    </p>
+                   <p style ="margin-bottom:5px;">
+                        Xe Toyota Altis
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Fortune
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Yaris
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Venza
+                    </p>
+                    <br />
+                </div>
+                <div class ="DivP20L">
+                    <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Camry
+                    </p>
+                   <p style ="margin-bottom:5px;">
+                        Xe Toyota Vios
+                    </p>
+                   <p style ="margin-bottom:5px;">
+                        Xe Toyota Altis
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Fortune
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Yaris
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Venza
+                    </p>
+                    <br />
+                </div>
+                <div class ="DivP20L">
+                    <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Camry
+                    </p>
+                   <p style ="margin-bottom:5px;">
+                        Xe Toyota Vios
+                    </p>
+                   <p style ="margin-bottom:5px;">
+                        Xe Toyota Altis
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Fortune
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Yaris
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Venza
+                    </p>
+                    <br />
+                </div>
+                <div class ="DivP20L">
+                    <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Camry
+                    </p>
+                   <p style ="margin-bottom:5px;">
+                        Xe Toyota Vios
+                    </p>
+                   <p style ="margin-bottom:5px;">
+                        Xe Toyota Altis
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Fortune
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Yaris
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Venza
+                    </p>
+                    <br />
+                </div>
+                <div class ="DivP20R">
+                    <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Camry
+                    </p>
+                   <p style ="margin-bottom:5px;">
+                        Xe Toyota Vios
+                    </p>
+                   <p style ="margin-bottom:5px;">
+                        Xe Toyota Altis
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Fortune
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Yaris
+                    </p>
+                    <p style ="margin-bottom:5px;">
+                        Xe Toyota Venza
+                    </p>
+                    <br />
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="MainFooter">
+            <div class="container" style="padding: 0px;">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p style="margin-top: 20px; font-weight: bold; color:#fff;">Hỗ trợ khách hàng</p>
+                        <p style="margin-bottom: 5px; color:#fff;">
+                            Quy định, chính sách
+                        </p>
+                        <p style="margin-bottom: 5px; color:#fff;">
+                            Điều khoản hoạt động Salon
+                        </p>
+                        <p style="margin-bottom: 5px; color:#fff;">
+                            Câu hỏi thường gặp
+                        </p>
+                        <p style="margin-bottom: 5px; color:#fff;">
+                            Liên hệ, trợ giúp
+                        </p>
+                        <br />
+                    </div>
+                    <div class="col-md-4" style ="padding-left:0px;">
+                        <p style="margin-top: 20px; font-weight: bold; color:#fff;">Về chúng tôi</p>
+                        <p style="margin-bottom: 5px; color:#fff;">
+                            Giới thiệu
+                        </p>
+                        <p style="margin-bottom: 5px; color:#fff;">
+                            Quy chế hoạt động
+                        </p>
+                        <p style="margin-bottom: 5px; color:#fff;">
+                            Tuyển dụng
+                        </p>
+                        <br />
+                    </div>
+                    <div class="col-md-4" style ="padding-left:0px; padding-right:0px;">
+                        <p style="margin-top: 20px; font-weight: bold; color:#fff;">Tin tức bán xe hơi</p>
+                        <p style="margin-bottom: 5px; color:#fff;">
+                            Báo giá dịch vụ
+                        </p>
+                        <p style="margin-bottom: 5px; color:#fff;">
+                            Khuyến mãi trên otohatinh.vn
+                        </p>
+                        <p style="margin-bottom: 5px; color:#fff;">
+                            Khuyến mãi từ các hãng khác
+                        </p>
+                        <p style="margin-bottom: 5px; color:#fff;">
+                            Cải tiến và tính năng mới
+                        </p>
+                        <br />
+                    </div>
+                    <br />&nbsp;
+                    <hr style ="color:#fff; margin-top:-20px; width:96%; text-align:left; margin-left:15px;" />
+                    <p style="text-align:center; color:#fff; font-weight:bold; font-size:18px; margin-top:-5px;">OTOHATINH.VN</p>
+                     <p style="margin-top: -10px; color:#fff; text-align:center;">
+                            Hotline: 0911 810 682 - Email: otohatinh@gmail.com
+                        </p>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

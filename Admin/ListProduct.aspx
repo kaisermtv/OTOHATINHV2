@@ -43,12 +43,14 @@
                         <%# Eval("NgayDang") %>
                     </td>
                     <td class="DataListTableTdItemCenter" style="width: 3%;">
-                        <a href="MucGiaEdit.aspx?id=<%# Eval("IdOto") %>">
-                            <img src="../Images/Edit.png" alt=""></a>
+                        <a href="ProductEdit.aspx?id=<%# Eval("IdOto") %>">
+                            <img src="../Images/Edit.png" alt="">
+                        </a>
                     </td>
                     <td class="DataListTableTdItemCenter" style="width: 3%;">
-                        <a href="MucGiaDel.aspx?id=<%# Eval("IdOto") %>">
-                            <img src="../Images/delete.png" alt=""></a>
+                        <a href="ProductDel.aspx?id=<%# Eval("IdOto") %>">
+                            <img src="../Images/delete.png" alt="">
+                        </a>
                     </td>
                 </tr>
             </table>

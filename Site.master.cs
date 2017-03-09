@@ -94,17 +94,30 @@ public partial class SiteMaster : MasterPage
             strAction += "<img src=\"../Images/btnLogout.png\" alt=\"Thoat\">&nbsp;Thoát";
             strAction += "</a>";
         }
-        if (!Page.IsPostBack)
-        {
+        //if (!Page.IsPostBack)
+        //{
             this.objTableMenuHorizontal = this.objCategory.getDataForHorizontal();
             if (this.objTableMenuHorizontal.Rows.Count > 0)
             {
                 for (int i = 0; i < this.objTableMenuHorizontal.Rows.Count; i++)
                 {
-                    this.strMenuHorizontal += "<li><a runat=\"server\" href=\"#\">" + this.objTableMenuHorizontal.Rows[i]["Name"].ToString()+ "</a></li>";
+                    String urls ="";
+                    if(this.objTableMenuHorizontal.Rows[i]["MenuUrl"] != null && this.objTableMenuHorizontal.Rows[i]["MenuUrl"].ToString() != "")
+                    {
+                        urls = this.objTableMenuHorizontal.Rows[i]["MenuUrl"].ToString();
+                    }
+                    else
+                    {
+                        urls = "/news.aspx?id=" + this.objTableMenuHorizontal.Rows[i]["Id"].ToString();
+                    }
+                    
+
+                    this.strMenuHorizontal += "<li><a runat=\"server\" href=\"" + urls + "\">" + this.objTableMenuHorizontal.Rows[i]["Name"].ToString() + "</a></li>";
                 }
             }
-        }
+
+
+        //}
     } 
     #endregion
 

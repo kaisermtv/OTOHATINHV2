@@ -108,7 +108,7 @@ public class HangXe : DataClass
     #endregion
 
     #region method getDataCategoryToCombobox
-    public DataTable getDataCategoryToCombobox()
+    public DataTable getDataCategoryToCombobox(String noselect = "Không chọn" )
     {
         DataTable objTable = new DataTable();
         try
@@ -124,13 +124,36 @@ public class HangXe : DataClass
             sqlCon.Close();
             sqlCon.Dispose();
             objTable = ds.Tables[0];
-            objTable.Rows.Add(0, "Không chọn");
+
+            if (noselect != "")
+                objTable.Rows.Add(0, noselect);
         }
         catch
         {
 
         }
         return objTable;
+    }
+    #endregion
+
+    #region method getDataToRightElemant
+    public DataTable getDataToRightElemant()
+    {
+        try
+        {
+            SqlCommand Cmd = this.getSQLConnect();
+            Cmd.CommandText = "SELECT IdHangXe, NameHangXe,(SELECT COUNT(tblOto.IdHangXe) FROM tblOto WHERE tblOto.IdHangXe = tblHangXe.IdHangXe) AS CountItem FROM tblHangXe";
+
+            DataTable ret = this.findAll(Cmd);
+            this.SQLClose();
+
+            return ret;
+        }
+        catch
+        {
+            return new DataTable();
+        }
+        
     }
     #endregion
 

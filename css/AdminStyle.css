@@ -398,3 +398,10 @@ a {
 	color:#fff;
 	text-decoration:none;
 }
+
+@media (max-width: 992px){ 
+    .no-mg-padding-r{
+        padding-right: 0px;
+    }
+
+}

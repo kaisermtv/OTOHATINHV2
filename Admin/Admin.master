@@ -7,11 +7,11 @@
     <title>TVS Administrator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="/css/TVSStyle.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../css/Adminstyle.css" />
 
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- Bootstrap Core CSS -->
     <link href="/admin/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="/css/Adminstyle.css" />
     <!-- Custom CSS -->
     <link href="/admin/css/style.css" rel='stylesheet' type='text/css' />
     <!-- Graph CSS -->
@@ -68,10 +68,11 @@
                         <li class="menu-list"><a href="#"><i class="lnr lnr-indent-increase"></i><span>Quản lý nội dung</span></a>
                             <ul class="sub-menu-list">
                                 <li><a href="/Directory/Category.aspx">Menu, danh mục</a></li>
-                                <li><a href="/Admin/ListCategory.aspx">Nhóm hàng hóa</a></li>
-                                <li><a href="/Admin/ListProduct.aspx">Quản lý hàng hóa</a></li>
-                                <li><a href="/Admin/ListNational.aspx">Xuất xứ hàng hóa</a></li>
-                                <li><a href="/Admin/ListQuotation.aspx">Báo giá sản phẩm</a></li>
+                                <%--<li><a href="/Admin/ListCategory.aspx">Nhóm hàng hóa</a></li>--%>
+                                <li><a href="/Admin/ListProduct.aspx">Quản lý bán xe</a></li>
+                                <li><a href="/Admin/ListNews.aspx">Tin tức - Bài viết</a></li>
+                                <%--<li><a href="/Admin/ListNational.aspx">Xuất xứ hàng hóa</a></li>--%>
+                                <%--<li><a href="/Admin/ListQuotation.aspx">Báo giá sản phẩm</a></li>--%>
                                 <li><a href="/Admin/Ads.aspx">Quảng cáo</a></li>
                             </ul>
                         </li>
@@ -107,7 +108,7 @@
                     <!--notification menu start -->
                     <div class="profile_details_left">
                         <div style ="margin-top:10px;">
-                            GIANOIBO.COM - <% if (context.Items["strTitle"] != null) { Response.Write(context.Items["strTitle"].ToString()); } else { Response.Write("QUẢN TRỊ HỆ THỐNG"); }  %>
+                            OTOHATINH.COM - <% if (Context.Items["strTitle"] != null) { Response.Write(Context.Items["strTitle"].ToString()); } else { Response.Write("QUẢN TRỊ HỆ THỐNG"); }  %>
                         </div>
                     </div>
                     <div class="menu-right">

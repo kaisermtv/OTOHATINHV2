@@ -15,9 +15,8 @@ public partial class Admin_ListProduct : System.Web.UI.Page
             Response.Redirect("Login.aspx");
         }
 
-        Session["TITLE"] = "HÀNG HÓA";
 
-
+        this.Context.Items["strTitle"] = "Quản lý bán xe";
 
         if (!Page.IsPostBack)
         {

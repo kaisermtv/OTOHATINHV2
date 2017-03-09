@@ -395,7 +395,8 @@ public class Category
             SqlConnection sqlCon = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["TVSConn"].ConnectionString);
             sqlCon.Open();
             SqlCommand Cmd = sqlCon.CreateCommand();
-            Cmd.CommandText = "SELECT Id, Name FROM tblCategory";
+            Cmd.CommandText = "SELECT Id, Name FROM tblCategory WHERE [MenuUrl] IS NULL OR [MenuUrl] = @menuurl ";
+            Cmd.Parameters.Add("menuurl", SqlDbType.NVarChar).Value = "" ;
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = Cmd;
             DataSet ds = new DataSet();

@@ -7,17 +7,16 @@
     {
         
         routes.MapPageRoute("trangchu", "trang-chu", "~/Default.aspx");
+        routes.MapPageRoute("trangchu1", "{name}-post{id}", "~/ViewOto.aspx");
+        routes.MapPageRoute("trangchu2", "trang-chu/{name}-post{id}", "~/ViewOto.aspx");
+        
         routes.MapPageRoute("tintuc", "tin-tuc", "~/News.aspx");
         routes.MapPageRoute("tintuc1", "tin-tuc/{id}", "~/News.aspx");
+        routes.MapPageRoute("tintuc2", "tin-tuc/{name}-post{id}", "~/View.aspx");
+
+        routes.MapPageRoute("dangnhap", "dang-nhap", "~/Member/Login.aspx");
         
         
-        routes.MapPageRoute("chuyenmuc", "{name}/{id}", "~/NewsCategory.aspx");
-        routes.MapPageRoute("vanban", "{name}-document{id}", "~/Document/Default.aspx");
-        routes.MapPageRoute("thongbao", "{name}-notice{id}", "~/Detailt.aspx");
-        routes.MapPageRoute("chitiettintuc", "{name}-post{id}", "~/NewsDetailt.aspx");
-        routes.MapPageRoute("danhsach", "{name}-list{id}", "~/ListCategory.aspx");
-        routes.MapPageRoute("danhsachchitiet", "{name}-detail{id}", "~/ListCategoryDetail.aspx");
-        routes.MapPageRoute("danhsachchitietbaiviet", "{name}-content{id}", "~/ListNewsDetail.aspx");
     }
 
     void Application_Start(object sender, EventArgs e)

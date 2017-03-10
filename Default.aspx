@@ -31,7 +31,7 @@
                     <div class="DeafaultItemLeft">
                         <div style="width: 200px;height:150px;overflow:hidden;">
                             <a href ="/ViewOto?id=<%# Eval("IdOto") %>" >
-                                <img src="/Images/post/<%# Eval("img") %>" alt="<%# Eval("IdNameOto") %>" style="width: 200px" />
+                                <img  onerror="imgCatchError(this)"  src="/Images/post/<%# Eval("img") %>" alt="<%# Eval("IdNameOto") %>" style="width: 200px" />
                             </a>
                         </div>
                         <div class="CarPrice">
@@ -98,7 +98,7 @@
     <div class="col-md-5" style="padding-left: 0px;">
         <div class="NewsHotImg">
             <% if (hostImgTuVan != "")
-               { %><a href="/View.aspx?id=<%=hostIdTuVan %>"><img src="/Images/News/<%=hostImgTuVan %>" alt="<%=hostTileTuVan %>" /></a><% } %>
+               { %><a href="/View.aspx?id=<%=hostIdTuVan %>"><img onerror="imgCatchError(this)" src="/Images/News/<%=hostImgTuVan %>" alt="<%=hostTileTuVan %>" /></a><% } %>
         </div>
         <div class="NewsHotTitle">
             <a href="View.aspx?id=<%=hostIdTuVan %>"><%=hostTileTuVan %></a> <span class="TimePost"><%=hostTimePostTuVan %></span>
@@ -114,7 +114,7 @@
                 <div class="NewsHomeItem">
                     <div class="NewsHomeItemLeft">
                         <a href="/View.aspx?id=<%# Eval("Id") %>">
-                            <img src="/Images/News/<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" style="width: 100%" />
+                            <img onerror="imgCatchError(this)" src="/Images/News/<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" style="width: 100%" />
                         </a>
                     </div>
                     <div class="NewsHomeItemRight">

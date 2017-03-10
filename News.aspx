@@ -14,7 +14,7 @@
                 <div class="DeafaultItem">
                     <div class="DeafaultItemLeft">
                         <a href="/View?id=<%# Eval("Id") %>">
-                            <img src="/Images/News/<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" style="width: 100%" />
+                            <img  onerror="imgCatchError(this)" src="/Images/News/<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" style="width: 100%" />
                         </a>
                     </div>
                     <div class="DeafaultItemRight">

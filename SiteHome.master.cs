@@ -7,7 +7,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class SiteHome : System.Web.UI.MasterPage
+public partial class SiteHome : MasterPage
 {
     #region declare objects
     private const string AntiXsrfTokenKey = "__AntiXsrfToken";

@@ -94,7 +94,7 @@ public class Oto : DataClass
         catch (Exception ex)
         {
             this.Message = ex.Message;
-            this.ErrorCode = ex.HResult;
+          //  this.ErrorCode = ex.HResult;
             return new DataTable(); ;
         }
     }
@@ -166,12 +166,14 @@ public class Oto : DataClass
         catch (Exception ex)
         {
             this.Message = ex.Message;
-            this.ErrorCode = ex.HResult;
+        //    this.ErrorCode = ex.HResult;
             return new DataTable();
         }
     }
     #endregion
 
+
+    
 
     #region getDataLienQuan
     public DataTable getDataLienQuan(int limit = 5, int tinlq = 0, int idDongXe = 0)

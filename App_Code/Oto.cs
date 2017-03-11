@@ -245,7 +245,8 @@ public class Oto : DataClass
             Cmd.CommandText += ",oto.[IdOto],oto.[IdNameOto],oto.[NgayDang],oto.[GiaBan],nl.[NameNhienLieu],dx.[NameDongXe]";
             Cmd.CommandText += ",hx.[NameHangXe],sc.[NameSoCho],scu.[NameSoCua],ms.[NameMauSac],tit.NameTinhThanh,kd.NameKieuDang";
             Cmd.CommandText += ",oto.NamSanXuat,tv.[Phone],oto.Mota,oto.NameImage1,oto.NameImage2,oto.NameImage3,oto.IdDongXe";
-            Cmd.CommandText += ",oto.NameImage4,oto.NameImage5";
+            Cmd.CommandText += ",oto.NameImage4,oto.NameImage5,";
+            Cmd.CommandText += ",REPLACE(REPLACE(CAST(oto.[IdHopSo] AS varchar),'1',N'Hộp số sàn'),'0',N'Hộp số tự động') AS HopSo";
             Cmd.CommandText += " FROM [tblOto] AS oto";
             Cmd.CommandText += " LEFT JOIN tblNhienLieu AS nl ON oto.[IdNhienLieu] = nl.[IdNhienLieu]";
             Cmd.CommandText += " LEFT JOIN [tblDongXe] AS dx ON oto.[IdDongXe] = dx.[IdDongXe]";

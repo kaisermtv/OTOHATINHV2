@@ -86,7 +86,7 @@
                         Hộp số
                     </div>
                     <div class = "OtoHopSoPhai">
-                        : Số tự động
+                        : <%=objData["HopSo"] %>
                     </div>
                     <br />
                     <br />&nbsp;

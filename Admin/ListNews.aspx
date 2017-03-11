@@ -48,12 +48,12 @@
                     </td>
                     <td class="DataListTableTdItemCenter" style="width: 3%;">
                         <a href="NewsEdit.aspx?id=<%# Eval("Id") %>">
-                            <img src="../Images/Edit.png" alt="">
+                            <img src="/Images/Edit.png" alt="">
                         </a>
                     </td>
                     <td class="DataListTableTdItemCenter" style="width: 3%;">
                         <a href="NewsDel.aspx?id=<%# Eval("Id") %>">
-                            <img src="../Images/delete.png" alt="">
+                            <img src="/Images/delete.png" alt="">
                         </a>
                     </td>
                 </tr>

@@ -85,6 +85,16 @@
                             </div>
                         </div>
 
+                        <div class="RowRegister">
+                            <div class="LeftPost">Hộp số: </div>
+                            <div class="RightPost">
+                                <asp:DropDownList ID="ddlHopSo" runat="server" CssClass="form-control" Style="width: 100%;">
+                                    <asp:ListItem Value="0">Hộp số tự động</asp:ListItem>
+                                    <asp:ListItem Value="1">Hộp số sàn</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="col-md-4" style="padding-left: 0px;">
 

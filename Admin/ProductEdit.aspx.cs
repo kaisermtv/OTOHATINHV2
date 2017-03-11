@@ -129,7 +129,7 @@ public partial class Admin_ProductEdit : System.Web.UI.Page
             //upImage1.PostedFile.ToString();
 
             bool ret = objOto.update(itemId, txtIdNameOto.Text, txtNoiDung.Value, giaban, txtNamSanXuat.Text,
-                Int32.Parse(ddlIdTinhTrang.Text), Int32.Parse(ddlIdXuatXu.Text), 0, Int32.Parse(ddlIdKieuDang.Text),
+                Int32.Parse(ddlIdTinhTrang.Text), Int32.Parse(ddlIdXuatXu.Text), Int32.Parse(ddlHopSo.Text), Int32.Parse(ddlIdKieuDang.Text),
                 Int32.Parse(ddlIdNhienLieu.Text), Int32.Parse(ddlIdTinhThanh.Text), Int32.Parse(ddlIdMauSac.Text), Int32.Parse(ddlIdSoCho.Text),
                 Int32.Parse(ddlIdSoCua.Text), Int32.Parse(ddlIdHangXe.Text), Int32.Parse(ddlIdDongXe.Text), saveImage(FileUpload1,htxtimg1),
                 saveImage(FileUpload2, htxtimg2), saveImage(FileUpload3, htxtimg3), saveImage(FileUpload4, htxtimg4), saveImage(FileUpload5, htxtimg5));

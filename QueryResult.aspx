@@ -23,6 +23,11 @@
         </div>
     </div>
     <br />
+    <% if(this.objTblCar.Rows.Count==0) {%>
+    <div class="well alert-info">
+        Không có thông tin ở mục này
+    </div>
+    <% } %>
     <asp:DataList ID="dtlChucVu" runat="server" RepeatDirection="Horizontal" RepeatColumns="1" Width="100%">
         <ItemTemplate>
             <div class="DeafaultRow">
@@ -95,7 +100,11 @@
         </div>
     </div>
     <br />
-
+     <% if(this.objTblNews.Rows.Count==0) {%>
+    <div class="well alert-info">
+        Không có thông tin ở mục này
+    </div>
+    <% } %>
     <div class="col-md-12" style="padding-right: 0px !important; padding-left: 0px; margin-right: 0px;">
         <asp:DataList ID="dtlNews" runat="server" RepeatDirection="Horizontal" RepeatColumns="1" Width="100%">
         <ItemTemplate>

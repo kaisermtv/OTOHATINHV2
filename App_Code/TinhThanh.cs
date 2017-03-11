@@ -106,6 +106,34 @@ public class TinhThanh
     }
     #endregion
 
+    #region method getIdByName
+    public int getIdByName(string NameTinhThanh)
+    {
+        DataTable objTable = new DataTable();
+        try
+        {
+            SqlConnection sqlCon = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["TVSConn"].ConnectionString);
+            sqlCon.Open();
+            SqlCommand Cmd = sqlCon.CreateCommand();
+            Cmd.Parameters.Add("NameTinhThanh", SqlDbType.NVarChar).Value = NameTinhThanh;
+            Cmd.CommandText = "SELECT TOP 1 IdTinhThanh AS Id FROM tblTinhThanh WHERE NameTinhThanh = @NameTinhThanh";
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = Cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            sqlCon.Close();
+            sqlCon.Dispose();
+            objTable = ds.Tables[0];
+            return int.Parse(objTable.Rows[0]["Id"].ToString());
+        }
+        catch
+        {
+            return 0;
+        }
+
+    }
+    #endregion
+
     #region method getDataCategoryToCombobox
     public DataTable getDataCategoryToCombobox(String noselect = "Không chọn")
     {

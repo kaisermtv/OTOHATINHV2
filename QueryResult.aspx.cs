@@ -23,7 +23,26 @@ public partial class QueryResult : System.Web.UI.Page
                if(Request.QueryString["que"] != null)
                {
                    querry = Request.QueryString["que"].ToString();
-                   getResult(querry);
+                   getResult(querry,"que");
+                   return;
+               }
+               else if (Request.QueryString["hangxe"] != null)
+               {
+                   querry = Request.QueryString["hangxe"].ToString();
+                   getResult(querry,"hangxe");
+                   return;
+               }
+            else if(Request.QueryString["location"] != null)
+               {
+                   querry = Request.QueryString["location"].ToString();
+                   getResult(querry,"location");
+                   return;
+               }
+               else if (Request.QueryString["kieuxe"] != null)
+               {
+                   querry = Request.QueryString["kieuxe"].ToString();
+                   getResult(querry, "kieuxe");
+                   return;
                }
         }
         catch
@@ -35,10 +54,16 @@ public partial class QueryResult : System.Web.UI.Page
     }
 
     #region getResultFromQuerryString
-    public void getResult(string querry)
+    public void getResult(string querry , string filter = "")
     {
+        switch(filter)
+        {
+            case "hangxe": { HangXe objHangxe = new HangXe(); objTblCar = objOto.getDataShowHome("", objHangxe.getIdByName(querry), 0,0,2); break; }
+            case "location": { TinhThanh objTinhThanh = new TinhThanh(); objTblCar = objOto.getDataShowHome("", 0, 0,objTinhThanh.getIdByName(querry),2); break; }
+            case "kieuxe": { KieuDang objKieuDang = new KieuDang(); objTblCar = objOto.getDataShowHome("", 0, 0, 0, 2, objKieuDang.getIdByName(querry)); break; }
+            default:        {   objTblCar = objOto.getDataShowHome(querry, 0, 0); break; }
+        }
 
-        objTblCar = objOto.getDataShowHome(querry,0,0);
         if (objTblCar.Rows.Count > 0) { 
         cpChucVu.Visible = true;
         cpChucVu.MaxPages = 1000;
@@ -51,7 +76,6 @@ public partial class QueryResult : System.Web.UI.Page
         objTblNews = objNews.getTopShowHome(0, 5, querry, 0);
         if(objTblNews.Rows.Count > 0 )
         {
-
             cpNews.Visible = true;
             cpNews.MaxPages = 1000;
             cpNews.PageSize = 5;

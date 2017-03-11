@@ -121,8 +121,8 @@
                         <div class="NewsHomeItemRightTitle">
                             <a href="/tin-tuc/<%# TVSFunction.convertToUnSign2(Eval("Title").ToString()) + "-post" + Eval("Id") %>"><%# Eval("Title") %></a>
                         </div>
-                        <div class="NewsHomeItemRightShortContent">
-                            <%# Eval("ShortContent").ToString() %>
+                        <div class="NewsHomeItemRightShortContent" >
+                     <p style=" height:80px !important;overflow:hidden">     <%# Eval("ShortContent").ToString() %></p>  
                         </div>
                     </div>
                 </div>
@@ -130,8 +130,13 @@
             </ItemTemplate>
         </asp:DataList>
     </div>
+      
     <!-- KET THUC TU VAN XE -->
     <br />
+    <div style="clear:both">
+        <div class="DeafaultHeader" style="border-bottom: solid 0.1px #d4d9dd !important; ">
+        </div>
+    </div>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="RightContent" runat="server">

@@ -101,7 +101,7 @@ public class Oto : DataClass
     #endregion
 
     #region getDataShowHome
-    public DataTable getDataShowHome(string searchKey = "", int idHangXe = 0, int idDongXe = 0,int idTinhThanh = 0,int idTinhTrang = 2)
+    public DataTable getDataShowHome(string searchKey = "", int idHangXe = 0, int idDongXe = 0,int idTinhThanh = 0,int idTinhTrang = 2,int idKieuDang= 0)
     {
         try
         {
@@ -153,6 +153,11 @@ public class Oto : DataClass
             {
                 Cmd.CommandText += " AND oto.IdTinhTrang = @IdTinhTrang";
                 Cmd.Parameters.Add("IdTinhTrang", SqlDbType.Int).Value = idTinhTrang;
+            }
+            if (idKieuDang > 0)
+            {
+                Cmd.CommandText += " AND oto.IdKieuDang = @idKieuDang";
+                Cmd.Parameters.Add("idKieuDang", SqlDbType.Int).Value = idKieuDang;
             }
 
             Cmd.CommandText += " ORDER BY oto.[NgayDang] DESC";

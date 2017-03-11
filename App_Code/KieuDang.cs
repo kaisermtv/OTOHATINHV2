@@ -79,6 +79,34 @@ public class KieuDang
     }
     #endregion
 
+    #region method getIdByName
+    public int getIdByName(string NameKieuDang)
+    {
+        DataTable objTable = new DataTable();
+        try
+        {
+            SqlConnection sqlCon = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["TVSConn"].ConnectionString);
+            sqlCon.Open();
+            SqlCommand Cmd = sqlCon.CreateCommand();
+            Cmd.Parameters.Add("NameKieuDang", SqlDbType.NVarChar).Value = NameKieuDang.Trim();
+            Cmd.CommandText = "SELECT TOP 1 IdKieuDang AS Id FROM tblKieuDang WHERE NameKieuDang = @NameKieuDang";
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = Cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            sqlCon.Close();
+            sqlCon.Dispose();
+            objTable = ds.Tables[0];
+            return int.Parse(objTable.Rows[0]["Id"].ToString());
+        }
+        catch
+        {
+            return -1;
+        }
+
+    }
+    #endregion
+
     #region method getDataById
     public DataTable getDataById(int IdKieuDang)
     {

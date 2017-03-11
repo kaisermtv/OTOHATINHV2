@@ -15,12 +15,12 @@
     <webopt:BundleReference runat="server" Path="/Content/css" />
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="/Content/TVSStyle.css" rel="stylesheet" />
-      <script>
-          function imgCatchError(src) {
-              src.onerror = "";
-              src.src = "/Images/design/no_img.jpg";
-              return true;
-          }
+    <script>
+        function imgCatchError(src) {
+            src.onerror = "";
+            src.src = "/Images/design/no_img.jpg";
+            return true;
+        }
     </script>
 
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
@@ -64,25 +64,25 @@
                     <asp:ImageButton ID="btnPost" ImageUrl="/Images/btnPost.png" runat="server" OnClick="btnPost_Click" />
                 </div>
                 <div class="HeaderPostRight">
-                   <% Response.Write(this.strAction); %>
+                    <% Response.Write(this.strAction); %>
                 </div>
             </div>
         </div>
         <div class="Menu">
             <div class="container" style="padding: 0px;">
-                <div class="navbar navbar-inverse" style="border-radius:0px">
+                <div class="navbar navbar-inverse" style="border-radius: 0px">
                     <div class="navbar-header" style="height: 42px !important; padding-left: 0px !important;">
-                        <button type="button" class="navbar-toggle" style="margin-top:4px" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" style="margin-top: 4px" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="/" >
-                            <img style="height:100%;margin-top:-1px" src="/Images/HomeIcon.png" />
+                        <a href="/">
+                            <img style="height: 100%; margin-top: -1px" src="/Images/HomeIcon.png" />
                         </a>
                     </div>
                     <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav" >
+                        <ul class="nav navbar-nav">
                             <% Response.Write(this.strMenuHorizontal); %>
                             <%--<li><a runat="server" href="#">TIN BÁN Ô TÔ</a></li>
                             <li><a runat="server" href="#">TIN TỨC</a></li>
@@ -102,7 +102,7 @@
             <div class="col-md-9" style="padding-left: 0px;">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
-                
+
             </div>
             <div class="col-md-3" style="padding-right: 0px; margin-right: 0px;">
                 <asp:ContentPlaceHolder ID="RightContent" runat="server">
@@ -146,10 +146,12 @@
                 <!-- KET THUC PHAN SALON O TO TIEU BIEU -->
 
                 <!-- BAT DAU PHAN DANH GIA XE -->
-                 <br /><br /><br />
+                <br />
+                <br />
+                <br />
                 <div class="DeafaultHeaderRight" style="margin-top: -3px;">
                     <div class="DeafaultHeaderRightName">
-                       ĐÁNH GIÁ XE
+                        ĐÁNH GIÁ XE
                     </div>
                 </div>
                 <br />
@@ -173,176 +175,227 @@
             </div>
         </div>
         <div class="container body-content" style="padding-top: 30px; padding-bottom: 50px;">
-        <br /><br />
-        <div class="row">
-            <div class="container" style="margin-left: 10px; padding-left: 20px; padding-right: 0px; background-color:#f2f2f2;">
-                <div class ="DivP20L">
-                    <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
-                    <p style ="margin-bottom:5px;">
-                     <a href="QueryResult.aspx?que=Toyota Camry">   Xe Toyota Camry</a>
-                    </p>
-                   <p style ="margin-bottom:5px;">
-                   <a href="QueryResult.aspx?que=Toyota Vios">      Xe Toyota Vios</a>
-                    </p>
-                   <p style ="margin-bottom:5px;">
-                  <a href="QueryResult.aspx?que=Toyota Altis">       Xe Toyota Altis</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                  <a href="QueryResult.aspx?que=Toyota Fortune">       Xe Toyota Fortune</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                    <a href="QueryResult.aspx?que=Toyota Yaris">     Xe Toyota Yaris</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                    <a href="QueryResult.aspx?que=Toyota Venza">     Xe Toyota Venza</a>
-                    </p>
-                    <br />
-                </div>
-                <div class ="DivP20L">
-                    <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
-                    <p style ="margin-bottom:5px;">
-                     <a href="QueryResult.aspx?que=Toyota Camry">   Xe Toyota Camry</a>
-                    </p>
-                   <p style ="margin-bottom:5px;">
-                   <a href="QueryResult.aspx?que=Toyota Vios">      Xe Toyota Vios</a>
-                    </p>
-                   <p style ="margin-bottom:5px;">
-                  <a href="QueryResult.aspx?que=Toyota Altis">       Xe Toyota Altis</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                  <a href="QueryResult.aspx?que=Toyota Fortune">       Xe Toyota Fortune</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                    <a href="QueryResult.aspx?que=Toyota Yaris">     Xe Toyota Yaris</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                    <a href="QueryResult.aspx?que=Toyota Venza">     Xe Toyota Venza</a>
-                    </p>
-                    <br />
-                </div>
-                <div class ="DivP20L">
-                    <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
-                    <p style ="margin-bottom:5px;">
-                     <a href="QueryResult.aspx?que=Toyota Camry">   Xe Toyota Camry</a>
-                    </p>
-                   <p style ="margin-bottom:5px;">
-                   <a href="QueryResult.aspx?que=Toyota Vios">      Xe Toyota Vios</a>
-                    </p>
-                   <p style ="margin-bottom:5px;">
-                  <a href="QueryResult.aspx?que=Toyota Altis">       Xe Toyota Altis</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                  <a href="QueryResult.aspx?que=Toyota Fortune">       Xe Toyota Fortune</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                    <a href="QueryResult.aspx?que=Toyota Yaris">     Xe Toyota Yaris</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                    <a href="QueryResult.aspx?que=Toyota Venza">     Xe Toyota Venza</a>
-                    </p>
-                    <br />
-                </div>
-                <div class ="DivP20L">
-                      <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
-                    <p style ="margin-bottom:5px;">
-                     <a href="QueryResult.aspx?que=Toyota Camry">   Xe Toyota Camry</a>
-                    </p>
-                   <p style ="margin-bottom:5px;">
-                   <a href="QueryResult.aspx?que=Toyota Vios">      Xe Toyota Vios</a>
-                    </p>
-                   <p style ="margin-bottom:5px;">
-                  <a href="QueryResult.aspx?que=Toyota Altis">       Xe Toyota Altis</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                  <a href="QueryResult.aspx?que=Toyota Fortune">       Xe Toyota Fortune</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                    <a href="QueryResult.aspx?que=Toyota Yaris">     Xe Toyota Yaris</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                    <a href="QueryResult.aspx?que=Toyota Venza">     Xe Toyota Venza</a>
-                    </p>
-                    <br />
-                </div>
-                <div class ="DivP20L">
-                      <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
-                    <p style ="margin-bottom:5px;">
-                     <a href="QueryResult.aspx?que=Toyota Camry">   Xe Toyota Camry</a>
-                    </p>
-                   <p style ="margin-bottom:5px;">
-                   <a href="QueryResult.aspx?que=Toyota Vios">      Xe Toyota Vios</a>
-                    </p>
-                   <p style ="margin-bottom:5px;">
-                  <a href="QueryResult.aspx?que=Toyota Altis">       Xe Toyota Altis</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                  <a href="QueryResult.aspx?que=Toyota Fortune">    Xe Toyota Fortune</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                    <a href="QueryResult.aspx?que=Toyota Yaris">     Xe Toyota Yaris</a>
-                    </p>
-                    <p style ="margin-bottom:5px;">
-                    <a href="QueryResult.aspx?que=Toyota Venza">     Xe Toyota Venza</a>
-                    </p>
-                    <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="container" style="margin-left: 10px; padding-left: 20px; padding-right: 0px; background-color: #f2f2f2;">
+                  
+                      <% int x = objQuickHref.Rows.Count;
+                        if(x >0 )
+                        { 
+                    %>
+                    
+                        <% for(int i = 0 ; i < x ; i+=6 ) %>
+                        <%{ %>
+
+                           <div class="DivP20L">
+                        <p style="margin-top: 20px; font-weight: bold;">BÁN XE</p>
+                                <p style="margin-bottom: 5px;">
+                               
+                            <a href="QueryResult.aspx?hangxe=Xe <%=objQuickHref.Rows[i]["NameHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i]["NameHangXe"].ToString() %></a>
+                           </p>
+                               <% if (i+2<x)
+                                  {%>
+                                <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?hangxe=Xe <%=objQuickHref.Rows[i+1]["NameHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i+1]["NameHangXe"].ToString() %></a>
+                           </p>
+                               <%} %>
+                               <% if (i+3<x)
+                                  {%>
+                                 <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?que=hangxe <%=objQuickHref.Rows[i+2]["NameHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i+2]["NameHangXe"].ToString() %></a>
+                           </p>
+                               <% }%>
+
+                                <% if (i+4<x)
+                                  {%>
+                                 <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?hangxe=Xe <%=objQuickHref.Rows[i+3]["NameHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i+3]["NameHangXe"].ToString() %></a>
+                           </p>
+                               <% }%>
+
+                                <% if (i+5<x)
+                                  {%>
+                                 <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?hangxe=Xe <%=objQuickHref.Rows[i+4]["NameHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i+4]["NameHangXe"].ToString() %></a>
+                           </p>
+                               <% }%>
+                                <% if (i+5<x)
+                                  {%>
+                                 <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?hangxe=Xe <%=objQuickHref.Rows[i+5]["NameHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i+5]["NameHangXe"].ToString() %></a>
+                           </p>
+                               <% }%>
+                        <br />
+                         </div>
+                        <%} %>
+                    <%
+                        }
+                    %>
+
+                    <!----->
+
+                      <% int y = objQickLocationHref.Rows.Count;
+                        if(y >0 )
+                        { 
+                        %>
+                        <% for(int i = 0 ; i < y ; i+=6 ) %>
+                        <%{ %>
+                           <div class="DivP20L">
+                        <p style="margin-top: 20px; font-weight: bold;">TỈNH THÀNH</p>
+                                <p style="margin-bottom: 5px;">
+                               
+                            <a href="QueryResult.aspx?location=<%=objQickLocationHref.Rows[i]["NameTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i]["NameTinhThanh"].ToString() %></a>
+                           </p>
+                               <% if (i+1<y)
+                                  {%>
+                                <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?location=<%=objQickLocationHref.Rows[i+1]["NameTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i+1]["NameTinhThanh"].ToString() %></a>
+                           </p>
+                               <%} %>
+                               <% if (i+2<y)
+                                  {%>
+                                 <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?location=<%=objQickLocationHref.Rows[i+2]["NameTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i+2]["NameTinhThanh"].ToString() %></a>
+                           </p>
+                               <% }%>
+
+                                <% if (i+3<y)
+                                  {%>
+                                 <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?location=Tỉnh <%=objQickLocationHref.Rows[i+3]["NameTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i+3]["NameTinhThanh"].ToString() %></a>
+                           </p>
+                               <% }%>
+                                <% if (i+4<y)
+                                  {%>
+                                 <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?location=<%=objQickLocationHref.Rows[i+4]["NameTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i+4]["NameTinhThanh"].ToString() %></a>
+                           </p>
+                               <% }%>
+                                   <% if (i+5<y)
+                                  {%>
+                                 <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?location=<%=objQickLocationHref.Rows[i+5]["NameTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i+5]["NameTinhThanh"].ToString() %></a>
+                           </p>
+                               <% }%>
+                        <br />
+                         </div>
+                        <%} %>
+                    <%
+                        }
+                    %>
+
+                    <% int z = objQickBrandHref.Rows.Count;
+                        if(z >0 )
+                        { 
+                    %>
+                    
+                        <% for(int i = 0 ; i < z ; i+=6 ) %>
+                        <%{ %>
+                           <div class="DivP20L">
+                        <p style="margin-top: 20px; font-weight: bold;">KIỂU XE</p>
+                                <p style="margin-bottom: 5px;">
+                               
+                            <a href="QueryResult.aspx?kieuxe= <%=objQickBrandHref.Rows[i]["NameKieuDang"].ToString() %>"> <%=objQickBrandHref.Rows[i]["NameKieuDang"].ToString() %></a>
+                           </p>
+                               <% if (i+1<z)
+                                  {%>
+                                <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?kieuxe= <%=objQickBrandHref.Rows[i+1]["NameKieuDang"].ToString() %>"> <%=objQickBrandHref.Rows[i+1]["NameKieuDang"].ToString() %></a>
+                           </p>
+                               <%} %>
+                               <% if (i+2<z)
+                                  {%>
+                                 <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?kieuxe= <%=objQickBrandHref.Rows[i+2]["NameKieuDang"].ToString() %>"> <%=objQickBrandHref.Rows[i+2]["NameKieuDang"].ToString() %></a>
+                           </p>
+                               <% }%>
+
+                                <% if (i+3<z)
+                                  {%>
+                                 <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?kieuxe= <%=objQickBrandHref.Rows[i+3]["NameKieuDang"].ToString() %>"> <%=objQickBrandHref.Rows[i+3]["NameKieuDang"].ToString() %></a>
+                           </p>
+                               <% }%>
+
+                                <% if (i+4<z)
+                                  {%>
+                                 <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?kieuxe= <%=objQickBrandHref.Rows[i+4]["NameKieuDang"].ToString() %>"> <%=objQickBrandHref.Rows[i+4]["NameKieuDang"].ToString() %></a>
+                           </p>
+                               <% }%>
+                                   <% if (i+5<z)
+                                  {%>
+                                 <p style="margin-bottom: 5px;">
+                            <a href="QueryResult.aspx?kieuxe= <%=objQickBrandHref.Rows[i+5]["NameKieuDang"].ToString() %>"> <%=objQickBrandHref.Rows[i+5]["NameKieuDang"].ToString() %></a>
+                           </p>
+                               <% }%>
+
+                        <br />
+                         </div>
+                        <%} %>
+                    <%
+                        }
+                    %>
+                
                 </div>
             </div>
-        </div>
         </div>
         <div class="MainFooter">
             <div class="container" style="padding: 0px;">
                 <div class="row">
                     <div class="col-md-4">
-                        <p style="margin-top: 20px; font-weight: bold; color:#fff;">Hỗ trợ khách hàng</p>
-                        <p style="margin-bottom: 5px; color:#fff;">
+                        <p style="margin-top: 20px; font-weight: bold; color: #fff;">Hỗ trợ khách hàng</p>
+                        <p style="margin-bottom: 5px; color: #fff;">
                             Quy định, chính sách
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
+                        <p style="margin-bottom: 5px; color: #fff;">
                             Điều khoản hoạt động Salon
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
+                        <p style="margin-bottom: 5px; color: #fff;">
                             Câu hỏi thường gặp
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                           <a style="color:#fff" href="Contact.aspx#help">  Liên hệ, trợ giúp</a>
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="Contact.aspx#help">Liên hệ, trợ giúp</a>
                         </p>
                         <br />
                     </div>
-                    <div class="col-md-4" style ="padding-left:0px;">
-                        <p style="margin-top: 20px; font-weight: bold; color:#fff;">Về chúng tôi</p>
-                        <p style="margin-bottom: 5px; color:#fff; " >
-                    <a style="color:#fff" href="Contact.aspx#about">        Giới thiệu</a>
+                    <div class="col-md-4" style="padding-left: 0px;">
+                        <p style="margin-top: 20px; font-weight: bold; color: #fff;">Về chúng tôi</p>
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="Contact.aspx#about">Giới thiệu</a>
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                        <a style="color:#fff"  href="Contact.aspx#quyche">   Quy chế hoạt động</a>
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="Contact.aspx#quyche">Quy chế hoạt động</a>
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                      <a style="color:#fff" href="Contact.aspx#tuyendung">         Tuyển dụng</a>
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="Contact.aspx#tuyendung">Tuyển dụng</a>
                         </p>
                         <br />
                     </div>
-                    <div class="col-md-4" style ="padding-left:0px; padding-right:0px;">
-                        <p style="margin-top: 20px; font-weight: bold; color:#fff;">Tin tức bán xe hơi</p>
-                        <p style="margin-bottom: 5px; color:#fff;">
+                    <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+                        <p style="margin-top: 20px; font-weight: bold; color: #fff;">Tin tức bán xe hơi</p>
+                        <p style="margin-bottom: 5px; color: #fff;">
                             Báo giá dịch vụ
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
+                        <p style="margin-bottom: 5px; color: #fff;">
                             Khuyến mãi trên otohatinh.vn
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
+                        <p style="margin-bottom: 5px; color: #fff;">
                             Khuyến mãi từ các hãng khác
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
+                        <p style="margin-bottom: 5px; color: #fff;">
                             Cải tiến và tính năng mới
                         </p>
                         <br />
                     </div>
-                    <br />&nbsp;
-                    <hr style ="color:#fff; margin-top:-20px; width:96%; text-align:left; margin-left:15px;" />
-                    <p style="text-align:center; color:#fff; font-weight:bold; font-size:18px; margin-top:-5px;">OTOHATINH.VN</p>
-                     <p style="margin-top: -10px; color:#fff; text-align:center;">
-                            Hotline: 0911 810 682 - Email: otohatinh@gmail.com
-                        </p>
+                    <br />
+                    &nbsp;
+                    <hr style="color: #fff; margin-top: -20px; width: 96%; text-align: left; margin-left: 15px;" />
+                    <p style="text-align: center; color: #fff; font-weight: bold; font-size: 18px; margin-top: -5px;">OTOHATINH.VN</p>
+                    <p style="margin-top: -10px; color: #fff; text-align: center;">
+                        Hotline: 0911 810 682 - Email: otohatinh@gmail.com
+                    </p>
                 </div>
             </div>
         </div>

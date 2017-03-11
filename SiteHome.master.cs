@@ -16,7 +16,9 @@ public partial class SiteHome : MasterPage
     private Category objCategory = new Category();
     private DataTable objTableMenuHorizontal = new DataTable();
     public string strMenuHorizontal = "", strAction = "";
-
+    public DataTable objQuickHref = new DataTable();
+    public DataTable objQickLocationHref = new DataTable();
+    public DataTable objQickBrandHref = new DataTable();
     public bool buf = true;
 
     public String htmlHangXe = "";
@@ -155,7 +157,7 @@ public partial class SiteHome : MasterPage
                 htmlHangXe += "</div>";
             }
 
-
+            getQuickItenAboveFooter();
         }
     }
     #endregion
@@ -173,6 +175,8 @@ public partial class SiteHome : MasterPage
         Response.Redirect("/Member/Post.aspx");
     }
     #endregion
+
+    #region timkiem
     protected void imgSearch_Click(object sender, ImageClickEventArgs e)
     {
         #region getQuerryString
@@ -188,4 +192,19 @@ public partial class SiteHome : MasterPage
             return;
         }
     }
+    #endregion
+
+    #region 
+    public void getQuickItenAboveFooter()
+    {
+        HangXe objOto = new HangXe();
+        objQuickHref = objOto.getData("");
+        TinhThanh objAdress = new TinhThanh();
+        objQickLocationHref = objAdress.getData("");
+        KieuDang objKieuDang = new KieuDang();
+        objQickBrandHref = objKieuDang.getData("");
+
+    }
+
+    #endregion
 }

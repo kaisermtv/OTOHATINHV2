@@ -107,6 +107,34 @@ public class HangXe : DataClass
     }
     #endregion
 
+    #region method getIdByName
+    public int getIdByName(string NameHangXe)
+    {
+        DataTable objTable = new DataTable();
+        try
+        {
+            SqlConnection sqlCon = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["TVSConn"].ConnectionString);
+            sqlCon.Open();
+            SqlCommand Cmd = sqlCon.CreateCommand();
+            Cmd.Parameters.Add("NameHangXe", SqlDbType.NVarChar).Value = NameHangXe;
+            Cmd.CommandText = "SELECT TOP 1 IdHangXe AS Id FROM tblHangXe WHERE NameHangXe = @NameHangXe";
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = Cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            sqlCon.Close();
+            sqlCon.Dispose();
+            objTable = ds.Tables[0];
+            return int.Parse(objTable.Rows[0]["Id"].ToString());
+        }
+        catch
+        {
+            return 0;
+        }
+     
+    }
+    #endregion
+
     #region method getDataCategoryToCombobox
     public DataTable getDataCategoryToCombobox(String noselect = "Không chọn" )
     {

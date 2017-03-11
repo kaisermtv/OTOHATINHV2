@@ -30,7 +30,7 @@
                 <div class="DeafaultItem">
                     <div class="DeafaultItemLeft">
                         <div style="width: 200px;height:150px;overflow:hidden;">
-                            <a href ="/ViewOto?id=<%# Eval("IdOto") %>" >
+                            <a href ="/<%# TVSFunction.convertToUnSign2(Eval("IdNameOto").ToString()) + "-post" + Eval("IdOto") %>" >
                                 <img src="/Images/post/<%# Eval("img") %>" alt="<%# Eval("IdNameOto") %>" style="width: 200px" />
                             </a>
                         </div>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="DeafaultItemRight">
                         <div class="DeafaultItemRight1">
-                            <a href="/ViewOto?id=<%# Eval("IdOto") %>"><%# Eval("IdNameOto") %></a>
+                            <a href="/<%# TVSFunction.convertToUnSign2(Eval("IdNameOto").ToString()) + "-post" + Eval("IdOto") %>"><%# Eval("IdNameOto") %></a>
                         </div>
                         <div class="DeafaultItemRight2">
                             <div class="DeafaultItemRightSub1">
@@ -98,10 +98,10 @@
     <div class="col-md-5" style="padding-left: 0px;">
         <div class="NewsHotImg">
             <% if (hostImgTuVan != "")
-               { %><a href="/View.aspx?id=<%=hostIdTuVan %>"><img src="/Images/News/<%=hostImgTuVan %>" alt="<%=hostTileTuVan %>" /></a><% } %>
+               { %><a href="/tin-tuc/<%= TVSFunction.convertToUnSign2(hostTileTuVan) + "-post" + hostIdTuVan %>"><img src="/Images/News/<%=hostImgTuVan %>" alt="<%=hostTileTuVan %>" /></a><% } %>
         </div>
         <div class="NewsHotTitle">
-            <a href="View.aspx?id=<%=hostIdTuVan %>"><%=hostTileTuVan %></a> <span class="TimePost"><%=hostTimePostTuVan %></span>
+            <a href="/tin-tuc/<%= TVSFunction.convertToUnSign2(hostTileTuVan) + "-post" + hostIdTuVan %>"><%=hostTileTuVan %></a> <span class="TimePost"><%=hostTimePostTuVan %></span>
         </div>
         <div class="NewsShortContent">
             <%=hostShortContentTuVan %>
@@ -113,13 +113,13 @@
             <ItemTemplate>
                 <div class="NewsHomeItem">
                     <div class="NewsHomeItemLeft">
-                        <a href="/View.aspx?id=<%# Eval("Id") %>">
+                        <a href="/tin-tuc/<%# TVSFunction.convertToUnSign2(Eval("Title").ToString()) + "-post" + Eval("Id") %>">
                             <img src="/Images/News/<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" style="width: 100%" />
                         </a>
                     </div>
                     <div class="NewsHomeItemRight">
                         <div class="NewsHomeItemRightTitle">
-                            <a href="/View.aspx?id=<%# Eval("Id") %>"><%# Eval("Title") %></a>
+                            <a href="/tin-tuc/<%# TVSFunction.convertToUnSign2(Eval("Title").ToString()) + "-post" + Eval("Id") %>"><%# Eval("Title") %></a>
                         </div>
                         <div class="NewsHomeItemRightShortContent">
                             <%# Eval("ShortContent").ToString() %>
@@ -135,9 +135,11 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="RightContent" runat="server">
+    <asp:UpdatePanel runat="server" ID="UpdatePanel1" UpdateMode="Conditional">
+        <ContentTemplate>
 
     <!-- TIM KIEM XE O TO -->
-
+            <p><%=strHtmlTest %></p>
     <div class="DeafaultHeaderRight">
         <div class="DeafaultHeaderRightName">
             TÌM XE Ô TÔ
@@ -149,13 +151,13 @@
             <input id="txtSearchBox" class="txtTextBoxSearchSmall" runat="server" placeholder="Bạn muốn tìm gì? Ví dụ bán xe Camry...">
         </div>
         <div class="DefaultRightSearchButton">
-            <asp:ImageButton ID="imgSearch" ImageUrl="../Images/btnSearch.png" Width="28px" CssClass="btnImgSearch" runat="server" OnClick="imgSearch_Click" />
+            <asp:ImageButton ID="imgSearch" ImageUrl="/Images/btnSearch.png" Width="28px" CssClass="btnImgSearch" runat="server" OnClick="imgSearch_Click" />
         </div>
     </div>
 
     <div class="DeafaultHeaderRightItem">
         <div class="DeafaultHeaderRightLeft">
-            <asp:DropDownList ID="ddlHangXe" CssClass="DeafaultHeaderRightCombobox" runat="server">
+            <asp:DropDownList ID="ddlHangXe" AutoPostBack ="true" CssClass="DeafaultHeaderRightCombobox" runat="server" OnSelectedIndexChanged="ddlHangXe_TextChanged">
                 <asp:ListItem>Chọn hàng</asp:ListItem>
             </asp:DropDownList>
         </div>
@@ -195,4 +197,7 @@
     </div>
     <!-- KET THUC TIM KIEM XE O TO-->
     <br />
+            
+        </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>

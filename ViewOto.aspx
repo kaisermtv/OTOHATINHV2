@@ -117,7 +117,7 @@
                 <div class="DeafaultItem">
                     <div class="DeafaultItemLeft">
                         <div style="width: 200px;height:150px;overflow:hidden;">
-                            <a href ="/ViewOto?id=<%# Eval("IdOto") %>" >
+                            <a href ="/<%# TVSFunction.convertToUnSign2(Eval("IdNameOto").ToString()) + "-post" + Eval("IdOto") %>" >
                                 <img src="/Images/post/<%# Eval("img") %>" alt="<%# Eval("IdNameOto") %>" style="width: 200px" />
                             </a>
                         </div>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="DeafaultItemRight">
                         <div class="DeafaultItemRight1">
-                            <a href="/ViewOto?id=<%# Eval("IdOto") %>"><%# Eval("IdNameOto") %></a>
+                            <a href="/<%# TVSFunction.convertToUnSign2(Eval("IdNameOto").ToString()) + "-post" + Eval("IdOto") %>"><%# Eval("IdNameOto") %></a>
                         </div>
                         <div class="DeafaultItemRight2">
                             <div class="DeafaultItemRightSub1">

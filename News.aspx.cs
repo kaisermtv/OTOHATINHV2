@@ -23,11 +23,21 @@ public partial class News : System.Web.UI.Page
                 id = Int32.Parse(Request["id"].ToString());
             }
             catch { }
+            try
+            {
+                id = Int32.Parse(RouteData.Values["id"].ToString());
+            }
+            catch { }
 
             String Search = "";
             try
             {
                 Search = Request["Search"].ToString();
+            }
+            catch { }
+            try
+            {
+                Search = RouteData.Values["Search"].ToString();
             }
             catch { }
             txtSearchBox.Value = Search;
@@ -64,21 +74,20 @@ public partial class News : System.Web.UI.Page
     #region imgSearch_Click
     protected void imgSearch_Click(object sender, ImageClickEventArgs e)
     {
-        String rdr = "?";
+        String rdr = "";
         try
         {
             int cat = Int32.Parse(this.ddlCategory.Text);
-            if (cat > 0) rdr += "id=" + cat;
+            if (cat > 0) rdr += "/cat-" + cat;
         }
         catch { }
 
         if (this.txtSearchBox.Value != "")
         {
-            rdr = (rdr == "?") ? "?" : rdr + "&";
-            rdr += "Search=" + HttpUtility.UrlEncode(txtSearchBox.Value);
+            rdr += "/?Search=" + HttpUtility.UrlEncode(txtSearchBox.Value);
         }
        
-        Response.Redirect("/news.aspx"+rdr);
+        Response.Redirect("/tin-tuc"+rdr);
         
     }
     #endregion

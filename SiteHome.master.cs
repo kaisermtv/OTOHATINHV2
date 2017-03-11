@@ -82,19 +82,19 @@ public partial class SiteHome : MasterPage
     {
         if (Session["THANHVIEN"] == null)
         {
-            strAction = "<a href=\"/Member/Register.aspx\">";
-            strAction += "<img src=\"../Images/btnRegister.png\" alt=\"Đăng nhập\"></a>";
-            strAction += "<a href=\"/Member/Login.aspx\">";
-            strAction += "<img src=\"../Images/btnLogin.png\" alt=\"Đăng nhập\"></a>";
+            strAction = "<a href=\"dang-ky\">";
+            strAction += "<img src=\"/Images/btnRegister.png\" alt=\"Đăng nhập\"></a>";
+            strAction += "<a href=\"/dang-nhap\">";
+            strAction += "<img src=\"/Images/btnLogin.png\" alt=\"Đăng nhập\"></a>";
         }
         else
         {
             strAction = "<a href=\"#\">";
-            strAction += "<img src=\"../Images/btnAccount.png\" alt=\"Đăng nhập\">&nbsp;Xin chào " + Session["THANHVIEN"].ToString();
+            strAction += "<img src=\"/Images/btnAccount.png\" alt=\"Đăng nhập\">&nbsp;Xin chào " + Session["THANHVIEN"].ToString();
             strAction += "</a>";
             strAction += "&nbsp;&nbsp;&nbsp;";
             strAction += "<a href=\"/Member/Logout.aspx\">";
-            strAction += "<img src=\"../Images/btnLogout.png\" alt=\"Thoat\">&nbsp;Thoát";
+            strAction += "<img src=\"/Images/btnLogout.png\" alt=\"Thoat\">&nbsp;Thoát";
             strAction += "</a>";
         }
         if (!Page.IsPostBack)
@@ -111,7 +111,7 @@ public partial class SiteHome : MasterPage
                     }
                     else
                     {
-                        urls = "/news.aspx?id=" + this.objTableMenuHorizontal.Rows[i]["Id"].ToString();
+                        urls = "/tin-tuc/cat-" + this.objTableMenuHorizontal.Rows[i]["Id"].ToString();
                     }
 
 
@@ -136,18 +136,16 @@ public partial class SiteHome : MasterPage
             int a = 0;
             foreach (DataRow objDataRow in objDataHangXe.Rows)
             {
+                String hurl = "/" + TVSFunction.convertToUnSign2(objDataRow["NameHangXe"].ToString()) + "-hx" + objDataRow["IdHangXe"].ToString();
+                String aurl = "<b><a href=\"" +hurl + "\">" + objDataRow["NameHangXe"].ToString() + " (" + objDataRow["CountItem"].ToString() + ")</a></b>";
                 a++;
                 if (a % 2 == 1)
                 {
                     htmlHangXe += "<div class=\"DeafaultHeaderRightAsBrand\">";
-                    htmlHangXe += "<div class=\"DeafaultHeaderRightAsBrand1\">";
-                    htmlHangXe += "<b><a href=\"/?hangxe=" + objDataRow["IdHangXe"].ToString() + "\">" + objDataRow["NameHangXe"].ToString() + " (" + objDataRow["CountItem"].ToString() + ")</a></b>";
-                    htmlHangXe += "</div>";
+                    htmlHangXe += "<div class=\"DeafaultHeaderRightAsBrand1\">" + aurl + "</div>";
                 } else
                 {
-                    htmlHangXe += "<div class=\"DeafaultHeaderRightAsBrand2\">";
-                    htmlHangXe += "<b><a href=\"/?hangxe=" + objDataRow["IdHangXe"].ToString() + "\">" + objDataRow["NameHangXe"].ToString() + " (" + objDataRow["CountItem"].ToString() + ")</a></b>";
-                    htmlHangXe += "</div>";
+                    htmlHangXe += "<div class=\"DeafaultHeaderRightAsBrand2\">" + aurl + "</div>";
 
                     htmlHangXe += "</div>";
                 }

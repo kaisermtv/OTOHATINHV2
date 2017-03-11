@@ -13,13 +13,13 @@
             <div class="DeafaultRow">
                 <div class="DeafaultItem">
                     <div class="DeafaultItemLeft">
-                        <a href="/View?id=<%# Eval("Id") %>">
+                        <a href="/tin-tuc/<%# TVSFunction.convertToUnSign2(Eval("Title").ToString()) + "-post" + Eval("Id") %>">
                             <img src="/Images/News/<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" style="width: 100%" />
                         </a>
                     </div>
                     <div class="DeafaultItemRight">
                         <div class="DeafaultItemRight1">
-                            <a href="/View?id=<%# Eval("Id") %>"><%# Eval("Title") %></a>
+                            <a href="/tin-tuc/<%# TVSFunction.convertToUnSign2(Eval("Title").ToString()) + "-post" + Eval("Id") %>"><%# Eval("Title") %></a>
                         </div>
                         <div class="DeafaultItemRight2">
                             <%# Eval("ShortContent") %>

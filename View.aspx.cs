@@ -22,6 +22,11 @@ public partial class View : System.Web.UI.Page
             ItemId = Int32.Parse(Request["id"].ToString());
         }
         catch { }
+        try
+        {
+            ItemId = Int32.Parse(RouteData.Values["id"].ToString());
+        }
+        catch { }
 
         if (ItemId == 0) Response.Redirect("/News.aspx");
 

@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-public class DongXe
+public class DongXe:DataClass
 {
 	#region method DongXe
     public DongXe()
@@ -113,29 +113,30 @@ public class DongXe
     #endregion
 
     #region method getDataCategoryToCombobox
-    public DataTable getDataCategoryToCombobox()
+    public DataTable getDataCategoryToCombobox(int idHangXe = 0, String noselect = "Không chọn")
     {
-        DataTable objTable = new DataTable();
         try
         {
-            SqlConnection sqlCon = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["TVSConn"].ConnectionString);
-            sqlCon.Open();
-            SqlCommand Cmd = sqlCon.CreateCommand();
+            SqlCommand Cmd = this.getSQLConnect();
+
             Cmd.CommandText = "SELECT IdDongXe, NameDongXe FROM tblDongXe";
-            SqlDataAdapter da = new SqlDataAdapter();
-            da.SelectCommand = Cmd;
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            sqlCon.Close();
-            sqlCon.Dispose();
-            objTable = ds.Tables[0];
-            objTable.Rows.Add(0, "Không chọn");
+            if(idHangXe > 0)
+            {
+                Cmd.CommandText += " WHERE [IdHangXe] = @IdHangXe";
+                Cmd.Parameters.Add("IdHangXe", SqlDbType.Int).Value = idHangXe;
+            }
+
+            DataTable ret = this.findAll(Cmd);
+            if (noselect != "")
+                ret.Rows.Add(0, noselect);
+            this.SQLClose();
+
+            return ret;
         }
         catch
         {
-
+            return new DataTable();
         }
-        return objTable;
     }
     #endregion
 

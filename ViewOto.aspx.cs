@@ -26,6 +26,11 @@ public partial class ViewOto : System.Web.UI.Page
             ItemId = Int32.Parse(Request["id"].ToString());
         }
         catch { }
+        try
+        {
+            ItemId = Int32.Parse(RouteData.Values["id"].ToString());
+        }
+        catch { }
 
         if (ItemId == 0) Response.Redirect("/");
 

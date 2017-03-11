@@ -79,45 +79,45 @@ public partial class SiteMaster : MasterPage
     {
         if (Session["THANHVIEN"] == null)
         {
-            strAction =  "<a href=\"/Member/Register.aspx\">";
-            strAction += "<img src=\"../Images/btnRegister.png\" alt=\"Đăng nhập\"></a>";
-            strAction += "<a href=\"/Member/Login.aspx\">";
-            strAction += "<img src=\"../Images/btnLogin.png\" alt=\"Đăng nhập\"></a>";
+            strAction = "<a href=\"dang-ky\">";
+            strAction += "<img src=\"/Images/btnRegister.png\" alt=\"Đăng nhập\"></a>";
+            strAction += "<a href=\"/dang-nhap\">";
+            strAction += "<img src=\"/Images/btnLogin.png\" alt=\"Đăng nhập\"></a>";
         }
         else
         {
             strAction = "<a href=\"#\">";
-            strAction += "<img src=\"../Images/btnAccount.png\" alt=\"Đăng nhập\">&nbsp;Xin chào " + Session["THANHVIEN"].ToString();
+            strAction += "<img src=\"/Images/btnAccount.png\" alt=\"Đăng nhập\">&nbsp;Xin chào " + Session["THANHVIEN"].ToString();
             strAction += "</a>";
             strAction += "&nbsp;&nbsp;&nbsp;";
             strAction += "<a href=\"/Member/Logout.aspx\">";
-            strAction += "<img src=\"../Images/btnLogout.png\" alt=\"Thoat\">&nbsp;Thoát";
+            strAction += "<img src=\"/Images/btnLogout.png\" alt=\"Thoat\">&nbsp;Thoát";
             strAction += "</a>";
         }
-        //if (!Page.IsPostBack)
-        //{
+        if (!Page.IsPostBack)
+        {
             this.objTableMenuHorizontal = this.objCategory.getDataForHorizontal();
             if (this.objTableMenuHorizontal.Rows.Count > 0)
             {
                 for (int i = 0; i < this.objTableMenuHorizontal.Rows.Count; i++)
                 {
-                    String urls ="";
-                    if(this.objTableMenuHorizontal.Rows[i]["MenuUrl"] != null && this.objTableMenuHorizontal.Rows[i]["MenuUrl"].ToString() != "")
+                    String urls = "";
+                    if (this.objTableMenuHorizontal.Rows[i]["MenuUrl"] != null && this.objTableMenuHorizontal.Rows[i]["MenuUrl"].ToString() != "")
                     {
                         urls = this.objTableMenuHorizontal.Rows[i]["MenuUrl"].ToString();
                     }
                     else
                     {
-                        urls = "/news.aspx?id=" + this.objTableMenuHorizontal.Rows[i]["Id"].ToString();
+                        urls = "/tin-tuc/cat-" + this.objTableMenuHorizontal.Rows[i]["Id"].ToString();
                     }
-                    
+
 
                     this.strMenuHorizontal += "<li><a runat=\"server\" href=\"" + urls + "\">" + this.objTableMenuHorizontal.Rows[i]["Name"].ToString() + "</a></li>";
                 }
             }
 
 
-        //}
+        }
     } 
     #endregion
 

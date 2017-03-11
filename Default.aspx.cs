@@ -34,6 +34,11 @@ public partial class _Default : Page
                 hangxe = Int32.Parse(Request["hangxe"].ToString());
             }
             catch { }
+            try
+            {
+                hangxe = Int32.Parse(RouteData.Values["hangxe"].ToString());
+            }
+            catch { }
 
             int dongxe = 0;
             try
@@ -83,14 +88,12 @@ public partial class _Default : Page
                 setDroplist(this.ddlHangXe, objHangXe.getDataCategoryToCombobox(), "NameHangXe", "IdHangXe");
                 this.ddlHangXe.SelectedValue = hangxe.ToString();
 
+                LoadHangXe(hangxe);
+                this.ddlDongXe.SelectedValue = dongxe.ToString();
+
                 TinhThanh objTinhThanh = new TinhThanh();
                 setDroplist(this.ddlTinhThanh, objTinhThanh.getDataCategoryToCombobox(), "NameTinhThanh", "IdTinhThanh");
                 this.ddlTinhThanh.SelectedValue = tinhthanh.ToString();
-
-                DongXe objDongXe = new DongXe();
-                setDroplist(this.ddlDongXe, objDongXe.getDataCategoryToCombobox(), "NameDongXe", "IdDongXe");
-                this.ddlDongXe.SelectedValue = dongxe.ToString();
-
 
             }
             catch
@@ -149,23 +152,32 @@ public partial class _Default : Page
 
         try
         {
-            if(rdr != "?") rdr += "&";
             int i = Int32.Parse(this.ddlDongXe.Text);
-            if(i != 0) rdr += "dongxe=" + i;
+            if (i != 0)
+            {
+                if (rdr != "?") rdr += "&";
+                rdr += "dongxe=" + i;
+            }
         }catch{}
 
         try
         {
-            if(rdr != "?") rdr += "&";
             int i = Int32.Parse(this.ddlTinhThanh.Text);
-            if(i != 0) rdr += "tinhthanh=" + i;
+            if (i != 0)
+            {
+                if (rdr != "?") rdr += "&";
+                rdr += "tinhthanh=" + i;
+            }
         }catch{}
 
         try
         {
-            if(rdr != "?") rdr += "&";
             int i = Int32.Parse(this.ddlTingTrang.Text);
-            if(i < 2) rdr += "tinhtrang=" + i;
+            if (i < 2)
+            {
+                if (rdr != "?") rdr += "&";
+                rdr += "tinhtrang=" + i;
+            }
         }catch{}
 
         if(txtSearchBox.Value != "")
@@ -179,4 +191,26 @@ public partial class _Default : Page
     }
     #endregion
 
+    protected void ddlHangXe_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            LoadHangXe(Int32.Parse(ddlHangXe.SelectedValue));
+        }
+        catch { }
+    }
+
+    public void LoadHangXe(int idHangxe = 0)
+    {
+        try
+        {
+            DongXe objDongXe = new DongXe();
+            setDroplist(this.ddlDongXe, objDongXe.getDataCategoryToCombobox(idHangxe,"Dòng xe"), "NameDongXe", "IdDongXe");
+            this.ddlDongXe.SelectedValue = "0";
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
 }

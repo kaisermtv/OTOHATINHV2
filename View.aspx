@@ -61,13 +61,13 @@
         <ItemTemplate>
             <div class="NewsHomeItem">
                 <div class="col-md-4" style="padding-left:0px">
-                    <a href="/View.aspx?id=<%# Eval("Id") %>">
+                    <a href="/tin-tuc/<%# TVSFunction.convertToUnSign2(Eval("Title").ToString()) + "-post" + Eval("Id") %>">
                         <img src="/Images/News/<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" style="width: 100%" />
                     </a>
                 </div>
                 <div class="col-md-8" style="padding-right:0px">
                     <div class="NewsTopTile">
-                        <a href="/View.aspx?id=<%# Eval("Id") %>"><%# Eval("Title") %></a>
+                        <a href="/tin-tuc/<%# TVSFunction.convertToUnSign2(Eval("Title").ToString()) + "-post" + Eval("Id") %>"><%# Eval("Title") %></a>
                     </div>
                     <div class="NewsTopShortContent">
                         <%# Eval("ShortContent").ToString() %>

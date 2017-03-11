@@ -48,7 +48,6 @@ public partial class QueryResult : System.Web.UI.Page
         dtlChucVu.DataSource = cpChucVu.DataSourcePaged;
         dtlChucVu.DataBind();
         }
-
         objTblNews = objNews.getTopShowHome(0, 5, querry, 0);
         if(objTblNews.Rows.Count > 0 )
         {

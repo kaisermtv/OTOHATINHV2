@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteHome.master" AutoEventWireup="true" CodeFile="QueryResult.aspx.cs" Inherits="QueryResult" %>
+﻿<%@ Page Title="TRANG TÌM KIẾM" Language="C#" MasterPageFile="~/SiteHome.master" AutoEventWireup="true" CodeFile="QueryResult.aspx.cs" Inherits="QueryResult" %>
 <%@ Register TagPrefix="cc1" Namespace="SiteUtils" Assembly="CollectionPager" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 
@@ -15,7 +15,6 @@
         </div>
     </div>
     <br />
-
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
       <div class="DeafaultHeader">

@@ -18,7 +18,7 @@
       <script>
           function imgCatchError(src) {
               src.onerror = "";
-              src.src = "Images/design/no_img.jpg";
+              src.src = "/Images/design/no_img.jpg";
               return true;
           }
     </script>
@@ -179,110 +179,110 @@
                 <div class ="DivP20L">
                     <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Camry
+                     <a href="QueryResult.aspx?que=Toyota Camry">   Xe Toyota Camry</a>
                     </p>
                    <p style ="margin-bottom:5px;">
-                        Xe Toyota Vios
+                   <a href="QueryResult.aspx?que=Toyota Vios">      Xe Toyota Vios</a>
                     </p>
                    <p style ="margin-bottom:5px;">
-                        Xe Toyota Altis
+                  <a href="QueryResult.aspx?que=Toyota Altis">       Xe Toyota Altis</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Fortune
+                  <a href="QueryResult.aspx?que=Toyota Fortune">       Xe Toyota Fortune</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Yaris
+                    <a href="QueryResult.aspx?que=Toyota Yaris">     Xe Toyota Yaris</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Venza
+                    <a href="QueryResult.aspx?que=Toyota Venza">     Xe Toyota Venza</a>
                     </p>
                     <br />
                 </div>
                 <div class ="DivP20L">
                     <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Camry
+                     <a href="QueryResult.aspx?que=Toyota Camry">   Xe Toyota Camry</a>
                     </p>
                    <p style ="margin-bottom:5px;">
-                        Xe Toyota Vios
+                   <a href="QueryResult.aspx?que=Toyota Vios">      Xe Toyota Vios</a>
                     </p>
                    <p style ="margin-bottom:5px;">
-                        Xe Toyota Altis
+                  <a href="QueryResult.aspx?que=Toyota Altis">       Xe Toyota Altis</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Fortune
+                  <a href="QueryResult.aspx?que=Toyota Fortune">       Xe Toyota Fortune</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Yaris
+                    <a href="QueryResult.aspx?que=Toyota Yaris">     Xe Toyota Yaris</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Venza
+                    <a href="QueryResult.aspx?que=Toyota Venza">     Xe Toyota Venza</a>
                     </p>
                     <br />
                 </div>
                 <div class ="DivP20L">
                     <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Camry
+                     <a href="QueryResult.aspx?que=Toyota Camry">   Xe Toyota Camry</a>
                     </p>
                    <p style ="margin-bottom:5px;">
-                        Xe Toyota Vios
+                   <a href="QueryResult.aspx?que=Toyota Vios">      Xe Toyota Vios</a>
                     </p>
                    <p style ="margin-bottom:5px;">
-                        Xe Toyota Altis
+                  <a href="QueryResult.aspx?que=Toyota Altis">       Xe Toyota Altis</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Fortune
+                  <a href="QueryResult.aspx?que=Toyota Fortune">       Xe Toyota Fortune</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Yaris
+                    <a href="QueryResult.aspx?que=Toyota Yaris">     Xe Toyota Yaris</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Venza
+                    <a href="QueryResult.aspx?que=Toyota Venza">     Xe Toyota Venza</a>
                     </p>
                     <br />
                 </div>
                 <div class ="DivP20L">
-                    <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
+                      <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Camry
+                     <a href="QueryResult.aspx?que=Toyota Camry">   Xe Toyota Camry</a>
                     </p>
                    <p style ="margin-bottom:5px;">
-                        Xe Toyota Vios
+                   <a href="QueryResult.aspx?que=Toyota Vios">      Xe Toyota Vios</a>
                     </p>
                    <p style ="margin-bottom:5px;">
-                        Xe Toyota Altis
+                  <a href="QueryResult.aspx?que=Toyota Altis">       Xe Toyota Altis</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Fortune
+                  <a href="QueryResult.aspx?que=Toyota Fortune">       Xe Toyota Fortune</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Yaris
+                    <a href="QueryResult.aspx?que=Toyota Yaris">     Xe Toyota Yaris</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Venza
+                    <a href="QueryResult.aspx?que=Toyota Venza">     Xe Toyota Venza</a>
                     </p>
                     <br />
                 </div>
-                <div class ="DivP20R">
-                    <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
+                <div class ="DivP20L">
+                      <p style ="margin-top:20px; font-weight:bold;">Bán xe Toyota</p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Camry
+                     <a href="QueryResult.aspx?que=Toyota Camry">   Xe Toyota Camry</a>
                     </p>
                    <p style ="margin-bottom:5px;">
-                        Xe Toyota Vios
+                   <a href="QueryResult.aspx?que=Toyota Vios">      Xe Toyota Vios</a>
                     </p>
                    <p style ="margin-bottom:5px;">
-                        Xe Toyota Altis
+                  <a href="QueryResult.aspx?que=Toyota Altis">       Xe Toyota Altis</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Fortune
+                  <a href="QueryResult.aspx?que=Toyota Fortune">    Xe Toyota Fortune</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Yaris
+                    <a href="QueryResult.aspx?que=Toyota Yaris">     Xe Toyota Yaris</a>
                     </p>
                     <p style ="margin-bottom:5px;">
-                        Xe Toyota Venza
+                    <a href="QueryResult.aspx?que=Toyota Venza">     Xe Toyota Venza</a>
                     </p>
                     <br />
                 </div>
@@ -304,20 +304,20 @@
                             Câu hỏi thường gặp
                         </p>
                         <p style="margin-bottom: 5px; color:#fff;">
-                            Liên hệ, trợ giúp
+                           <a style="color:#fff" href="Contact.aspx#help">  Liên hệ, trợ giúp</a>
                         </p>
                         <br />
                     </div>
                     <div class="col-md-4" style ="padding-left:0px;">
                         <p style="margin-top: 20px; font-weight: bold; color:#fff;">Về chúng tôi</p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                            Giới thiệu
+                        <p style="margin-bottom: 5px; color:#fff; " >
+                    <a style="color:#fff" href="Contact.aspx#about">        Giới thiệu</a>
                         </p>
                         <p style="margin-bottom: 5px; color:#fff;">
-                            Quy chế hoạt động
+                        <a style="color:#fff"  href="Contact.aspx#quyche">   Quy chế hoạt động</a>
                         </p>
                         <p style="margin-bottom: 5px; color:#fff;">
-                            Tuyển dụng
+                      <a style="color:#fff" href="Contact.aspx#tuyendung">         Tuyển dụng</a>
                         </p>
                         <br />
                     </div>

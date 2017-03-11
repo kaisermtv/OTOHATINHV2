@@ -139,7 +139,6 @@
         <ContentTemplate>
 
     <!-- TIM KIEM XE O TO -->
-            <p><%=strHtmlTest %></p>
     <div class="DeafaultHeaderRight">
         <div class="DeafaultHeaderRightName">
             TÌM XE Ô TÔ

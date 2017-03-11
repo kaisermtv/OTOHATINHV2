@@ -69,6 +69,13 @@ public partial class _Default : Page
             }
             catch { }
 
+            int namsanxuat = 0;
+            try
+            {
+                namsanxuat = Int32.Parse(Request["namsx"].ToString());
+            }
+            catch { }
+
             String Search = "";
             try
             {
@@ -105,6 +112,10 @@ public partial class _Default : Page
                 MucGia objMucGia = new MucGia();
                 setDroplist(this.ddlMucGia, objMucGia.getDataCategoryToCombobox("Mức giá"), "NameMucGia", "IdMucGia");
                 this.ddlMucGia.SelectedValue = mucgia.ToString();
+
+                NamSanXuat objNamSanXuat = new NamSanXuat();
+                setDroplist(this.ddlNamSX, objNamSanXuat.getDataCategoryToCombobox("Năm SX"), "NameNamSanXuat", "IdNamSanXuat");
+                this.ddlNamSX.SelectedValue = namsanxuat.ToString();
 
             }
             catch
@@ -188,6 +199,17 @@ public partial class _Default : Page
             {
                 if (rdr != "?") rdr += "&";
                 rdr += "mucgia=" + i;
+            }
+        }
+        catch { }
+
+        try
+        {
+            int i = Int32.Parse(this.ddlNamSX.Text);
+            if (i != 0)
+            {
+                if (rdr != "?") rdr += "&";
+                rdr += "namsx=" + i;
             }
         }
         catch { }

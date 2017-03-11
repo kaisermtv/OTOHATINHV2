@@ -84,7 +84,7 @@
     </asp:DataList>
     <cc1:CollectionPager ID="cpChucVu" runat="server" BackText="" FirstText="Đầu"
         ControlCssClass="ProductPage" LabelText="" LastText="Cuối" NextText="" UseSlider="true"
-        ResultsFormat="" BackNextLinkSeparator="" ResultsLocation="None" BackNextLocation="None"
+        ResultsFormat="" BackNextLinkSeparator="" ResultsLocation="None" BackNextLocation="None" 
         PageNumbersSeparator="&nbsp;">
     </cc1:CollectionPager>
     <br />
@@ -111,7 +111,7 @@
     <div class="col-md-7" style="padding-right: 0px !important; padding-left: 15px; margin-right: 0px;">
         <asp:DataList ID="dtlTuVan" runat="server" RepeatDirection="Horizontal" RepeatColumns="1" Width="100%">
             <ItemTemplate>
-                <div class="NewsHomeItem">
+                <div class="NewsHomeItem" style="height:100px !important ; overflow:hidden">
                     <div class="NewsHomeItemLeft">
                         <a href="/tin-tuc/<%# TVSFunction.convertToUnSign2(Eval("Title").ToString()) + "-post" + Eval("Id") %>">
                             <img onerror="imgCatchError(this)" src="/Images/News/<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" style="width: 100%" />

@@ -173,4 +173,19 @@ public partial class SiteHome : MasterPage
         Response.Redirect("/Member/Post.aspx");
     }
     #endregion
+    protected void imgSearch_Click(object sender, ImageClickEventArgs e)
+    {
+        #region getQuerryString
+        string que = txtSearchBox.Value;
+        if(!(que == null) & !(que == ""))
+        {
+            Response.Redirect("QueryResult.aspx" + "?que=" + que);
+            
+                    }
+        #endregion
+        else
+        {
+            return;
+        }
+    }
 }

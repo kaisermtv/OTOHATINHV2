@@ -305,10 +305,10 @@
 }
 .NewsHotImg img
 {
-	display:table;
-	max-width:290px;
-	max-height:180px;
-	height:180px;
+		display:table;
+	max-width:300px ;
+	max-height:300px;
+	height:300px;
 }
 .NewsHotTitle
 {

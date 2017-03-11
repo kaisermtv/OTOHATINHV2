@@ -70,6 +70,16 @@
                     </div>
                 </div>
 
+                <div class="RowRegister">
+                    <div class="LeftPost">Hộp số: </div>
+                    <div class="RightPost">
+                        <asp:DropDownList ID="ddlHopSo" runat="server" CssClass="form-control" Style="width: 100%;">
+                            <asp:ListItem Value="0">Hộp số tự động</asp:ListItem>
+                            <asp:ListItem Value="1">Hộp số sàn</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+
             </div>
             <div class="col-md-6" style="padding-left: 0px; padding-right: 0px;">
 
@@ -127,7 +137,7 @@
             <div style="border: solid 1px red; height: 100px;">
                 <img id="preview" src="<%=htxtimg1.Value %>" style="height: 100px !important; width: 100%" alt="" />
                 <label class="file-upload" style="margin-top: 1px;">
-                    <input type="hidden" ID="htxtimg1" runat="server" Width="10px"/>
+                    <input type="hidden" id="htxtimg1" runat="server" width="10px" />
                     <asp:FileUpload ID="FileUpload1" onchange="LoadImgSrc(this,'#preview','htxtimg1');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
                 </label>
             </div>
@@ -136,7 +146,7 @@
             <div style="border: solid 1px red; height: 100px;">
                 <img id="preview2" src="<%=htxtimg2.Value %>" style="height: 100px !important; width: 100%" alt="" />
                 <label class="file-upload" style="margin-top: 1px;">
-                    <input type="hidden" ID="htxtimg2" runat="server" Width="10px"/>
+                    <input type="hidden" id="htxtimg2" runat="server" width="10px" />
                     <asp:FileUpload ID="FileUpload2" onchange="LoadImgSrc(this,'#preview2','htxtimg2');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
                 </label>
             </div>
@@ -145,7 +155,7 @@
             <div style="border: solid 1px red; height: 100px;">
                 <img id="preview3" src="<%=htxtimg3.Value %>" style="height: 100px !important; width: 100%" alt="" />
                 <label class="file-upload" style="margin-top: 1px;">
-                    <input type="hidden" ID="htxtimg3" runat="server" Width="10px"/>
+                    <input type="hidden" id="htxtimg3" runat="server" width="10px" />
                     <asp:FileUpload ID="FileUpload3" onchange="LoadImgSrc(this,'#preview3','htxtimg3');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
                 </label>
             </div>
@@ -154,7 +164,7 @@
             <div style="border: solid 1px red; height: 100px;">
                 <img id="preview4" src="<%=htxtimg3.Value %>" style="height: 100px !important; width: 100%" alt="" />
                 <label class="file-upload" style="margin-top: 1px;">
-                    <input type="hidden" ID="htxtimg4" runat="server" Width="10px"/>
+                    <input type="hidden" id="htxtimg4" runat="server" width="10px" />
                     <asp:FileUpload ID="FileUpload4" onchange="LoadImgSrc(this,'#preview4','htxtimg4');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
                 </label>
             </div>
@@ -163,21 +173,21 @@
             <div style="border: solid 1px red; height: 100px;">
                 <img id="preview5" src="<%=htxtimg3.Value %>" style="height: 100px !important; width: 100%" alt="" />
                 <label class="file-upload" style="margin-top: 1px;">
-                    <input type="hidden" ID="htxtimg5" runat="server" Width="10px"/>
+                    <input type="hidden" id="htxtimg5" runat="server" width="10px" />
                     <asp:FileUpload ID="FileUpload5" onchange="LoadImgSrc(this,'#preview5','htxtimg5');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
                 </label>
             </div>
         </div>
     </div>
 
-    <div class="AdminItem" style="margin-top:30px">
+    <div class="AdminItem" style="margin-top: 30px">
         <center>
             <asp:Button ID="btnSave" runat="server" Text="Ghi nhận" CssClass="btn btn-primary" OnClick="btnSave_Click" />
             <asp:Button ID="btnCancel" runat="server" Text="Thoát" CssClass="btn btn-default" OnClick="btnCancel_Click" />
         </center>
     </div>
     <script>
-        function LoadImgSrc(input, img,imp) {
+        function LoadImgSrc(input, img, imp) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
@@ -194,6 +204,6 @@
         }
 
     </script>
-   
+
 </asp:Content>
 

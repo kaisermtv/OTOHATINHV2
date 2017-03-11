@@ -62,6 +62,13 @@ public partial class _Default : Page
             catch { }
             this.ddlTingTrang.SelectedValue = tinhtrang.ToString();
 
+            int mucgia = 0;
+            try
+            {
+                mucgia = Int32.Parse(Request["mucgia"].ToString());
+            }
+            catch { }
+
             String Search = "";
             try
             {
@@ -85,15 +92,19 @@ public partial class _Default : Page
             try
             {
                 HangXe objHangXe = new HangXe();
-                setDroplist(this.ddlHangXe, objHangXe.getDataCategoryToCombobox(), "NameHangXe", "IdHangXe");
+                setDroplist(this.ddlHangXe, objHangXe.getDataCategoryToCombobox("Hãng xe"), "NameHangXe", "IdHangXe");
                 this.ddlHangXe.SelectedValue = hangxe.ToString();
 
                 LoadHangXe(hangxe);
                 this.ddlDongXe.SelectedValue = dongxe.ToString();
 
                 TinhThanh objTinhThanh = new TinhThanh();
-                setDroplist(this.ddlTinhThanh, objTinhThanh.getDataCategoryToCombobox(), "NameTinhThanh", "IdTinhThanh");
+                setDroplist(this.ddlTinhThanh, objTinhThanh.getDataCategoryToCombobox("Tỉnh thành"), "NameTinhThanh", "IdTinhThanh");
                 this.ddlTinhThanh.SelectedValue = tinhthanh.ToString();
+
+                MucGia objMucGia = new MucGia();
+                setDroplist(this.ddlMucGia, objMucGia.getDataCategoryToCombobox("Mức giá"), "NameMucGia", "IdMucGia");
+                this.ddlMucGia.SelectedValue = mucgia.ToString();
 
             }
             catch
@@ -169,6 +180,17 @@ public partial class _Default : Page
                 rdr += "tinhthanh=" + i;
             }
         }catch{}
+
+        try
+        {
+            int i = Int32.Parse(this.ddlMucGia.Text);
+            if (i != 0)
+            {
+                if (rdr != "?") rdr += "&";
+                rdr += "mucgia=" + i;
+            }
+        }
+        catch { }
 
         try
         {

@@ -107,7 +107,7 @@ public class MucGia
     #endregion
 
     #region method getDataCategoryToCombobox
-    public DataTable getDataCategoryToCombobox()
+    public DataTable getDataCategoryToCombobox(String noselect = "Không chọn")
     {
         DataTable objTable = new DataTable();
         try
@@ -123,7 +123,9 @@ public class MucGia
             sqlCon.Close();
             sqlCon.Dispose();
             objTable = ds.Tables[0];
-            objTable.Rows.Add(0, "Không chọn");
+
+            if (noselect != "")
+                objTable.Rows.Add(0, noselect);
         }
         catch
         {

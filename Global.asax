@@ -12,6 +12,8 @@
         routes.MapPageRoute("trangchu", "trang-chu", "~/Default.aspx");
         routes.MapPageRoute("trangchu1", "{name}-post{id}", "~/ViewOto.aspx", false, rvdId);
         routes.MapPageRoute("trangchu2", "{name}-hx{hangxe}", "~/Default.aspx");
+        routes.MapPageRoute("trangchu6", "{name}-tt{tinhthanh}", "~/Default.aspx");
+        routes.MapPageRoute("trangchu7", "{name}-kd{kieudang}", "~/Default.aspx");
         routes.MapPageRoute("trangchu3", "trang-chu/{name}-post{id}", "~/ViewOto.aspx", false, rvdId);
         routes.MapPageRoute("trangchu4", "trang-chu/{name}-hx{hangxe}", "~/Default.aspx");
 
@@ -24,6 +26,8 @@
         routes.MapPageRoute("dangky", "dang-ky", "~/Member/Register.aspx");
 
         routes.MapPageRoute("lienhe", "lien-he", "~/Contact.aspx");
+
+        routes.MapPageRoute("timkiem", "tim-kiem", "~/QueryResult.aspx");
 
         
         

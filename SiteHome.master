@@ -179,165 +179,44 @@
             <br />
             <div class="row">
                 <div class="container" style="margin-left: 10px; padding-left: 20px; padding-right: 0px; background-color: #f2f2f2;">
-                  
-                      <% int x = objQuickHref.Rows.Count;
-                        if(x >0 )
-                        { 
-                    %>
                     
-                        <% for(int i = 0 ; i < x ; i+=6 ) %>
-                        <%{ %>
-
-                           <div class="DivP20L">
+                    <div class="DivP20L">
                         <p style="margin-top: 20px; font-weight: bold;">BÁN XE</p>
-                                <p style="margin-bottom: 5px;">
-                               
-                            <a href="QueryResult.aspx?hangxe=Xe <%=objQuickHref.Rows[i]["NameHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i]["NameHangXe"].ToString() %></a>
-                           </p>
-                               <% if (i+2<x)
-                                  {%>
-                                <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?hangxe=Xe <%=objQuickHref.Rows[i+1]["NameHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i+1]["NameHangXe"].ToString() %></a>
-                           </p>
-                               <%} %>
-                               <% if (i+3<x)
-                                  {%>
-                                 <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?que=hangxe <%=objQuickHref.Rows[i+2]["NameHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i+2]["NameHangXe"].ToString() %></a>
-                           </p>
-                               <% }%>
+                        <% for (int i = 0; i < objQuickHref.Rows.Count && i < 6; i++){ %>
+                            <p style="margin-bottom: 5px;">
+                                <a href="/<%=TVSFunction.convertToUnSign2(objQuickHref.Rows[i]["NameHangXe"].ToString()) %>-hx<%=objQuickHref.Rows[i]["IdHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i]["NameHangXe"].ToString() %></a>
+                            </p>
+                        <% } %>
+                    </div>
 
-                                <% if (i+4<x)
-                                  {%>
-                                 <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?hangxe=Xe <%=objQuickHref.Rows[i+3]["NameHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i+3]["NameHangXe"].ToString() %></a>
-                           </p>
-                               <% }%>
-
-                                <% if (i+5<x)
-                                  {%>
-                                 <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?hangxe=Xe <%=objQuickHref.Rows[i+4]["NameHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i+4]["NameHangXe"].ToString() %></a>
-                           </p>
-                               <% }%>
-                                <% if (i+5<x)
-                                  {%>
-                                 <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?hangxe=Xe <%=objQuickHref.Rows[i+5]["NameHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i+5]["NameHangXe"].ToString() %></a>
-                           </p>
-                               <% }%>
-                        <br />
-                         </div>
-                        <%} %>
-                    <%
-                        }
-                    %>
+                    <div class="DivP20L">
+                        <p style="margin-top: 20px; font-weight: bold;">BÁN XE</p>
+                        <% for (int i = 6; i < objQuickHref.Rows.Count && i < 12; i++){ %>
+                            <p style="margin-bottom: 5px;">
+                                <a href="/<%=TVSFunction.convertToUnSign2(objQuickHref.Rows[i]["NameHangXe"].ToString()) %>-hx<%=objQuickHref.Rows[i]["IdHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i]["NameHangXe"].ToString() %></a>
+                            </p>
+                        <% } %>
+                    </div>
 
                     <!----->
-
-                      <% int y = objQickLocationHref.Rows.Count;
-                        if(y >0 )
-                        { 
-                        %>
-                        <% for(int i = 0 ; i < y ; i+=6 ) %>
-                        <%{ %>
-                           <div class="DivP20L">
+                    <div class="DivP20L">
                         <p style="margin-top: 20px; font-weight: bold;">TỈNH THÀNH</p>
-                                <p style="margin-bottom: 5px;">
-                               
-                            <a href="QueryResult.aspx?location=<%=objQickLocationHref.Rows[i]["NameTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i]["NameTinhThanh"].ToString() %></a>
-                           </p>
-                               <% if (i+1<y)
-                                  {%>
-                                <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?location=<%=objQickLocationHref.Rows[i+1]["NameTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i+1]["NameTinhThanh"].ToString() %></a>
-                           </p>
-                               <%} %>
-                               <% if (i+2<y)
-                                  {%>
-                                 <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?location=<%=objQickLocationHref.Rows[i+2]["NameTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i+2]["NameTinhThanh"].ToString() %></a>
-                           </p>
-                               <% }%>
+                        <% for (int i = 0; i < objQickLocationHref.Rows.Count && i < 6; i ++){ %>
+                            <p style="margin-bottom: 5px;">
+                                <a href="/<%=TVSFunction.convertToUnSign2(objQickLocationHref.Rows[i]["NameTinhThanh"].ToString()) %>-tt<%=objQickLocationHref.Rows[i]["IdTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i]["NameTinhThanh"].ToString() %></a>
+                            </p>
+                        <% } %>
+                    </div>
 
-                                <% if (i+3<y)
-                                  {%>
-                                 <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?location=Tỉnh <%=objQickLocationHref.Rows[i+3]["NameTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i+3]["NameTinhThanh"].ToString() %></a>
-                           </p>
-                               <% }%>
-                                <% if (i+4<y)
-                                  {%>
-                                 <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?location=<%=objQickLocationHref.Rows[i+4]["NameTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i+4]["NameTinhThanh"].ToString() %></a>
-                           </p>
-                               <% }%>
-                                   <% if (i+5<y)
-                                  {%>
-                                 <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?location=<%=objQickLocationHref.Rows[i+5]["NameTinhThanh"].ToString() %>">Tỉnh <%=objQickLocationHref.Rows[i+5]["NameTinhThanh"].ToString() %></a>
-                           </p>
-                               <% }%>
-                        <br />
-                         </div>
-                        <%} %>
-                    <%
-                        }
-                    %>
+                    <div class="DivP20L">
+                        <p style="margin-top: 20px; font-weight: bold;">TỈNH THÀNH</p>
+                        <% for (int i = 0; i < objQickBrandHref.Rows.Count && i < 6; i++){ %>
+                            <p style="margin-bottom: 5px;">
+                                <a href="/<%=TVSFunction.convertToUnSign2(objQickBrandHref.Rows[i]["NameKieuDang"].ToString()) %>-kd<%=objQickBrandHref.Rows[i]["IdKieuDang"].ToString() %>">Tỉnh <%=objQickBrandHref.Rows[i]["NameKieuDang"].ToString() %></a>
+                            </p>
+                        <% } %>
+                    </div>
 
-                    <% int z = objQickBrandHref.Rows.Count;
-                        if(z >0 )
-                        { 
-                    %>
-                    
-                        <% for(int i = 0 ; i < z ; i+=6 ) %>
-                        <%{ %>
-                           <div class="DivP20L">
-                        <p style="margin-top: 20px; font-weight: bold;">KIỂU XE</p>
-                                <p style="margin-bottom: 5px;">
-                               
-                            <a href="QueryResult.aspx?kieuxe= <%=objQickBrandHref.Rows[i]["NameKieuDang"].ToString() %>"> <%=objQickBrandHref.Rows[i]["NameKieuDang"].ToString() %></a>
-                           </p>
-                               <% if (i+1<z)
-                                  {%>
-                                <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?kieuxe= <%=objQickBrandHref.Rows[i+1]["NameKieuDang"].ToString() %>"> <%=objQickBrandHref.Rows[i+1]["NameKieuDang"].ToString() %></a>
-                           </p>
-                               <%} %>
-                               <% if (i+2<z)
-                                  {%>
-                                 <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?kieuxe= <%=objQickBrandHref.Rows[i+2]["NameKieuDang"].ToString() %>"> <%=objQickBrandHref.Rows[i+2]["NameKieuDang"].ToString() %></a>
-                           </p>
-                               <% }%>
-
-                                <% if (i+3<z)
-                                  {%>
-                                 <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?kieuxe= <%=objQickBrandHref.Rows[i+3]["NameKieuDang"].ToString() %>"> <%=objQickBrandHref.Rows[i+3]["NameKieuDang"].ToString() %></a>
-                           </p>
-                               <% }%>
-
-                                <% if (i+4<z)
-                                  {%>
-                                 <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?kieuxe= <%=objQickBrandHref.Rows[i+4]["NameKieuDang"].ToString() %>"> <%=objQickBrandHref.Rows[i+4]["NameKieuDang"].ToString() %></a>
-                           </p>
-                               <% }%>
-                                   <% if (i+5<z)
-                                  {%>
-                                 <p style="margin-bottom: 5px;">
-                            <a href="QueryResult.aspx?kieuxe= <%=objQickBrandHref.Rows[i+5]["NameKieuDang"].ToString() %>"> <%=objQickBrandHref.Rows[i+5]["NameKieuDang"].ToString() %></a>
-                           </p>
-                               <% }%>
-
-                        <br />
-                         </div>
-                        <%} %>
-                    <%
-                        }
-                    %>
-                
                 </div>
             </div>
         </div>

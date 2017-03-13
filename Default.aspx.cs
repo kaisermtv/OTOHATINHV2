@@ -53,6 +53,11 @@ public partial class _Default : Page
                 tinhthanh = Int32.Parse(Request["tinhthanh"].ToString());
             }
             catch { }
+            try
+            {
+                tinhthanh = Int32.Parse(RouteData.Values["tinhthanh"].ToString());
+            }
+            catch { }
 
             int tinhtrang = 2;
             try
@@ -76,6 +81,13 @@ public partial class _Default : Page
             }
             catch { }
 
+            int kieudang = 0;
+            try
+            {
+                kieudang = Int32.Parse(RouteData.Values["kieudang"].ToString());
+            }
+            catch { }
+
             String Search = "";
             try
             {
@@ -86,7 +98,7 @@ public partial class _Default : Page
 
             Oto objOto = new Oto();
 
-            DataTable objData = objOto.getDataShowHome(Search, hangxe, dongxe, tinhthanh, tinhtrang);
+            DataTable objData = objOto.getDataShowHome(Search, hangxe, dongxe, tinhthanh, tinhtrang, kieudang);
             strHtmlTest = objOto.Message;
             cpChucVu.Visible = true;
             cpChucVu.MaxPages = 1000;

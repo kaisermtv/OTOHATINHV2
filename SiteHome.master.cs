@@ -134,6 +134,7 @@ public partial class SiteHome : MasterPage
 
             HangXe objHangXe = new HangXe();
             DataTable objDataHangXe = objHangXe.getDataToRightElemant();
+            objQuickHref = objDataHangXe;
 
             int a = 0;
             foreach (DataRow objDataRow in objDataHangXe.Rows)
@@ -181,11 +182,11 @@ public partial class SiteHome : MasterPage
     {
         #region getQuerryString
         string que = txtSearchBox.Value;
-        if(!(que == null) & !(que == ""))
+        if (!(que == null) & !(que == ""))
         {
-            Response.Redirect("QueryResult.aspx" + "?que=" + que);
-            
-                    }
+            Response.Redirect("/tim-kiem/" + "?que=" + que);
+
+        }
         #endregion
         else
         {
@@ -197,12 +198,12 @@ public partial class SiteHome : MasterPage
     #region 
     public void getQuickItenAboveFooter()
     {
-        HangXe objOto = new HangXe();
-        objQuickHref = objOto.getData("");
+        //HangXe objOto = new HangXe();
+        //objQuickHref = objOto.getData("");
         TinhThanh objAdress = new TinhThanh();
-        objQickLocationHref = objAdress.getData("");
+        objQickLocationHref = objAdress.getDataCategoryToCombobox("");
         KieuDang objKieuDang = new KieuDang();
-        objQickBrandHref = objKieuDang.getData("");
+        objQickBrandHref = objKieuDang.getDataCategoryToCombobox("");
 
     }
 

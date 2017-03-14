@@ -53,7 +53,7 @@ public class Oto : DataClass
     #endregion
 
     #region getData
-    public DataTable getData(string searchKey = "", int idHangXe = 0,int idDongXe = 0)
+    public DataTable getData(string searchKey = "",int idtrangthai = 4, int idHangXe = 0,int idDongXe = 0)
     {
         try
         {
@@ -76,6 +76,12 @@ public class Oto : DataClass
             {
                 Cmd.CommandText += " AND IdDongXe = @IdDongXe";
                 Cmd.Parameters.Add("IdDongXe", SqlDbType.Int).Value = idDongXe;
+            }
+
+            if (idtrangthai != 4)
+            {
+                Cmd.CommandText += " AND IdTrangThai = @IdTrangThai";
+                Cmd.Parameters.Add("IdTrangThai", SqlDbType.Int).Value = idtrangthai;
             }
 
             Cmd.CommandText += " ORDER BY [NgayDang] DESC";
@@ -101,7 +107,7 @@ public class Oto : DataClass
     #endregion
 
     #region getDataShowHome
-    public DataTable getDataShowHome(string searchKey = "", int idHangXe = 0, int idDongXe = 0,int idTinhThanh = 0,int idTinhTrang = 2,int idKieuDang= 0)
+    public DataTable getDataShowHome(string searchKey = "", int idHangXe = 0, int idDongXe = 0,int idTinhThanh = 0,int idTinhTrang = 2,int idKieuDang= 0,int namsx = 0,int IdMucGia = 0)
     {
         try
         {
@@ -123,7 +129,7 @@ public class Oto : DataClass
             Cmd.CommandText += " LEFT JOIN [tblKieuDang] AS kd ON oto.[IdKieuDang] = kd.[IdKieuDang]";
             Cmd.CommandText += " LEFT JOIN [tblThanhVien] AS tv ON oto.[IdMember] = tv.[IdThanhVien]";
            // Cmd.CommandText += " LEFT JOIN [tblHopSo] AS hs ON oto.[IdHopSo] = hs.[IdHopSo]";
-            Cmd.CommandText += " WHERE 1=1";
+            Cmd.CommandText += " WHERE oto.IdTrangThai = 1";
 
             if (searchKey.Trim() != "")
             {
@@ -160,6 +166,74 @@ public class Oto : DataClass
                 Cmd.Parameters.Add("idKieuDang", SqlDbType.Int).Value = idKieuDang;
             }
 
+            if (namsx > 0)
+            {
+                NamSanXuat objNamSanXuat = new NamSanXuat();
+                DataTable objData = objNamSanXuat.getDataById(namsx);
+                if(objData.Rows.Count > 0)
+                {
+                    int tunam = 0;
+                    try
+                    {
+                        tunam = Int32.Parse(objData.Rows[0]["TuNam"].ToString());
+                    }
+                    catch { }
+                    
+                    if (tunam != 0)
+                    {
+                        Cmd.CommandText += " AND oto.NamSanXuat >= @TuNam";
+                        Cmd.Parameters.Add("TuNam", SqlDbType.Int).Value = tunam;
+                    }
+
+                    int dennam = 0;
+                    try
+                    {
+                        dennam = Int32.Parse(objData.Rows[0]["DenNam"].ToString());
+                    }
+                    catch { }
+                    if (dennam != 0)
+                    {
+                        Cmd.CommandText += " AND oto.NamSanXuat <= @DenNam";
+                        Cmd.Parameters.Add("DenNam", SqlDbType.Int).Value = dennam;
+                    }
+
+                }
+
+            }
+
+            if(IdMucGia > 0)
+            {
+                MucGia objMucGia = new MucGia();
+                DataTable objData = objMucGia.getDataById(IdMucGia);
+                if (objData.Rows.Count > 0)
+                {
+                    float tugia = 0;
+                    try
+                    {
+                        tugia = float.Parse(objData.Rows[0]["TuGia"].ToString());
+                    }
+                    catch { }
+                    if ( tugia != 0)
+                    {
+                        Cmd.CommandText += " AND oto.GiaBan >= @TuGia";
+                        Cmd.Parameters.Add("TuGia", SqlDbType.Float).Value = tugia;
+                    }
+
+                    float dengia = 0;
+                    try
+                    {
+                        dengia = float.Parse(objData.Rows[0]["DenGia"].ToString());
+                    }
+                    catch { }
+                    if (dengia != 0)
+                    {
+                        Cmd.CommandText += " AND oto.GiaBan <= @DenGia";
+                        Cmd.Parameters.Add("DenGia", SqlDbType.Float).Value = dengia;
+                    }
+
+                }
+            }
+
             Cmd.CommandText += " ORDER BY oto.[NgayDang] DESC";
 
             DataTable ret = this.findAll(Cmd);
@@ -176,9 +250,6 @@ public class Oto : DataClass
         }
     }
     #endregion
-
-
-    
 
     #region getDataLienQuan
     public DataTable getDataLienQuan(int limit = 5, int tinlq = 0, int idDongXe = 0)
@@ -209,7 +280,7 @@ public class Oto : DataClass
             Cmd.CommandText += " LEFT JOIN [tblKieuDang] AS kd ON oto.[IdKieuDang] = kd.[IdKieuDang]";
             Cmd.CommandText += " LEFT JOIN [tblThanhVien] AS tv ON oto.[IdMember] = tv.[IdThanhVien]";
             // Cmd.CommandText += " LEFT JOIN [tblHopSo] AS hs ON oto.[IdHopSo] = hs.[IdHopSo]";
-            Cmd.CommandText += " WHERE 1=1";
+            Cmd.CommandText += " WHERE oto.IdTrangThai = 1";
 
             if (tinlq != 0)
             {
@@ -265,7 +336,7 @@ public class Oto : DataClass
             Cmd.CommandText += " LEFT JOIN [tblKieuDang] AS kd ON oto.[IdKieuDang] = kd.[IdKieuDang]";
             Cmd.CommandText += " LEFT JOIN [tblThanhVien] AS tv ON oto.[IdMember] = tv.[IdThanhVien]";
             // Cmd.CommandText += " LEFT JOIN [tblHopSo] AS hs ON oto.[IdHopSo] = hs.[IdHopSo]";
-            Cmd.CommandText += " WHERE oto.[IdOto] = @id";
+            Cmd.CommandText += " WHERE oto.[IdOto] = @id AND IdTrangThai = 1";
             Cmd.Parameters.Add("id", SqlDbType.Int).Value = id;
 
 
@@ -344,7 +415,7 @@ public class Oto : DataClass
     public bool update(int id,String IdNameOto, String Mota, float GiaBan, String NamSanXuat,
                 int IdTinhTrang, int IdXuatXu, int IdHopSo, int IdKieuDang, int IdNhienLieu,
                 int IdTinhThanh, int IdMauSac, int IdSoCho, int IdSoCua, int IdHangXe, int IdDongXe,
-                String img1, String img2, String img3, String img4, String img5)
+                String img1, String img2, String img3, String img4, String img5,int IdTrangThai)
     {
         try
         {
@@ -354,7 +425,7 @@ public class Oto : DataClass
             Cmd.CommandText += " [IdHopSo] = @IdHopSo , [NamSanXuat] = @NamSanXuat, [IdKieuDang] = @IdKieuDang,";
             Cmd.CommandText += " [IdNhienLieu] = @IdNhienLieu, [IdTinhThanh] = @IdTinhThanh, [IdMauSac] = @IdMauSac,";
             Cmd.CommandText += " [IdSoCho] = @IdSoCho, [IdSoCua] = @IdSoCua, [IdHangXe] = @IdHangXe, [IdDongXe] = @IdDongXe,";
-            Cmd.CommandText += " [GiaBan] = @GiaBan, [Mota] = @Mota, ";
+            Cmd.CommandText += " [GiaBan] = @GiaBan, [Mota] = @Mota,[IdTrangThai] = @IdTrangThai, ";
             Cmd.CommandText += " NameImage1 = @img1, NameImage2 = @img2, NameImage3 = @img3, NameImage4 = @img4, NameImage5 = @img5";
             Cmd.CommandText += " WHERE [IdOto] = @ID";
             Cmd.Parameters.Add("ID", SqlDbType.Int).Value = id;
@@ -375,6 +446,7 @@ public class Oto : DataClass
             Cmd.Parameters.Add("IdSoCua", SqlDbType.Int).Value = IdSoCua;
             Cmd.Parameters.Add("IdHangXe", SqlDbType.Int).Value = IdHangXe;
             Cmd.Parameters.Add("IdDongXe", SqlDbType.Int).Value = IdDongXe;
+            Cmd.Parameters.Add("IdTrangThai", SqlDbType.Int).Value = IdTrangThai;
 
             Cmd.Parameters.Add("img1", SqlDbType.NVarChar).Value = img1;
             Cmd.Parameters.Add("img2", SqlDbType.NVarChar).Value = img2;

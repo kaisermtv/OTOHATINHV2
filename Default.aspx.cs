@@ -28,36 +28,12 @@ public partial class _Default : Page
         
         if (!Page.IsPostBack)
         {
-            int hangxe = 0;
-            try
-            {
-                hangxe = Int32.Parse(Request["hangxe"].ToString());
-            }
-            catch { }
-            try
-            {
-                hangxe = Int32.Parse(RouteData.Values["hangxe"].ToString());
-            }
-            catch { }
-
-            int dongxe = 0;
-            try
-            {
-                dongxe = Int32.Parse(Request["dongxe"].ToString());
-            }
-            catch { }
-
-            int tinhthanh = 0;
-            try
-            {
-                tinhthanh = Int32.Parse(Request["tinhthanh"].ToString());
-            }
-            catch { }
-            try
-            {
-                tinhthanh = Int32.Parse(RouteData.Values["tinhthanh"].ToString());
-            }
-            catch { }
+            int hangxe = getValueInt("hangxe");
+            int dongxe = getValueInt("dongxe");
+            int tinhthanh = getValueInt("tinhthanh");
+            int mucgia = getValueInt("mucgia");
+            int namsanxuat = getValueInt("namsx");
+            int kieudang = getValueInt("kieudang");
 
             int tinhtrang = 2;
             try
@@ -67,26 +43,6 @@ public partial class _Default : Page
             catch { }
             this.ddlTingTrang.SelectedValue = tinhtrang.ToString();
 
-            int mucgia = 0;
-            try
-            {
-                mucgia = Int32.Parse(Request["mucgia"].ToString());
-            }
-            catch { }
-
-            int namsanxuat = 0;
-            try
-            {
-                namsanxuat = Int32.Parse(Request["namsx"].ToString());
-            }
-            catch { }
-
-            int kieudang = 0;
-            try
-            {
-                kieudang = Int32.Parse(RouteData.Values["kieudang"].ToString());
-            }
-            catch { }
 
             String Search = "";
             try
@@ -98,7 +54,7 @@ public partial class _Default : Page
 
             Oto objOto = new Oto();
 
-            DataTable objData = objOto.getDataShowHome(Search, hangxe, dongxe, tinhthanh, tinhtrang, kieudang);
+            DataTable objData = objOto.getDataShowHome(Search, hangxe, dongxe, tinhthanh, tinhtrang, kieudang, namsanxuat, mucgia);
             strHtmlTest = objOto.Message;
             cpChucVu.Visible = true;
             cpChucVu.MaxPages = 1000;
@@ -160,6 +116,25 @@ public partial class _Default : Page
             }
         }
                        
+    }
+    #endregion
+
+    #region getValueInt
+    public int getValueInt(String key)
+    {
+        int temp = 0;
+        try
+        {
+            temp = Int32.Parse(Request[key].ToString());
+        }
+        catch { }
+        try
+        {
+            temp = Int32.Parse(RouteData.Values[key].ToString());
+        }
+        catch { }
+
+        return temp;
     }
     #endregion
 
@@ -247,6 +222,7 @@ public partial class _Default : Page
     }
     #endregion
 
+    #region ddlHangXe_TextChanged
     protected void ddlHangXe_TextChanged(object sender, EventArgs e)
     {
         try
@@ -255,7 +231,9 @@ public partial class _Default : Page
         }
         catch { }
     }
+    #endregion
 
+    #region LoadHangXe
     public void LoadHangXe(int idHangxe = 0)
     {
         try
@@ -269,4 +247,5 @@ public partial class _Default : Page
             throw ex;
         }
     }
+    #endregion
 }

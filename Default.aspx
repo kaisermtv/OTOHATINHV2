@@ -121,8 +121,8 @@
                         <div class="NewsHomeItemRightTitle">
                             <a href="/tin-tuc/<%# TVSFunction.convertToUnSign2(Eval("Title").ToString()) + "-post" + Eval("Id") %>"><%# Eval("Title") %></a>
                         </div>
-                        <div class="NewsHomeItemRightShortContent"  style="overflow:hidden">
-                            <p style="height:32px"><%# Eval("ShortContent").ToString() %></p>  
+                        <div class="NewsHomeItemRightShortContent">
+                            <p><%# Eval("ShortContent").ToString() %></p>  
                         </div>
                     </div>
                 </div>

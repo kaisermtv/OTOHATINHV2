@@ -41,6 +41,17 @@ public partial class Admin_ProductEdit : System.Web.UI.Page
                 txtNamSanXuat.Text = objData["NamSanXuat"].ToString();
                 txtGiaBan.Value = objData["GiaBan"].ToString();
 
+                if (objData["IdTrangThai"] == null)
+                {
+                    ddlTrangThai.SelectedValue = "0";
+                }
+                else
+                {
+                    ddlTrangThai.SelectedValue = objData["IdTrangThai"].ToString();
+                }
+
+                
+
                 if (objData["NameImage1"] != null && objData["NameImage1"].ToString() != "") htxtimg1.Value = "/Images/post/" + objData["NameImage1"].ToString();
                 if (objData["NameImage2"] != null && objData["NameImage2"].ToString() != "") htxtimg2.Value = "/Images/post/" + objData["NameImage2"].ToString();
                 if (objData["NameImage3"] != null && objData["NameImage3"].ToString() != "") htxtimg3.Value = "/Images/post/" + objData["NameImage3"].ToString();
@@ -132,7 +143,7 @@ public partial class Admin_ProductEdit : System.Web.UI.Page
                 Int32.Parse(ddlIdTinhTrang.Text), Int32.Parse(ddlIdXuatXu.Text), Int32.Parse(ddlHopSo.Text), Int32.Parse(ddlIdKieuDang.Text),
                 Int32.Parse(ddlIdNhienLieu.Text), Int32.Parse(ddlIdTinhThanh.Text), Int32.Parse(ddlIdMauSac.Text), Int32.Parse(ddlIdSoCho.Text),
                 Int32.Parse(ddlIdSoCua.Text), Int32.Parse(ddlIdHangXe.Text), Int32.Parse(ddlIdDongXe.Text), saveImage(FileUpload1,htxtimg1),
-                saveImage(FileUpload2, htxtimg2), saveImage(FileUpload3, htxtimg3), saveImage(FileUpload4, htxtimg4), saveImage(FileUpload5, htxtimg5));
+                saveImage(FileUpload2, htxtimg2), saveImage(FileUpload3, htxtimg3), saveImage(FileUpload4, htxtimg4), saveImage(FileUpload5, htxtimg5), Int32.Parse(ddlTrangThai.Text));
             
             if (ret)
             {

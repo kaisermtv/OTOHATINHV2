@@ -8,6 +8,14 @@
             <td>
                 <input type="text" id="txtSearch" placeholder="Nhập tên màu sắc để tìm kiếm" runat="server" class="form-control" />
             </td>
+            <td>
+                <asp:DropDownList ID="ddlTrangThai" runat="server" CssClass="form-control" Style="width: 100%;">
+                    <asp:ListItem Value="4">Tất cả</asp:ListItem>
+                    <asp:ListItem Value="0">Chờ duyệt</asp:ListItem>
+                    <asp:ListItem Value="1">Chia sẻ</asp:ListItem>
+                    <asp:ListItem Value="2">Lưu trữ</asp:ListItem>
+                </asp:DropDownList>
+            </td>
             <td style="width: 40px !important; text-align: center;">
                 <asp:ImageButton ID="btnSearch" ImageUrl="/Admin/images/Search.png" runat="server" Style="margin-bottom: -12px; margin-left: -15px;" OnClick="btnSearch_Click" />
             </td>
@@ -17,14 +25,11 @@
     <div style="width: 100%; margin-top: -20px;">
         <table class="DataListTableHeader" border="0">
             <tr style="height: 40px;">
-                <td class="DataListTableHeaderTdItemTT" style="width: 3%;">#
-                </td>
-                <td class="DataListTableHeaderTdItemJustify" style="width: 76%;">Tiêu đề
-                </td>
-                <td class="DataListTableHeaderTdItemCenter" style="width: 15%;">Ngày đăng
-                </td>
-                <td class="DataListTableHeaderTdItemCenter" style="width: 6%;">&nbsp;
-                </td>
+                <td class="DataListTableHeaderTdItemTT" style="width: 3%;"># </td>
+                <td class="DataListTableHeaderTdItemJustify" style="width: 66%;">Tiêu đề</td>
+                <td class="DataListTableHeaderTdItemCenter" style="width: 10%;">Trạng thái</td>
+                <td class="DataListTableHeaderTdItemCenter" style="width: 15%;">Ngày đăng</td>
+                <td class="DataListTableHeaderTdItemCenter" style="width: 6%;">&nbsp;</td>
             </tr>
         </table>
     </div>
@@ -36,8 +41,11 @@
                     <td class="DataListTableTdItemTT" style="width: 3%;">
                         <%# Eval("TT") %>
                     </td>
-                    <td class="DataListTableTdItemJustify" style="width: 76%;">
+                    <td class="DataListTableTdItemJustify" style="width: 66%;">
                         <%# Eval("IdNameOto") %>
+                    </td>
+                    <td class="DataListTableTdItemCenter" style="width: 10%;">
+                        <%# (Eval("IdTrangThai") != null)? Eval("IdTrangThai").ToString().Replace("1","Chia sẻ").Replace("2","Lưu trữ").Replace("0","Chờ duyệt"):"Chờ duyệt" %>
                     </td>
                     <td class="DataListTableTdItemCenter" style="width: 15%;">
                         <%# Eval("NgayDang") %>

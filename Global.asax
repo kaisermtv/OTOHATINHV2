@@ -24,6 +24,7 @@
 
         routes.MapPageRoute("dangnhap", "dang-nhap", "~/Member/Login.aspx");
         routes.MapPageRoute("dangky", "dang-ky", "~/Member/Register.aspx");
+        routes.MapPageRoute("dangxe", "dang-xe", "~/Member/Post.aspx");
 
         routes.MapPageRoute("lienhe", "lien-he", "~/Contact.aspx");
 

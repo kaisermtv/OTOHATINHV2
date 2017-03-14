@@ -43,6 +43,12 @@ public partial class Directory_MucGiaEdit : System.Web.UI.Page
             {
                 this.txtNameMucGia.Text = this.objTable.Rows[0]["NameMucGia"].ToString();
                 this.ckbState.Checked = bool.Parse(this.objTable.Rows[0]["State"].ToString());
+
+                this.txtTuGia.Text = this.objTable.Rows[0]["TuGia"].ToString();
+                this.TxtDenGia.Text = this.objTable.Rows[0]["DenGia"].ToString();
+
+                if (this.txtTuGia.Text == "0") this.txtTuGia.Text = "";
+                if (this.TxtDenGia.Text == "0") this.TxtDenGia.Text = "";
             }
         }
         this.txtNameMucGia.Focus();
@@ -61,7 +67,37 @@ public partial class Directory_MucGiaEdit : System.Web.UI.Page
             return;
         }
 
-        if (this.objMucGia.setData(this.itemId, this.txtNameMucGia.Text, this.ckbState.Checked) == 1)
+        float tugia = 0;
+        if (txtTuGia.Text.Trim() != "")
+        {
+            try
+            {
+                tugia = float.Parse(txtTuGia.Text);
+            }
+            catch
+            {
+                this.lblMsg.Text = "Định dạng sai!";
+                txtTuGia.Focus();
+                return;
+            }
+        }
+
+        float dengia = 0;
+        if (TxtDenGia.Text.Trim() != "")
+        {
+            try
+            {
+                dengia = float.Parse(TxtDenGia.Text);
+            }
+            catch
+            {
+                this.lblMsg.Text = "Định dạng sai!";
+                TxtDenGia.Focus();
+                return;
+            }
+        }
+
+        if (this.objMucGia.setData(this.itemId, this.txtNameMucGia.Text, this.ckbState.Checked,tugia,dengia) == 1)
         {
             Response.Redirect("MucGia.aspx");
         }

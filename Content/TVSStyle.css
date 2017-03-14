@@ -377,7 +377,13 @@
 	font-family:Arial;
 	color:#0f0f0f;
 	text-align:justify;
+    overflow:hidden;
 }
+
+.NewsHomeItemRightShortContent p{
+    height:32px;
+}
+
 .DeafaultHeaderRight
 {
 	border-bottom:solid 1px #4996ca;
@@ -542,7 +548,13 @@
 	font-weight:bold;
 	color:#0f0f0f;
 	text-align:justify;
+    overflow:hidden;
 }
+.NewsHomeItemRightBlockTitle1 a
+{
+    max-height:120px;
+}
+
 .DivP20L
 {
 	width:20%;

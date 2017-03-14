@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-public class MucGia
+public class MucGia : DataClass
 {
 	#region method MucGia
     public MucGia()
@@ -14,32 +14,30 @@ public class MucGia
     #endregion
 
     #region method setData
-    public int setData(int IdMucGia, string NameMucGia, bool State)
+    public int setData(int IdMucGia, string NameMucGia, bool State,float tugia = 0,float dengia = 0)
     {
-        int tmpValue = 0;
         try
         {
-            string sqlQuery = "";
-            sqlQuery = "IF NOT EXISTS (SELECT * FROM tblMucGia WHERE IdMucGia = @IdMucGia) ";
-            sqlQuery += "BEGIN INSERT INTO tblMucGia(NameMucGia,State) VALUES(@NameMucGia,@State) END ";
-            sqlQuery += "ELSE BEGIN UPDATE tblMucGia SET NameMucGia = @NameMucGia, State = @State WHERE IdMucGia = @IdMucGia END";
-            SqlConnection sqlCon = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["TVSConn"].ConnectionString);
-            sqlCon.Open();
-            SqlCommand Cmd = sqlCon.CreateCommand();
-            Cmd.CommandText = sqlQuery;
+            SqlCommand Cmd = this.getSQLConnect();
+
+            Cmd.CommandText = "IF NOT EXISTS (SELECT * FROM tblMucGia WHERE IdMucGia = @IdMucGia) ";
+            Cmd.CommandText += "BEGIN INSERT INTO tblMucGia(NameMucGia,State,TuGia,DenGia) VALUES(@NameMucGia,@State,@TuGia,@DenGia) END ";
+            Cmd.CommandText += "ELSE BEGIN UPDATE tblMucGia SET NameMucGia = @NameMucGia, State = @State, TuGia = @TuGia, DenGia = @DenGia WHERE IdMucGia = @IdMucGia END";
+
             Cmd.Parameters.Add("IdMucGia", SqlDbType.Int).Value = IdMucGia;
+            Cmd.Parameters.Add("TuGia", SqlDbType.Float).Value = tugia;
+            Cmd.Parameters.Add("DenGia", SqlDbType.Float).Value = dengia;
             Cmd.Parameters.Add("NameMucGia", SqlDbType.NVarChar).Value = NameMucGia;
             Cmd.Parameters.Add("State", SqlDbType.Bit).Value = State;
             Cmd.ExecuteNonQuery();
-            sqlCon.Close();
-            sqlCon.Dispose();
-            tmpValue = 1;
+            this.SQLClose();
+
+            return 1;
         }
         catch
         {
-            tmpValue = 0;
+            return 0;
         }
-        return tmpValue;
     }
     #endregion
 

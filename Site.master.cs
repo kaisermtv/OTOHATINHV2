@@ -134,4 +134,16 @@ public partial class SiteMaster : MasterPage
         Response.Redirect("/Member/Post.aspx");
     } 
     #endregion
+
+    #region timkiem
+    protected void imgSearch_Click(object sender, ImageClickEventArgs e)
+    {
+        string que = txtSearchBox.Value;
+        if (!(que == null) & !(que == ""))
+        {
+            Response.Redirect("/tim-kiem/" + "?que=" + que);
+
+        }
+    }
+    #endregion
 }

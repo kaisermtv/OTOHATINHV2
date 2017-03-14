@@ -45,7 +45,7 @@
                         <input id="txtSearchBox" class="txtTextBoxSearch" runat="server" placeholder="Bạn muốn tìm gì? Ví dụ bán xe Camry~.">
                     </div>
                     <div class="HeaderSearchBg2">
-                        <asp:ImageButton ID="imgSearch" ImageUrl="/Images/btnSearch.png" Width="28px" CssClass="btnImgSearch" runat="server" />
+                        <asp:ImageButton ID="imgSearch" ImageUrl="/Images/btnSearch.png" Width="28px" CssClass="btnImgSearch" OnClick="imgSearch_Click" runat="server" />
                     </div>
                 </div>
                 <div class="HeaderPostBg">

@@ -11,6 +11,24 @@
         </div>
     </div>
 
+    <div class="AdminItem">
+        <div class="AdminLeftItem">
+            Từ năm:
+        </div>
+        <div class="AdminRightItem">
+            <asp:TextBox ID="txtTuNam" runat="server" class="AdminTextControl"></asp:TextBox>
+        </div>
+    </div>
+
+    <div class="AdminItem">
+        <div class="AdminLeftItem">
+            Đến năm:
+        </div>
+        <div class="AdminRightItem">
+            <asp:TextBox ID="TxtDenNam" runat="server" class="AdminTextControl"></asp:TextBox>
+        </div>
+    </div>
+
     <div style="width: 100%; height: 35px; line-height: 35px; margin-top: 10px;">
         <div class="AdminLeftItem">
             &nbsp;&nbsp;Trạng thái: 

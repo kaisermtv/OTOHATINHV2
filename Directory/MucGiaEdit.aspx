@@ -11,6 +11,24 @@
         </div>
     </div>
 
+    <div class="AdminItem">
+        <div class="AdminLeftItem">
+            Giá từ:
+        </div>
+        <div class="AdminRightItem">
+            <asp:TextBox ID="txtTuGia" runat="server" class="AdminTextControl"></asp:TextBox>
+        </div>
+    </div>
+
+    <div class="AdminItem">
+        <div class="AdminLeftItem">
+            Đến giá:
+        </div>
+        <div class="AdminRightItem">
+            <asp:TextBox ID="TxtDenGia" runat="server" class="AdminTextControl"></asp:TextBox>
+        </div>
+    </div>
+
     <div style="width: 100%; height: 35px; line-height: 35px; margin-top: 10px;">
         <div class="AdminLeftItem">
             &nbsp;&nbsp;Trạng thái: 

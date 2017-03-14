@@ -43,6 +43,11 @@ public partial class Directory_NamSanXuatEdit : System.Web.UI.Page
             {
                 this.txtNameNamSanXuat.Text = this.objTable.Rows[0]["NameNamSanXuat"].ToString();
                 this.ckbState.Checked = bool.Parse(this.objTable.Rows[0]["State"].ToString());
+                this.txtTuNam.Text = this.objTable.Rows[0]["TuNam"].ToString();
+                this.TxtDenNam.Text = this.objTable.Rows[0]["DenNam"].ToString();
+
+                if (this.txtTuNam.Text == "0") this.txtTuNam.Text = "";
+                if (this.TxtDenNam.Text == "0") this.TxtDenNam.Text = "";
             }
         }
         this.txtNameNamSanXuat.Focus();
@@ -61,7 +66,37 @@ public partial class Directory_NamSanXuatEdit : System.Web.UI.Page
             return;
         }
 
-        if (this.objNamSanXuat.setData(this.itemId, this.txtNameNamSanXuat.Text, this.ckbState.Checked) == 1)
+        int tunam = 0;
+        if(txtTuNam.Text.Trim() != "" )
+        {
+            try
+            {
+                tunam = Int32.Parse(txtTuNam.Text);
+            }
+            catch
+            {
+                this.lblMsg.Text = "Định dạng sai!";
+                txtTuNam.Focus();
+                return;
+            }
+        }
+
+        int dennam = 0;
+            if(TxtDenNam.Text.Trim() != "" )
+        {
+            try
+            {
+                dennam = Int32.Parse(TxtDenNam.Text);
+            }
+            catch
+            {
+                this.lblMsg.Text = "Định dạng sai!";
+                TxtDenNam.Focus();
+                return;
+            }
+        }
+
+        if (this.objNamSanXuat.setData(this.itemId, this.txtNameNamSanXuat.Text, this.ckbState.Checked,tunam,dennam) == 1)
         {
             Response.Redirect("NamSanXuat.aspx");
         }

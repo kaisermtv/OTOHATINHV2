@@ -130,6 +130,18 @@
                         </asp:DropDownList>
                     </div>
                 </div>
+
+                <div class="RowRegister">
+                    <div class="LeftPost">Trạng thái: </div>
+                    <div class="RightPost">
+                        <asp:DropDownList ID="ddlTrangThai" runat="server" CssClass="form-control" Style="width: 100%;">
+                            <asp:ListItem Value="0">Chờ duyệt</asp:ListItem>
+                            <asp:ListItem Value="1">Chia sẻ</asp:ListItem>
+                            <asp:ListItem Value="2">Lưu trữ</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="col-md-4">

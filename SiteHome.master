@@ -198,6 +198,17 @@
                         <% } %>
                     </div>
 
+                    <% if(objQuickHref.Rows.Count > 12){ %>
+                    <div class="DivP20L">
+                        <p style="margin-top: 20px; font-weight: bold;">BÁN XE</p>
+                        <% for (int i = 12; i < objQuickHref.Rows.Count && i < 18; i++){ %>
+                            <p style="margin-bottom: 5px;">
+                                <a href="/<%=TVSFunction.convertToUnSign2(objQuickHref.Rows[i]["NameHangXe"].ToString()) %>-hx<%=objQuickHref.Rows[i]["IdHangXe"].ToString() %>">Xe <%=objQuickHref.Rows[i]["NameHangXe"].ToString() %></a>
+                            </p>
+                        <% } %>
+                    </div>
+                    <% } %>
+
                     <!----->
                     <div class="DivP20L">
                         <p style="margin-top: 20px; font-weight: bold;">TỈNH THÀNH</p>
@@ -209,10 +220,10 @@
                     </div>
 
                     <div class="DivP20L">
-                        <p style="margin-top: 20px; font-weight: bold;">TỈNH THÀNH</p>
+                        <p style="margin-top: 20px; font-weight: bold;">KIỂU XE</p>
                         <% for (int i = 0; i < objQickBrandHref.Rows.Count && i < 6; i++){ %>
                             <p style="margin-bottom: 5px;">
-                                <a href="/<%=TVSFunction.convertToUnSign2(objQickBrandHref.Rows[i]["NameKieuDang"].ToString()) %>-kd<%=objQickBrandHref.Rows[i]["IdKieuDang"].ToString() %>">Tỉnh <%=objQickBrandHref.Rows[i]["NameKieuDang"].ToString() %></a>
+                                <a href="/<%=TVSFunction.convertToUnSign2(objQickBrandHref.Rows[i]["NameKieuDang"].ToString()) %>-kd<%=objQickBrandHref.Rows[i]["IdKieuDang"].ToString() %>"><%=objQickBrandHref.Rows[i]["NameKieuDang"].ToString() %></a>
                             </p>
                         <% } %>
                     </div>

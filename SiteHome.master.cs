@@ -173,24 +173,18 @@ public partial class SiteHome : MasterPage
     #region method btnPost_Click
     protected void btnPost_Click(object sender, ImageClickEventArgs e)
     {
-        Response.Redirect("/Member/Post.aspx");
+        Response.Redirect("/dang-xe/");
     }
     #endregion
 
     #region timkiem
     protected void imgSearch_Click(object sender, ImageClickEventArgs e)
     {
-        #region getQuerryString
         string que = txtSearchBox.Value;
         if (!(que == null) & !(que == ""))
         {
             Response.Redirect("/tim-kiem/" + "?que=" + que);
 
-        }
-        #endregion
-        else
-        {
-            return;
         }
     }
     #endregion

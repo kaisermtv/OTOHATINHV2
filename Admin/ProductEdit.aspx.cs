@@ -41,6 +41,9 @@ public partial class Admin_ProductEdit : System.Web.UI.Page
                 txtNamSanXuat.Text = objData["NamSanXuat"].ToString();
                 txtGiaBan.Value = objData["GiaBan"].ToString();
 
+                txtNgayHienThi.Text = objData["NgayHienThi"].ToString();
+                txtHienThiden.Text = objData["HienThiDenNgay"].ToString();
+
                 if (objData["IdTrangThai"] == null)
                 {
                     ddlTrangThai.SelectedValue = "0";
@@ -143,7 +146,8 @@ public partial class Admin_ProductEdit : System.Web.UI.Page
                 Int32.Parse(ddlIdTinhTrang.Text), Int32.Parse(ddlIdXuatXu.Text), Int32.Parse(ddlHopSo.Text), Int32.Parse(ddlIdKieuDang.Text),
                 Int32.Parse(ddlIdNhienLieu.Text), Int32.Parse(ddlIdTinhThanh.Text), Int32.Parse(ddlIdMauSac.Text), Int32.Parse(ddlIdSoCho.Text),
                 Int32.Parse(ddlIdSoCua.Text), Int32.Parse(ddlIdHangXe.Text), Int32.Parse(ddlIdDongXe.Text), saveImage(FileUpload1,htxtimg1),
-                saveImage(FileUpload2, htxtimg2), saveImage(FileUpload3, htxtimg3), saveImage(FileUpload4, htxtimg4), saveImage(FileUpload5, htxtimg5), Int32.Parse(ddlTrangThai.Text));
+                saveImage(FileUpload2, htxtimg2), saveImage(FileUpload3, htxtimg3), saveImage(FileUpload4, htxtimg4), saveImage(FileUpload5, htxtimg5), Int32.Parse(ddlTrangThai.Text),
+                txtNgayHienThi.Text,txtHienThiden.Text);
             
             if (ret)
             {

@@ -46,10 +46,10 @@
 
                 <!--logo and iconic logo start-->
                 <div class="logo">
-                    <h1><a href="index.html">TVS <span>Admin</span></a></h1>
+                    <h1><a href="/Admin/index.html">TVS <span>Admin</span></a></h1>
                 </div>
                 <div class="logo-icon text-center">
-                    <a href="default.aspx"><i class="lnr lnr-home"></i></a>
+                    <a href="/Admin/default.aspx"><i class="lnr lnr-home"></i></a>
                 </div>
 
                 <!--logo and iconic logo end-->
@@ -118,7 +118,7 @@
                                     <li class="dropdown profile_details_drop">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                             <div class="profile_img">
-                                                <span style="background: url(images/tvs.jpg) no-repeat center"></span>
+                                                <span style="background: url(/Admin/images/tvs.jpg) no-repeat center"></span>
                                                 <div class="user-name">
                                                     <p style ="width:100px;"><% Response.Write(Session["ACCOUNT"].ToString()); %><br /><span style ="width:100px;"><% Response.Write(Session["FULLNAME"].ToString()); %></span></p>
                                                 </div>

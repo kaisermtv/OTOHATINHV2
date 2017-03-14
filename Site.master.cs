@@ -17,6 +17,8 @@ public partial class SiteMaster : MasterPage
     private Category objCategory = new Category();
     private DataTable objTableMenuHorizontal = new DataTable();
     public string strMenuHorizontal = "", strAction = "";
+
+    public DataTable objTableAbout = new DataTable();
     #endregion
 
     #region method Page_Init
@@ -79,7 +81,7 @@ public partial class SiteMaster : MasterPage
     {
         if (Session["THANHVIEN"] == null)
         {
-            strAction = "<a href=\"dang-ky\">";
+            strAction = "<a href=\"/dang-ky\">";
             strAction += "<img src=\"/Images/btnRegister.png\" alt=\"Đăng nhập\"></a>";
             strAction += "<a href=\"/dang-nhap\">";
             strAction += "<img src=\"/Images/btnLogin.png\" alt=\"Đăng nhập\"></a>";
@@ -116,7 +118,8 @@ public partial class SiteMaster : MasterPage
                 }
             }
 
-
+            AboutUs objAboutUs = new AboutUs();
+            objTableAbout = objAboutUs.getData();
         }
     } 
     #endregion

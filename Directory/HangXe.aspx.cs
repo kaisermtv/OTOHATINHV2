@@ -30,8 +30,29 @@ public partial class Directory_HangXe : System.Web.UI.Page
         //}
         if (!Page.IsPostBack)
         {
+            String Search = "";
+            try
+            {
+                Search = Request["Search"].ToString();
+            }
+            catch { }
+            txtSearch.Value = Search;
+
+
             this.getData();
         }
+        else
+        {
+            if (txtSearch.Value != "")
+            {
+                String rdr = "?Search=" + HttpUtility.UrlEncode(txtSearch.Value);
+
+                Response.Redirect("/Directory/Hangxe.aspx" + rdr);
+            }
+
+            
+        }
+
         this.txtSearch.Focus();
     }
     #endregion
@@ -60,7 +81,7 @@ public partial class Directory_HangXe : System.Web.UI.Page
     #region method btnSearch_Click
     protected void btnSearch_Click(object sender, ImageClickEventArgs e)
     {
-        this.getData();
+        //this.getData();
     }
     #endregion
 }

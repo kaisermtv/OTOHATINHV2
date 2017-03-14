@@ -80,6 +80,12 @@
                     </div>
                 </div>
 
+                <div class="RowRegister">
+                    <div class="LeftPost">Ngày hiển thị: </div>
+                    <div class="RightPost">
+                        <asp:TextBox ID="txtNgayHienThi" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                </div>
             </div>
             <div class="col-md-6" style="padding-left: 0px; padding-right: 0px;">
 
@@ -142,6 +148,12 @@
                     </div>
                 </div>
 
+                <div class="RowRegister">
+                    <div class="LeftPost">Hiển thị đến: </div>
+                    <div class="RightPost">
+                        <asp:TextBox ID="txtHienThiden" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-md-4">

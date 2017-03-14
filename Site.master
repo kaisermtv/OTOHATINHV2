@@ -91,56 +91,61 @@
             <div class="container" style="padding: 0px;">
                 <div class="row">
                     <div class="col-md-4">
-                        <p style="margin-top: 20px; font-weight: bold; color:#fff;">Hỗ trợ khách hàng</p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                            Quy định, chính sách
+                        <p style="margin-top: 20px; font-weight: bold; color: #fff;">
+                           <a style="color: #fff" href="/lien-he">Hỗ trợ khách hàng</a>
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                            Điều khoản hoạt động Salon
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="/tin-tuc/quy-dinh-chinh-sach-post47">Quy định, chính sách</a>
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                            Câu hỏi thường gặp
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="/tin-tuc/dieu-khoan-hoat-dong-post48">Điều khoản hoạt động Salon</a>
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                            Liên hệ, trợ giúp
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="/tin-tuc/cau-hoi-thuong-gap-post49">Câu hỏi thường gặp</a>
                         </p>
-                        <br />
-                    </div>
-                    <div class="col-md-4" style ="padding-left:0px;">
-                        <p style="margin-top: 20px; font-weight: bold; color:#fff;">Về chúng tôi</p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                            Giới thiệu
-                        </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                            Quy chế hoạt động
-                        </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                            Tuyển dụng
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="/lien-he">Liên hệ, trợ giúp</a>
                         </p>
                         <br />
                     </div>
-                    <div class="col-md-4" style ="padding-left:0px; padding-right:0px;">
-                        <p style="margin-top: 20px; font-weight: bold; color:#fff;">Tin tức bán xe hơi</p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                            Báo giá dịch vụ
+                    <div class="col-md-4" style="padding-left: 0px;">
+                        <p style="margin-top: 20px; font-weight: bold; color: #fff;">Về chúng tôi</p>
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="/tin-tuc/gioi-thieu-post51">Giới thiệu</a>
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                            Khuyến mãi trên otohatinh.vn
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="/tin-tuc/quy-che-hoat-dong-post50">Quy chế hoạt động</a>
                         </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                            Khuyến mãi từ các hãng khác
-                        </p>
-                        <p style="margin-bottom: 5px; color:#fff;">
-                            Cải tiến và tính năng mới
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="/tin-tuc">Tuyển dụng</a>
                         </p>
                         <br />
                     </div>
-                    <br />&nbsp;
-                    <hr style ="color:#fff; margin-top:-20px; width:96%; text-align:left; margin-left:15px;" />
-                    <p style="text-align:center; color:#fff; font-weight:bold; font-size:18px; margin-top:-5px;">OTOHATINH.VN</p>
-                     <p style="margin-top: -10px; color:#fff; text-align:center;">
-                            Hotline: 0911 810 682 - Email: otohatinh@gmail.com
+                    <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+                        <p style="margin-top: 20px; font-weight: bold; color: #fff;">
+                            <a style="color: #fff" href="/">Tin tức bán xe hơi</a>
                         </p>
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="/tin-tuc">Báo giá dịch vụ</a>
+                        </p>
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="/tin-tuc">Khuyến mãi trên otohatinh.vn</a>
+                        </p>
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="/tin-tuc">Khuyến mãi từ các hãng khác</a>
+                        </p>
+                        <p style="margin-bottom: 5px; color: #fff;">
+                            <a style="color: #fff" href="/tin-tuc">Cải tiến và tính năng mới</a>
+                        </p>
+                        <br />
+                    </div>
+                    <br />
+                    &nbsp;
+                    <hr style="color: #fff; margin-top: -20px; width: 96%; text-align: left; margin-left: 15px;" />
+                    <p style="text-align: center; color: #fff; font-weight: bold; font-size: 18px; margin-top: -5px;">OTOHATINH.VN</p>
+                    <p style="margin-top: -10px; color: #fff; text-align: center;">
+                        Hotline: <%=objTableAbout.Rows[0]["Hotline"].ToString() %> - Email: <%=objTableAbout.Rows[0]["Email"].ToString() %>
+                    </p>
                 </div>
             </div>
         </div>

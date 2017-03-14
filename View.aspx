@@ -29,6 +29,13 @@
             color: #0f0f0f;
             text-align: justify;
         }
+
+        .NewsTopImage
+        {
+            padding-left:0px;
+            overflow:hidden;
+            max-height:150px;
+        }
     </style>
 </asp:Content>
 
@@ -60,9 +67,9 @@
     <asp:DataList ID="dtlTuVan" runat="server" RepeatDirection="Horizontal" RepeatColumns="1" Width="100%">
         <ItemTemplate>
             <div class="NewsHomeItem">
-                <div class="col-md-4" style="padding-left:0px">
+                <div class="col-md-4 NewsTopImage">
                     <a href="/tin-tuc/<%# TVSFunction.convertToUnSign2(Eval("Title").ToString()) + "-post" + Eval("Id") %>">
-                        <img src="/Images/News/<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" style="width: 100%" />
+                        <img onerror="imgCatchError(this)" src="/Images/News/<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" style="width: 100%" />
                     </a>
                 </div>
                 <div class="col-md-8" style="padding-right:0px">

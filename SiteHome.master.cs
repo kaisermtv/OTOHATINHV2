@@ -22,6 +22,8 @@ public partial class SiteHome : MasterPage
     public bool buf = true;
 
     public String htmlHangXe = "";
+
+    public DataTable objTableAbout = new DataTable();
     #endregion
 
     #region method Page_Init
@@ -157,6 +159,10 @@ public partial class SiteHome : MasterPage
             {
                 htmlHangXe += "</div>";
             }
+
+
+            AboutUs objAboutUs = new AboutUs();
+            objTableAbout = objAboutUs.getData();
 
             getQuickItenAboveFooter();
         }

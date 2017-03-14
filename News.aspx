@@ -1,6 +1,17 @@
 ﻿<%@ Page Title="TIN TỨC" Language="C#" AutoEventWireup="true" MasterPageFile="~/SiteHome.Master" CodeFile="News.aspx.cs" Inherits="News" %>
 
 <%@ Register TagPrefix="cc1" Namespace="SiteUtils" Assembly="CollectionPager" %>
+
+<asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
+    <style>
+        .DeafaultItemLeft
+        {
+            overflow:hidden;
+            max-height:150px;
+        }
+    </style>
+</asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="DeafaultHeader">
         <div class="DeafaultHeaderName">

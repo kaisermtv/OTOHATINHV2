@@ -98,7 +98,7 @@ public partial class Member_Post : System.Web.UI.Page
                 Int32.Parse(ddlIdTinhTrang.Text), Int32.Parse(ddlIdXuatXu.Text), Int32.Parse(ddlHopSo.Text), Int32.Parse(ddlIdKieuDang.Text),
                 Int32.Parse(ddlIdNhienLieu.Text), Int32.Parse(ddlIdTinhThanh.Text), Int32.Parse(ddlIdMauSac.Text), Int32.Parse(ddlIdSoCho.Text),
                 Int32.Parse(ddlIdSoCua.Text), Int32.Parse(ddlIdHangXe.Text), Int32.Parse(ddlIdDongXe.Text),
-                saveImage(upImage1), saveImage(upImage2), saveImage(upImage3), saveImage(upImage4), saveImage(upImage5));
+                saveImage(upImage1), saveImage(upImage2), saveImage(upImage3), saveImage(upImage4), saveImage(upImage5),txtNgayHienThi.Text,txtHienThiden.Text);
 
             if(ret != 0)
             {

@@ -1,51 +1,77 @@
 ﻿<%@ Page Title="LIÊN HỆ " Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Contact.aspx.cs" Inherits="Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-   <style>
-       @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
-   </style>
-
-        <div class="container">
-    <div class="jumbotron jumbotron-sm" style="background-color:#0D598C;margin-top:2%;color:white;    color: white;height: 150px;padding-top: 0px !important;">
-        <div class="row">
-            <div class="col-sm-12 col-lg-12">
-                <div class="page-header">
-                <h1>Ô TÔ HÀ TĨNH -  <small>    <%=objTableAbout.Rows[0]["Greeting"].ToString() %></small></h1>
+    <div class="container" style="margin-top: 20px; padding: 0px;">
+        <script>
+            function validate() {
+                var txtFullName = document.getElementById('MainContent_txtFullName').value;
+                var txtEmail = document.getElementById('MainContent_txtEmail').value;
+                var txtTitle = document.getElementById('MainContent_txtTitle').value;
+                var txtQuestion = document.getElementById('MainContent_txtQuestion').value;
+                if (txtFullName != "" && txtEmail != "" && txtTitle != "" && txtQuestion != "") {
+                    document.getElementById('MainContent_btnSend').disabled = false;
+                }
+                else {
+                    document.getElementById('MainContent_btnSend').disabled = 'disabled'
+                }
+            }
+        </script>
+        <div class="col-md-12" style="padding: 0px; margin-right: -15px;">
+            <div class="BodyTitle">
+                <h1>LIÊN HỆ</h1>
             </div>
-              
-            </div>
+            <br />
+            <p>
+                Các tổ chức, cá nhân cần liên hệ với <%=objTableAbout.Rows[0]["Name"].ToString() %>, vui lòng liên hệ với chúng tôi theo các thông tin sau:
+            </p>
+            <br />
+            <p style="font-weight: bold; font-size: 15px;"><%=objTableAbout.Rows[0]["Name"].ToString().ToUpper() %></p>
+            <p style="font-size: 13.5px; margin-top: -8px;">Địa chỉ: <%=objTableAbout.Rows[0]["Address"].ToString() %></p>
+            <p style="font-size: 13.5px; margin-top: -8px;">Điện thoại: <%=objTableAbout.Rows[0]["Hotline"].ToString() %></p>
+            <p style="font-size: 13.5px; margin-top: -8px;">Email: <%=objTableAbout.Rows[0]["Email"].ToString() %></p>
+            <br />
+            <p style="margin-top: -5px;">
+                Hoặc gửi thông tin liên hệ trực tiếp về cho chúng tôi theo mẫu sau đây
+            </p>
+            <br />
+            <asp:UpdatePanel runat="server" ID="UpdatePanel1" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">THÔNG TIN LIÊN HỆ</h3>
+                        </div>
+                        <br />
+                        <div class="input-group" style="padding-left: 15px;">
+                            <span class="input-group-addon" id="basic-addon1">@</span>
+                            <input type="text" style="width: 98%; max-width: 1000px !important;" id="txtFullName" onkeyup="validate()" class="form-control" runat="server" placeholder="Họ và tên" aria-describedby="basic-addon1">
+                        </div>
+                        <br />
+                        <div class="input-group" style="padding-left: 15px;">
+                            <span class="input-group-addon" id="basic-addon2">@</span>
+                            <input type="email" style="width: 98%; max-width: 1000px !important;" id="txtEmail" onkeyup="validate()" class="form-control" runat="server" placeholder="Địa chỉ email" aria-describedby="basic-addon1">
+                        </div>
+                        <br />
+                        <div class="input-group" style="padding-left: 15px;">
+                            <span class="input-group-addon" id="basic-addon3">@</span>
+                            <input type="text" style="width: 98%; max-width: 1000px !important;" id="txtTitle" onkeyup="validate()" class="form-control" runat="server" placeholder="Tiêu đề" aria-describedby="basic-addon1">
+                        </div>
+                        <br />
+                        <div class="input-group" style="padding-left: 15px; display: table;">
+                            <span class="input-group-addon" id="basic-addon4">@</span>
+                            <textarea style="width: 98%; max-width: 925px !important;" id="txtQuestion" onkeyup="validate()" class="form-control" runat="server" placeholder="Nội dung liên hệ" rows="6" aria-describedby="basic-addon1"></textarea>
+                        </div>
+                        <br />
+                        <div class="input-group" style="padding-left: 15px;">
+                            <asp:Button ID="btnSend" CssClass="btn btn-default" Enabled="false" Style="width: 100px;" runat="server" Text="Gửi câu hỏi" OnClick="btnSend_Click" />
+                            <button type="reset" runat="server" class="btn btn-default">Xóa trắng</button>
+                            <asp:Label ID="lblMsg" runat="server" Text="" ForeColor="Red"></asp:Label>
+                        </div>
+                        <br />
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <br />
         </div>
+        <br />
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="well">
-                <h3 style="line-height:20%;"><i class="fa fa-home fa-1x" style="line-height:6%;color:#0D598C"></i> Địa Chỉ :</h3>               
-                <p style="margin-top:6%;line-height:35%">  <%=objTableAbout.Rows[0]["Address"].ToString() %>     </p>
-                <br />
-                <br />
-                <h3 style="line-height:20%;"><i class="fa fa-envelope fa-1x" style="line-height:6%;color:#0D598C"></i> E-Mail :</h3>
-                <p style="margin-top:6%;line-height:35%"><%=objTableAbout.Rows[0]["Email"].ToString() %>  </p>
-                <br />
-                <br />
-                <h3 style="line-height:20%;"><i class="fa fa-user fa-1x" style="line-height:6%;color:#0D598C"></i>Điện thoại :</h3>
-                <p style="margin-top:6%;line-height:35%"><%=objTableAbout.Rows[0]["Hotline"].ToString() %>  </p>
-                <br />
-                <br />
-                <h3 style="line-height:20%;"><i class="fa fa-yelp fa-1x" style="line-height:6%;color:#0D598C"></i> Website:</h3>
-                <p style="margin-top:6%;line-height:35%"><a href="siteadresi.com/destek">http://www.Otohatinh.vn </a></p>
-                <br />
-                <h3 style="line-height:20%;"><i class="fa fa-yelp fa-1x" style="line-height:6%;color:#0D598C"></i> Slogen</h3>
-                <p style="margin-top:6%;line-height:35%"><a href="siteadresi.com/destek"><%=objTableAbout.Rows[0]["Greeting1"].ToString() %>  </a></p>
-            </div>
-        </div>
-        <div class="col-sm-6">
-         <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJuTUSoCVOODERMW4xUQon17w&key=AIzaSyCJmsp11TWuTL9WzTsgTVg8yrEKnDmlRIQ" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>   
-        </div>
-    </div>
-</div>
-       
-
-
 </asp:Content>

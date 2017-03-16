@@ -73,6 +73,7 @@
                                 <li><a href="/Admin/ListNews.aspx">Tin tức - Bài viết</a></li>
                                 <%--<li><a href="/Admin/ListNational.aspx">Xuất xứ hàng hóa</a></li>--%>
                                 <%--<li><a href="/Admin/ListQuotation.aspx">Báo giá sản phẩm</a></li>--%>
+                                <li><a href="/Admin/ListContact.aspx">Quản lý liên hệ</a></li>
                                 <li><a href="/Admin/Ads.aspx">Quảng cáo</a></li>
                             </ul>
                         </li>

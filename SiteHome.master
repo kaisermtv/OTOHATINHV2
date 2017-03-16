@@ -267,19 +267,19 @@
                     </div>
                     <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
                         <p style="margin-top: 20px; font-weight: bold; color: #fff;">
-                            <a style="color: #fff" href="/">Tin tức bán xe hơi</a>
+                            Tin tức bán xe hơi
                         </p>
                         <p style="margin-bottom: 5px; color: #fff;">
-                            <a style="color: #fff" href="/tin-tuc">Báo giá dịch vụ</a>
+                            <a style="color: #fff" href="/tin-tuc/bao-gia-dich-vu-post52">Báo giá dịch vụ</a>
                         </p>
                         <p style="margin-bottom: 5px; color: #fff;">
-                            <a style="color: #fff" href="/tin-tuc">Khuyến mãi trên otohatinh.vn</a>
+                            <a style="color: #fff" href="/tin-tuc/khuyen-mai-tren-otohatinhvn-post53">Khuyến mãi trên otohatinh.vn</a>
                         </p>
                         <p style="margin-bottom: 5px; color: #fff;">
-                            <a style="color: #fff" href="/tin-tuc">Khuyến mãi từ các hãng khác</a>
+                            <a style="color: #fff" href="/tin-tuc/khuyen-mai-tu-cac-hang-khac-post54">Khuyến mãi từ các hãng khác</a>
                         </p>
                         <p style="margin-bottom: 5px; color: #fff;">
-                            <a style="color: #fff" href="/tin-tuc">Cải tiến và tính năng mới</a>
+                            <a style="color: #fff" href="/tin-tuc/cai-tien-va-tinh-nang-moi-post55">Cải tiến và tính năng mới</a>
                         </p>
                         <br />
                     </div>

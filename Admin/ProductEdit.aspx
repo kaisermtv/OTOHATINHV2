@@ -186,7 +186,7 @@
             <br />
             <br />
             <div style="border: solid 1px red; height: 100px;">
-                <img id="preview4" src="<%=htxtimg3.Value %>" style="height: 100px !important; width: 100%" alt="" />
+                <img id="preview4" src="<%=htxtimg4.Value %>" style="height: 100px !important; width: 100%" alt="" />
                 <label class="file-upload" style="margin-top: 1px;">
                     <input type="hidden" id="htxtimg4" runat="server" width="10px" />
                     <asp:FileUpload ID="FileUpload4" onchange="LoadImgSrc(this,'#preview4','htxtimg4');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
@@ -195,7 +195,7 @@
             <br />
             <br />
             <div style="border: solid 1px red; height: 100px;">
-                <img id="preview5" src="<%=htxtimg3.Value %>" style="height: 100px !important; width: 100%" alt="" />
+                <img id="preview5" src="<%=htxtimg5.Value %>" style="height: 100px !important; width: 100%" alt="" />
                 <label class="file-upload" style="margin-top: 1px;">
                     <input type="hidden" id="htxtimg5" runat="server" width="10px" />
                     <asp:FileUpload ID="FileUpload5" onchange="LoadImgSrc(this,'#preview5','htxtimg5');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />

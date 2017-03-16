@@ -58,6 +58,8 @@ public partial class Admin_ProductEdit : System.Web.UI.Page
                 if (objData["NameImage1"] != null && objData["NameImage1"].ToString() != "") htxtimg1.Value = "/Images/post/" + objData["NameImage1"].ToString();
                 if (objData["NameImage2"] != null && objData["NameImage2"].ToString() != "") htxtimg2.Value = "/Images/post/" + objData["NameImage2"].ToString();
                 if (objData["NameImage3"] != null && objData["NameImage3"].ToString() != "") htxtimg3.Value = "/Images/post/" + objData["NameImage3"].ToString();
+                if (objData["NameImage4"] != null && objData["NameImage4"].ToString() != "") htxtimg2.Value = "/Images/post/" + objData["NameImage4"].ToString();
+                if (objData["NameImage5"] != null && objData["NameImage5"].ToString() != "") htxtimg3.Value = "/Images/post/" + objData["NameImage5"].ToString();
 
                 HangXe objHangXe = new HangXe();
                 setDroplist(this.ddlIdHangXe, objHangXe.getDataCategoryToCombobox(), "NameHangXe", "IdHangXe");

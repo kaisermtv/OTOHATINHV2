@@ -825,3 +825,138 @@
 	font-size:14px;
 	text-align:justify;
 }
+
+
+/*PHAN TRANG*/
+.ProductPage
+{
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+}
+.ProductPage b
+{
+	border:solid 1px #f998ef;
+	padding:3px;
+	padding-left:10px;
+	padding-right:10px;
+	background-color:#c6d5e2;
+}
+.ProductPage a
+{
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	border:solid 1px #f998ef;
+}
+.ProductPage a:link
+{
+	border:solid 1px #f998ef;
+	padding:3px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.ProductPage a:hover
+{
+	border:solid 1px #ff5400;
+	text-decoration:none;
+	background-color:red;
+	color:#fff;
+}
+.ProductPage a:visited
+{
+	border:solid 1px #f998ef;
+}
+
+
+/*Default.aspx*/
+.BodyTitle {
+	font-family: Arial;
+	font-size: 14px;
+	color: #00923f;
+	text-transform: uppercase;
+}
+.BodyTitle a
+{
+	color: #00923f;
+	text-decoration:none;
+}
+.BodyTitle a:link
+{
+	color: #00923f;
+	text-decoration:none;
+}
+.BodyTitle a:hover
+{
+	color: #00923f;
+	text-decoration:none;
+}
+.BodyTitle a:visited
+{
+	color: #00923f;
+	text-decoration:none;
+}
+
+.dtlNewsProduct {
+	width: 100%;
+	margin-top: 15px;
+}
+
+.Product {
+	margin-right: 18px;
+	margin-bottom: 25px;
+}
+
+.ProductImg {
+	width: 165px;
+	height: 220px;
+}
+
+.ProductName {
+	margin-top: 10px;
+	font-family: Arial;
+	font-size: 14px;
+	text-align: justify;
+	color: #454040;
+	max-height: 40px;
+	overflow: hidden;
+}
+
+.ProductName a {
+	color: #454040;
+	max-height: 40px;
+	overflow: hidden;
+	text-decoration: none;
+}
+
+.ProductName a:link {
+	color: #454040;
+	max-height: 40px;
+	overflow: hidden;
+	text-decoration: none;
+}
+
+.ProductName a:hover {
+	color: #454040;
+	max-height: 40px;
+	overflow: hidden;
+	text-decoration: none;
+}
+
+.ProductName a:visited {
+	color: #454040;
+	max-height: 40px;
+	overflow: hidden;
+	text-decoration: none;
+}
+
+.ProductPrice {
+	margin-top: 8px;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: justify;
+	color: #e51e02;
+	max-height: 40px;
+	overflow: hidden;
+}
